@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170510 17:51:49.281" generator="Robot 3.0 (Python 2.7.10 on win32)">
+<suite source="d:\projects\gitRepository\AutoMan\Web\ui_suites\syf1.1.1\timepoint\performance.txt" id="s1" name="Performance">
+<test id="s1-t1" name="响应页面">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://192.168.10.164/syf1.1.1/login/Index</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20170510 17:51:49.478" level="INFO">Opening browser 'chrome' to base url 'http://192.168.10.164/syf1.1.1/login/Index'</msg>
+<status status="PASS" endtime="20170510 17:51:53.814" starttime="20170510 17:51:49.478"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170510 17:51:54.815" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20170510 17:51:54.815" starttime="20170510 17:51:53.814"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:51:54.815" level="INFO">${页面加载总时长} = 0</msg>
+<status status="PASS" endtime="20170510 17:51:54.815" starttime="20170510 17:51:54.815"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:51:54.816" level="INFO">${requestTime} = 0</msg>
+<status status="PASS" endtime="20170510 17:51:54.816" starttime="20170510 17:51:54.816"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:51:54.816" level="INFO">${TTFB} = 0</msg>
+<status status="PASS" endtime="20170510 17:51:54.816" starttime="20170510 17:51:54.816"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ 6 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:51:54.996" starttime="20170510 17:51:54.817"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:51:56.997" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:51:56.997" starttime="20170510 17:51:54.997"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:51:56.998" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:51:57.009" level="INFO">${userTime} = 162</msg>
+<status status="PASS" endtime="20170510 17:51:57.009" starttime="20170510 17:51:56.997"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:51:57.012" level="INFO">${页面加载总时长} = 162</msg>
+<status status="PASS" endtime="20170510 17:51:57.012" starttime="20170510 17:51:57.010"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:51:57.013" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:51:57.022" level="INFO">${rT} = 26</msg>
+<status status="PASS" endtime="20170510 17:51:57.022" starttime="20170510 17:51:57.012"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:51:57.025" level="INFO">${requestTime} = 26</msg>
+<status status="PASS" endtime="20170510 17:51:57.025" starttime="20170510 17:51:57.022"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:51:57.025" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:51:57.035" level="INFO">${tt} = 26</msg>
+<status status="PASS" endtime="20170510 17:51:57.036" starttime="20170510 17:51:57.025"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:51:57.038" level="INFO">${TTFB} = 26</msg>
+<status status="PASS" endtime="20170510 17:51:57.038" starttime="20170510 17:51:57.036"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:51:57.038" starttime="20170510 17:51:54.817"></status>
+</kw>
+<kw type="foritem" name="${i} = 1">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:51:57.183" starttime="20170510 17:51:57.039"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:51:59.184" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:51:59.184" starttime="20170510 17:51:57.183"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.185" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:51:59.194" level="INFO">${userTime} = 131</msg>
+<status status="PASS" endtime="20170510 17:51:59.194" starttime="20170510 17:51:59.184"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.197" level="INFO">${页面加载总时长} = 293</msg>
+<status status="PASS" endtime="20170510 17:51:59.197" starttime="20170510 17:51:59.195"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.197" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:51:59.205" level="INFO">${rT} = 24</msg>
+<status status="PASS" endtime="20170510 17:51:59.205" starttime="20170510 17:51:59.197"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.209" level="INFO">${requestTime} = 50</msg>
+<status status="PASS" endtime="20170510 17:51:59.209" starttime="20170510 17:51:59.206"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.210" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:51:59.218" level="INFO">${tt} = 24</msg>
+<status status="PASS" endtime="20170510 17:51:59.218" starttime="20170510 17:51:59.210"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:51:59.221" level="INFO">${TTFB} = 50</msg>
+<status status="PASS" endtime="20170510 17:51:59.221" starttime="20170510 17:51:59.218"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:51:59.221" starttime="20170510 17:51:57.038"></status>
+</kw>
+<kw type="foritem" name="${i} = 2">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:51:59.364" starttime="20170510 17:51:59.222"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:52:01.364" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:52:01.364" starttime="20170510 17:51:59.364"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.365" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:52:01.373" level="INFO">${userTime} = 115</msg>
+<status status="PASS" endtime="20170510 17:52:01.373" starttime="20170510 17:52:01.364"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.376" level="INFO">${页面加载总时长} = 408</msg>
+<status status="PASS" endtime="20170510 17:52:01.376" starttime="20170510 17:52:01.373"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.377" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:52:01.385" level="INFO">${rT} = 26</msg>
+<status status="PASS" endtime="20170510 17:52:01.385" starttime="20170510 17:52:01.376"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.388" level="INFO">${requestTime} = 76</msg>
+<status status="PASS" endtime="20170510 17:52:01.388" starttime="20170510 17:52:01.386"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.388" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:52:01.394" level="INFO">${tt} = 28</msg>
+<status status="PASS" endtime="20170510 17:52:01.394" starttime="20170510 17:52:01.388"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:52:01.396" level="INFO">${TTFB} = 78</msg>
+<status status="PASS" endtime="20170510 17:52:01.396" starttime="20170510 17:52:01.394"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:01.396" starttime="20170510 17:51:59.221"></status>
+</kw>
+<kw type="foritem" name="${i} = 3">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:52:01.542" starttime="20170510 17:52:01.396"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:52:03.543" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:52:03.543" starttime="20170510 17:52:01.542"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.544" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:52:03.552" level="INFO">${userTime} = 111</msg>
+<status status="PASS" endtime="20170510 17:52:03.552" starttime="20170510 17:52:03.543"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.554" level="INFO">${页面加载总时长} = 519</msg>
+<status status="PASS" endtime="20170510 17:52:03.554" starttime="20170510 17:52:03.552"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.555" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:52:03.564" level="INFO">${rT} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:03.564" starttime="20170510 17:52:03.555"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.566" level="INFO">${requestTime} = 101</msg>
+<status status="PASS" endtime="20170510 17:52:03.566" starttime="20170510 17:52:03.564"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.567" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:52:03.576" level="INFO">${tt} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:03.576" starttime="20170510 17:52:03.567"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:52:03.578" level="INFO">${TTFB} = 103</msg>
+<status status="PASS" endtime="20170510 17:52:03.578" starttime="20170510 17:52:03.576"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:03.578" starttime="20170510 17:52:01.396"></status>
+</kw>
+<kw type="foritem" name="${i} = 4">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:52:03.720" starttime="20170510 17:52:03.579"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:52:05.720" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:52:05.720" starttime="20170510 17:52:03.720"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.720" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:52:05.727" level="INFO">${userTime} = 111</msg>
+<status status="PASS" endtime="20170510 17:52:05.727" starttime="20170510 17:52:05.720"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.728" level="INFO">${页面加载总时长} = 630</msg>
+<status status="PASS" endtime="20170510 17:52:05.728" starttime="20170510 17:52:05.727"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.729" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:52:05.735" level="INFO">${rT} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:05.735" starttime="20170510 17:52:05.728"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.736" level="INFO">${requestTime} = 126</msg>
+<status status="PASS" endtime="20170510 17:52:05.736" starttime="20170510 17:52:05.735"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.737" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:52:05.743" level="INFO">${tt} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:05.743" starttime="20170510 17:52:05.737"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:52:05.744" level="INFO">${TTFB} = 128</msg>
+<status status="PASS" endtime="20170510 17:52:05.744" starttime="20170510 17:52:05.743"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:05.744" starttime="20170510 17:52:03.579"></status>
+</kw>
+<kw type="foritem" name="${i} = 5">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20170510 17:52:05.910" starttime="20170510 17:52:05.744"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170510 17:52:07.910" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170510 17:52:07.910" starttime="20170510 17:52:05.910"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</arg>
+</arguments>
+<assign>
+<var>${userTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.911" level="INFO">Executing JavaScript:
+return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart)</msg>
+<msg timestamp="20170510 17:52:07.921" level="INFO">${userTime} = 130</msg>
+<status status="PASS" endtime="20170510 17:52:07.921" starttime="20170510 17:52:07.911"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}+${userTime}</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.923" level="INFO">${页面加载总时长} = 760</msg>
+<status status="PASS" endtime="20170510 17:52:07.923" starttime="20170510 17:52:07.921"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return window.performance.timing.responseEnd-window.performance.timing.requestStart</arg>
+</arguments>
+<assign>
+<var>${rT}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.924" level="INFO">Executing JavaScript:
+return window.performance.timing.responseEnd-window.performance.timing.requestStart</msg>
+<msg timestamp="20170510 17:52:07.933" level="INFO">${rT} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:07.933" starttime="20170510 17:52:07.924"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}+${rT}</arg>
+</arguments>
+<assign>
+<var>${requestTime}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.935" level="INFO">${requestTime} = 151</msg>
+<status status="PASS" endtime="20170510 17:52:07.935" starttime="20170510 17:52:07.933"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</arg>
+</arguments>
+<assign>
+<var>${tt}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.936" level="INFO">Executing JavaScript:
+return (window.performance.timing.responseStart-window.performance.timing.connectEnd)</msg>
+<msg timestamp="20170510 17:52:07.945" level="INFO">${tt} = 23</msg>
+<status status="PASS" endtime="20170510 17:52:07.945" starttime="20170510 17:52:07.936"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}+${tt}</arg>
+</arguments>
+<assign>
+<var>${TTFB}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.947" level="INFO">${TTFB} = 151</msg>
+<status status="PASS" endtime="20170510 17:52:07.947" starttime="20170510 17:52:07.945"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:07.947" starttime="20170510 17:52:05.744"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:07.948" starttime="20170510 17:51:54.817"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${页面加载总时长}/6</arg>
+</arguments>
+<assign>
+<var>${页面加载总时长_Avg}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.950" level="INFO">${页面加载总时长_Avg} = 126</msg>
+<status status="PASS" endtime="20170510 17:52:07.950" starttime="20170510 17:52:07.948"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${requestTime}/6</arg>
+</arguments>
+<assign>
+<var>${requestTime_Avg}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.952" level="INFO">${requestTime_Avg} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:07.952" starttime="20170510 17:52:07.950"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${TTFB}/6</arg>
+</arguments>
+<assign>
+<var>${TTFB_Avg}</var>
+</assign>
+<msg timestamp="20170510 17:52:07.954" level="INFO">${TTFB_Avg} = 25</msg>
+<status status="PASS" endtime="20170510 17:52:07.954" starttime="20170510 17:52:07.952"></status>
+</kw>
+<kw type="teardown" name="结束进程" library="登陆登出">
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>taskkill /F /IM chromedriver.exe</arg>
+</arguments>
+<msg timestamp="20170510 17:52:07.974" level="INFO">Running command 'taskkill /F /IM chromedriver.exe 2&gt;&amp;1'.</msg>
+<status status="PASS" endtime="20170510 17:52:08.487" starttime="20170510 17:52:07.955"></status>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>taskkill /F /IM iedriverserver.exe</arg>
+</arguments>
+<msg timestamp="20170510 17:52:08.520" level="INFO">Running command 'taskkill /F /IM iedriverserver.exe 2&gt;&amp;1'.</msg>
+<status status="PASS" endtime="20170510 17:52:08.632" starttime="20170510 17:52:08.487"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:08.632" starttime="20170510 17:52:07.954"></status>
+</kw>
+<status status="PASS" endtime="20170510 17:52:08.632" critical="yes" starttime="20170510 17:51:49.476"></status>
+</test>
+<status status="PASS" endtime="20170510 17:52:08.633" starttime="20170510 17:51:49.286"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Performance" pass="1">Performance</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

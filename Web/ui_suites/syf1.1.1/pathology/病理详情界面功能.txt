@@ -1,0 +1,819 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+
+| *** Keywords *** |
+| 添加-病人信息 |
+|    | [Arguments] | ${病历号} | ${B超日期} | ${手术日期} | ${本次手术区块名} | ${本次手术用名} |
+|    | Input Text | id=txtHospitalNumber | ${病历号} |
+|    | press key | id=txtHospitalNumber | \\13 | #按下enter键 |
+|    | Sleep | 2 |
+|    | execute javascript | window.document.getElementById("txtBUltrasonicCheckTime").value="${B超日期}" | #Bchao日期 |
+|    | Sleep | 1 |
+|    | execute javascript | window.document.getElementById("txtOperationDay").value="${手术日期}" | #手术日 |
+|    | execute javascript | $("#txtOperationDay").blur() |
+|    | sleep | 3 |
+|    | click element | id=txtOperationSchemeCN |
+|    | sleep | 1 |
+|    | Input Text | id=txtOperationSchemeCN | ${本次手术区块名} |
+|    | Sleep | 1s |
+|    | Input Text | id=txtThisDoSurgery | ${本次手术用名} |
+|    | Click Element | id=saveMaster | #一般项目保存 |
+|    | Sleep | 5s |
+
+| 编辑本次手术区块名 |
+|    | [Arguments] | ${本次手术区块名} |
+|    | execute javascript | window.document.getElementById("txtOperationSchemeCN").value="${本次手术区块名}" |
+
+| 编辑本次手术名 |
+|    | [Arguments] | ${本次手术名} |
+|    | #编辑本次手术名 |
+|    | focus | id=txtThisDoSurgery |
+|    | Input Text | id=txtThisDoSurgery | ${本次手术名} |
+|    | sleep | 3s |
+
+| 编辑区属性超缺 |
+|    | [Arguments] | ${区属性超缺} |
+|    | execute javascript | window.document.getElementById("txtStripBlock").value="${区属性超缺}" |
+|    | Click Element | id=saveMaster | #一般项目保存 |
+|    | sleep | 3 |
+
+| 添加-原发灶 |
+|    | [Arguments] | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} |
+|    | [Documentation] | 参数： |
+|    | ... | ${左灶位置} \| ${左灶数} \| ${左灶均径} \| ${右灶位置} \| ${右灶数} \| ${右灶均径} \| ${峡部灶位置} \| ${峡部灶数} \| ${峡部灶均径} \| ${锥叶灶位置} \| ${锥叶灶数} \| ${锥叶灶均径}|{是否腺内播散} |
+|    | focus | id=txtStovePositionL |
+|    | execute javascript | window.document.getElementById("txtStovePositionL").value="${灶位置左}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumL").value="${灶数左}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionR").value="${灶位置右}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumR").value="${灶数右}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionX").value="${灶位置峡部}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumX").value="${灶数峡部}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}" |
+|    | focus | id=txtStoveMeanDiameterZ |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}" |
+|    | sleep | 2 |
+|    | execute javascript | window.document.getElementById("txtOtherOptions").value="${是否腺内播散}" |
+|    | wait until element is enabled | id=SaveOriginal | 20s | error=等待保存原发灶超时 |
+|    | sleep | 3s |
+|    | focus | id=SaveOriginal |
+|    | click element | id=SaveOriginal | #保存原发灶一级数据 |
+|    | sleep | 2s |
+|    | focus | id=SaveOriginalAndDerived |
+|    | click element | id=SaveOriginalAndDerived | #向下派生原发灶一级数据 |
+|    | sleep | 3s |
+|    | reload page |
+|    | sleep | 7s |
+
+| 添加-转移灶 |
+|    | [Arguments] | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | [Documentation] | 参数：${喉前亚区} \| ${胸骨上窝亚区} \| ${左沟上段} \| ${左沟中段} \| ${左沟下段} \| ${右沟上段} \| ${右沟中段} \| ${右沟下段桥1-2片} \| ${右沟下段桥1-3片} \| ${左IIa区} \| ${左IIb区} \| ${左III区} \| ${左IV区} \| ${左肌间区} \| ${左Va区} \| ${左Vb区} \| ${左前上纵膈区} \| ${左Ib区} \| ${左咽旁区} \| ${左颅底区} \| ${右IIa区} \| ${右IIb区} \| ${右III区} \| ${右IV区} \| ${右肌间区} \| ${右Va区} \| ${右Vb区} \| ${右前上纵膈区} \| ${右Ib区} \| ${右咽旁区} \| ${右颅底区} |
+|    | sleep | 5s |
+|    | focus | id=txtThroatBeforeArea |
+|    | execute javascript | window.document.getElementById("txtThroatBeforeArea").value="${喉前亚区}" |
+|    | execute javascript | window.document.getElementById("txtSternumTopArea").value="${胸骨上窝亚区}" |
+|    | execute javascript | window.document.getElementById("txtLeftAreaTop").value="${左沟上段}" |
+|    | execute javascript | window.document.getElementById("txtLeftAreaMiddle").value="${左沟中段}" |
+|    | execute javascript | window.document.getElementById("txtLeftAreaUnder").value="${左沟下段}" |
+|    | execute javascript | window.document.getElementById("txtRightAreaTop").value="${右沟上段}" |
+|    | execute javascript | window.document.getElementById("txtRightAreaMiddle").value="${右沟中段}" |
+|    | execute javascript | window.document.getElementById("txtRightUnderOneTwo").value="${右沟下段桥1-2片}" |
+|    | execute javascript | window.document.getElementById("txtRightUnderOneThree").value="${右沟下段桥1-3片}" |
+|    | execute javascript | window.document.getElementById("txtLTwoAArea").value="${左IIa区}" |
+|    | execute javascript | window.document.getElementById("txtLTwoBArea").value="${左IIb区}" |
+|    | execute javascript | window.document.getElementById("txtLThreeArea").value="${左III区}" |
+|    | execute javascript | window.document.getElementById("txtLFourArea").value="${左IV区}" |
+|    | execute javascript | window.document.getElementById("txtLMuscleArea").value="${左肌间区}" |
+|    | execute javascript | window.document.getElementById("txtLFiveAArea").value="${左Va区}" |
+|    | execute javascript | window.document.getElementById("txtLFiveBArea").value="${左Vb区}" |
+|    | execute javascript | window.document.getElementById("txtLMediastinalArea").value="${左前上纵膈区}" |
+|    | execute javascript | window.document.getElementById("txtLOnebArea").value="${左Ib区}" |
+|    | execute javascript | window.document.getElementById("txtLParapharyngealArea").value="${左咽旁区}" |
+|    | execute javascript | window.document.getElementById("txtLVeinholeArea").value="${左颅底区}" |
+|    | execute javascript | window.document.getElementById("txtRTwoAArea").value="${右IIa区}" |
+|    | execute javascript | window.document.getElementById("txtRTwoBArea").value="${右IIb区}" |
+|    | execute javascript | window.document.getElementById("txtRThreeArea").value="${右III区}" |
+|    | execute javascript | window.document.getElementById("txtRFourArea").value="${右IV区}" |
+|    | execute javascript | window.document.getElementById("txtRMuscleArea").value="${右肌间区}" |
+|    | execute javascript | window.document.getElementById("txtRFiveAArea").value="${右Va区}" |
+|    | execute javascript | window.document.getElementById("txtRFiveBArea").value="${右Vb区}" |
+|    | execute javascript | window.document.getElementById("txtRMediastinalArea").value="${右前上纵膈区}" |
+|    | execute javascript | window.document.getElementById("txtROnebArea").value="${右Ib区}" |
+|    | execute javascript | window.document.getElementById("txtRParapharyngealArea").value="${右咽旁区}" |
+|    | focus | id=txtRVeinholeArea |
+|    | execute javascript | window.document.getElementById("txtRVeinholeArea").value="${右颅底区}" |
+|    | #保存转移灶 |
+|    | wait until element is enabled | id=SaveMicroscope | 20s | erroe=等待原发灶保存超时 |
+|    | focus | id=SaveMicroscope |
+|    | click element | id=SaveMicroscope |
+|    | sleep | 2s |
+|    | #向下派生 |
+|    | focus | id=SaveMicroscopeAndDerived |
+|    | click element | id=SaveMicroscopeAndDerived |
+|    | sleep | 5s |
+|    | reload page |
+|    | sleep | 10s |
+
+| 派生数据A |
+|    | [Arguments] | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} | ${预期_单多中心发生类型} | ${预期_病期程} | ${预期_临床习惯归类} |
+|    | [Documentation] | 参数： |
+|    | ... | ${左灶位置} \| ${左灶数} \| ${左灶均径} \| ${右灶位置} \| ${右灶数} \| ${右灶均径} \| ${峡部灶位置} \| ${峡部灶数} \| ${峡部灶均径} \| ${锥叶灶位置} \| ${锥叶灶数} \| ${锥叶灶均径}|{是否腺内播散} |
+|    | 添加-原发灶 | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} |
+|    | ${实际_单多中心发生类型} | Get Element Attribute | id=txtCenterHappenType@dataval |
+|    | ${实际_病期程} | Get Element Attribute | id=txtDiseaseEstimate@dataval |
+|    | ${实际_临床习惯归类} | Get Element Attribute | id=txtStoveMeanDiameterTyping@dataval |
+|    | should be Equal | ${实际_单多中心发生类型} | ${预期_单多中心发生类型} |
+|    | should contain | ${实际_病期程} | ${预期_病期程} |
+|    | should contain | ${实际_临床习惯归类} | ${预期_临床习惯归类} |
+
+| 派生数据B-1 |
+|    | [Arguments] | ${本次手术区块名} | ${区属超缺项} | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} |
+|    | ... | ${灶数右} | ${灶均径右} | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} |
+|    | ... | ${灶数锥叶} | ${灶均径锥叶} | ${是否腺内播散} | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} |
+|    | ... | ${左沟中段} | ${左沟下段} | ${右沟上段} | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} |
+|    | ... | ${左IIa区} | ${左IIb区} | ${左III区} | ${左IV区} | ${左Va区} | ${左Vb区} |
+|    | ... | ${左肌间区} | ${左前上纵膈区} | ${左Ib区} | ${左咽旁区} | ${左颅底区} | ${右IIa区} |
+|    | ... | ${右IIb区} | ${右III区} | ${右IV区} | ${右肌间区} | ${右Va区} | ${右Vb区} |
+|    | ... | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} | ${右颅底区} | ${左主侧} | ${左次侧} |
+|    | ... | ${右主侧} | ${右次侧} | ${左侧中} | ${右侧中} | ${左外侧} | ${右外侧} |
+|    | ... | ${左前上纵膈} | ${右前上纵膈} | ${左咽旁颅底} | ${右咽旁颅底} |
+|    | [Documentation] | ${本次手术区块名} \| ${区属超缺项} \| ${灶位置左} \| ${灶数左} \| ${灶均径左} \| ${灶位置右} \| ${灶数右} \| ${灶均径右} \| ${灶位置峡部} \| ${灶数峡部} \| ${灶均径峡部} \| ${灶位置锥叶} \| ${灶数锥叶} \| ${灶均径锥叶} \ \| ${是否腺内播散}| ${喉前亚区} \| ${胸骨上窝亚区} \| ${左沟上段} \| ${左沟中段} \| ${左沟下段} \| ${右沟上段} \| ${右沟中段} \| ${右沟下段桥1-2片} \| ${右沟下段桥1-3片} \| ${左IIa区} \| ${左IIb区} \| ${左III区} \| ${左IV区} \| ${左Va区} \| ${左Vb区} \| ${左肌间区} \| ${左前上纵膈区} \| ${左Ib区} \| ${左咽旁区} \| ${左颅底区} \| ${右IIa区} \| ${右IIb区} \| ${右III区} \| ${右IV区} \| ${右肌间区} \| ${右Va区} \| ${右Vb区} \| ${右前上纵膈区} \| ${右Ib区} \| ${右咽旁区} \| ${右颅底区}| ${左主侧} \| ${左次侧} \| ${右主侧} \| ${右次侧} \| ${左侧中} \| ${右侧中} \| ${左外侧} \| ${右外侧} \| ${左前上纵膈} \| ${右前上纵膈} \| ${左咽旁颅底} \| ${右咽旁颅底} |
+|    | 编辑本次手术区块名 | ${本次手术区块名} |
+|    | 编辑区属性超缺 | ${区属超缺项} |
+|    | 添加-原发灶 | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | ${mainL} | run keyword and return status | element should be visible | id=tdLeftMainText | #读取左主侧是否显示 |
+|    | ${nummainL} | get value | id=txtLeftMainSide | #读取左主侧的值 |
+|    | run keyword if | ${mainL}==1 | should be equal | ${nummainL} | ${左主侧} |
+|    | run keyword if | ${mainL}==0 | should be equal | '${mainL}' | ${左主侧} |
+|    | sleep | 1 |
+|    | ${subL} | run keyword and return status | element should be visible | id=tdLeftSecondText | ${左次侧} |
+|    | ${numSubL} | get value | id=txtLeftSecondarySide | #读取左次侧的值 |
+|    | run keyword if | ${subL}==1 | should be equal | ${numSubL} | ${左次侧} |
+|    | run keyword if | ${subL}==0 | should be equal | '${subL}' | ${左次侧} |
+|    | ${mainR} | run keyword and return status | element should be visible | id=tdRightMainText |
+|    | ${nummainR} | get value | id=txtRightMainSide | #读取右主侧的值 |
+|    | run keyword if | ${mainR}==1 | should be equal | ${nummainR} | ${右主侧} |
+|    | run keyword if | ${mainR}==0 | should be equal | '${mainR}' | ${右主侧} |
+|    | sleep | 1 |
+|    | ${subR} | run keyword and return status | element should be visible | id=tdRightSecondText | #读取右次侧是否显示 |
+|    | ${numSubR} | get value | id=txtRightSecondarySide | #读取右次侧的值 |
+|    | run keyword if | ${subR}==1 | should be equal | ${numSubR} | ${右次侧} |
+|    | run keyword if | ${subR}==0 | should be equal | '${subR}' | ${右次侧} |
+|    | sleep | 1 |
+|    | ${middleL} | run keyword and return status | element should be visible | id=tdLeftMiddleText | #读取左侧中是否显示 |
+|    | ${numMiddleL} | get value | id=txtLeftSideMiddle | #读取左侧中的值 |
+|    | run keyword if | ${middleL}==1 | should be equal | ${numMiddleL} | ${左侧中} |
+|    | run keyword if | ${middleL}==0 | should be equal | '${middleL}' | ${左侧中} |
+|    | sleep | 1 |
+|    | ${middleR} | run keyword and return status | element should be visible | id=tdRightMiddleText | #读取右侧中是否显示 |
+|    | ${numMiddleR} | get value | id=txtRightSideMiddle | #读取右侧中的值 |
+|    | run keyword if | ${middleR}==1 | should be equal | ${numMiddleR} | ${右侧中} |
+|    | run keyword if | ${middleR}==0 | should be equal | '${middleR}' | ${右侧中} |
+|    | sleep | 1 |
+|    | ${outerL} | run keyword and return status | element should be visible | id=tdLeftOutText | #读取左外侧是否显示 |
+|    | ${numOuterL} | get value | id=txtLeftOutsideSide | #读取左外侧的值 |
+|    | run keyword if | ${outerL}==1 | should be equal | ${numOuterL} | ${左外侧} |
+|    | run keyword if | ${outerL}==0 | should be equal | '${outerL}' | ${左外侧} |
+|    | sleep | 1 |
+|    | ${outerR} | run keyword and return status | element should be visible | id=tdRightOutText | #读取右外侧是否显示 |
+|    | ${numOuterR} | get value | id=txtRightOutsideSide | #读取右外侧的值 |
+|    | run keyword if | ${outerR}==1 | should be equal | ${numOuterR} | ${右外侧} |
+|    | run keyword if | ${outerR}==0 | should be equal | '${outerR}' | ${右外侧} |
+|    | sleep | 1 |
+|    | ${beforeL} | run keyword and return status | element should be visible | id=tdLBeforeTopText | #读取左侧前上纵膈是否显示 |
+|    | ${numBeforeL} | get value | id=txtLeftMediastinal | #读取左前上纵膈的值 |
+|    | run keyword if | ${beforeL}==1 | should be equal | ${numBeforeL} | ${左前上纵膈} |
+|    | run keyword if | ${beforeL}==0 | should be equal | '${beforeL}' | ${左前上纵膈} |
+|    | sleep | 1 |
+|    | ${beforeR} | run keyword and return status | element should be visible | id=tdRBeforeTopText | #读取右侧前上纵膈是否显示 |
+|    | ${numBeforeR} | get value | id=txtRightMediastinal | #读取右前上纵膈的值 |
+|    | run keyword if | ${beforeR}==1 | should be equal | ${numBeforeR} | ${右前上纵膈} |
+|    | run keyword if | ${beforeR}==0 | should be equal | '${beforeR}' | ${右前上纵膈} |
+|    | sleep | 1 |
+|    | ${triangL} | run keyword and return status | element should be visible | id=tdLeftTriangleText | #读取左咽旁颅底是否显示 |
+|    | ${numTriangL} | get value | id=txtLeftTriangleArea | #读取左咽旁颅底的值 |
+|    | run keyword if | ${triangL}==1 | should be equal | ${numTriangL} | ${左咽旁颅底} |
+|    | run keyword if | ${triangL}==0 | should be equal | '${triangL}' | ${左咽旁颅底} |
+|    | sleep | 1 |
+|    | ${triangR} | run keyword and return status | element should be visible | id=tdLeftTriangleText | #读取右咽旁颅底是否显示 |
+|    | ${numTriangR} | get value | id=txtRightTriangleArea | #读取右咽旁颅底的值 |
+|    | run keyword if | ${triangR}==1 | should be equal | ${numTriangR} | ${右咽旁颅底} |
+|    | run keyword if | ${triangR}==0 | should be equal | '${triangR}' | ${右咽旁颅底} |
+|    | sleep | 1 |
+|    | [Return] | ${mainL} | ${nummainL} | ${mainR} | ${nummainR} |
+
+| 派生数据B2-转移LN分布首站前锋站 |
+|    | [Arguments] | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左Va区} | ${左Vb区} | ${左肌间区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右Va区} | ${右Vb区} | ${右肌间区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} | ${预期左侧转移LN} | ${预期左侧实际转移首站} | ${预期左侧前锋站} | ${预期右侧转移LN} | ${预期右侧实际转移首站} |
+|    | ... | ${预期右侧前锋站} |
+|    | [Documentation] | ${喉前亚区} \| ${胸骨上窝亚区} \| ${左沟上段} \| ${左沟中段} \| ${左沟下段} \| ${右沟上段} \| ${右沟中段} \| ${右沟下段桥1-2片} \| ${右沟下段桥1-3片} \| ${左IIa区} \| ${左IIb区} \| ${左III区} \| ${左IV区} \| ${左Va区} \| ${左Vb区} \| ${左肌间区} \| ${左前上纵膈区} \| ${左Ib区} \| ${左咽旁区} \| ${左颅底区} \| ${右IIa区} \| ${右IIb区} \| ${右III区} \| ${右IV区} \| ${右Va区} \| ${右Vb区} \| ${右肌间区} \| ${右前上纵膈区} \| ${右Ib区} \| ${右咽旁区} \| ${右颅底区} \| ${预期左侧转移LN} \| ${预期左侧实际转移首站} \| ${预期左侧前锋站} \| ${预期右侧转移LN} \| ${预期右侧实际转移首站} \| ${预期右侧前锋站} |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | focus | id=txtTransferLNSpreadL |
+|    | ${左侧转移LN}= | Get Element Attribute | id=txtTransferLNSpreadL@dataval |
+|    | focus | id=txtRealTransferFirstL |
+|    | ${左侧实际转移首站}= | Get Element Attribute | id=txtRealTransferFirstL@dataval |
+|    | focus | id=txtForwardStationL |
+|    | ${左侧前锋站}= | Get Element Attribute | id=txtForwardStationL@dataval |
+|    | focus | id=txtTransferLNSpreadR |
+|    | ${右侧转移LN}= | Get Element Attribute | id=txtTransferLNSpreadR@dataval |
+|    | focus | id=txtRealTransferFirstR |
+|    | ${右侧实际转移首站}= | Get Element Attribute | id=txtRealTransferFirstR@dataval |
+|    | focus | id=txtForwardStationR |
+|    | ${右侧前锋站}= | Get Element Attribute | id=txtForwardStationR@dataval |
+|    | should be equal as strings | '${左侧转移LN}' | '${预期左侧转移LN}' |
+|    | should be equal as strings | '${左侧实际转移首站}' | '${预期左侧实际转移首站}' |
+|    | should be equal as strings | '${左侧前锋站}' | '${预期左侧前锋站}' |
+|    | should be equal as strings | '${右侧转移LN}' | '${预期右侧转移LN}' |
+|    | should be equal as strings | '${右侧实际转移首站}' | '${预期右侧实际转移首站}' |
+|    | should be equal as strings | '${右侧前锋站}' | '${预期右侧前锋站}' |
+
+| 派生数据B2下站指向缓冲区 |
+|    | [Arguments] | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左Va区} | ${左Vb区} | ${左肌间区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} | ${预期左缓冲区} | ${预期左下站指向} | ${预期右缓冲区} | ${预期右下站指向} |
+|    | [Documentation] | ${喉前亚区} \| ${胸骨上窝亚区} \| ${左沟上段} \| ${左沟中段} \| ${左沟下段} \| ${右沟上段} \| ${右沟中段} \| ${右沟下段桥1-2片} \| ${右沟下段桥1-3片} \| ${左IIa区} \| ${左IIb区} \| ${左III区} \| ${左IV区} \| ${左Va区} \| ${左Vb区} \| ${左肌间区} \| ${左前上纵膈区} \| ${左Ib区} \| ${左咽旁区} \| ${左颅底区} \| ${右IIa区} \| ${右IIb区} \| ${右III区} \| ${右IV区} \| ${右肌间区} \| ${右Va区} \| ${右Vb区} \| ${右前上纵膈区} \| ${右Ib区} \| ${右咽旁区} \| ${右颅底区} \| ${预期左缓冲区} \| ${预期左下站指向} \| ${预期右缓冲区} \| ${预期右下站指向} |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | #派生下站指向和缓冲区 |
+|    | focus | id=txtBufferL |
+|    | ${实际左缓冲区}= | get element attribute | id=txtBufferL@dataval |
+|    | focus | id=txtNextStationPointL |
+|    | ${实际左下站指向}= | get element attribute | id=txtNextStationPointL@dataval |
+|    | focus | id=txtBufferR |
+|    | ${实际右缓冲区}= | get element attribute | id=txtBufferR@dataval |
+|    | focus | id=txtNextStationPointR |
+|    | ${实际右下站指向}= | get element attribute | id=txtNextStationPointR@dataval |
+|    | #比较实际结果和预期结果 |
+|    | should be equal as strings | ${实际左缓冲区} | ${预期左缓冲区} |
+|    | should be equal as strings | ${实际左下站指向} | ${预期左下站指向} |
+|    | should be equal as strings | ${实际右缓冲区} | ${预期右缓冲区} |
+|    | should be equal as strings | ${实际右下站指向} | ${预期右下站指向} |
+
+| 派生数据B2转移路径判定 |
+|    | [Arguments] | ${本次手术区块名} | ${本次手术用名} | ${区属性超缺} | ${左灶位置} | ${左灶数} | ${左灶均径} |
+|    | ... | ${右灶位置} | ${右灶数} | ${右灶均径} | ${峡部灶位置} | ${峡部灶数} | ${峡部灶均径} |
+|    | ... | ${锥叶灶位置} | ${锥叶灶数} | ${锥叶灶均径} | ${是否腺内传播} | ${喉前亚区} | ${胸骨上窝亚区} |
+|    | ... | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} | ${右沟中段} | ${右沟下段桥1-2片} |
+|    | ... | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} | ${左IV区} | ${左Va区} |
+|    | ... | ${左Vb区} | ${左肌间区} | ${左前上纵膈区} | ${左Ib区} | ${左咽旁区} | ${左颅底区} |
+|    | ... | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} | ${右Va区} | ${右Vb区} |
+|    | ... | ${右肌间区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} | ${右颅底区} | ${预期左转移径路判定} |
+|    | ... | ${预期左主转移路径} | ${预期左转移路径数} | ${预期右转移路径判定} | ${预期右主转移路径} | ${预期右转移路径数} |
+|    | #填写一般项目 |
+|    | input text | id=txtOperationSchemeCN | ${本次手术区块名} |
+|    | input text | id=txtThisDoSurgery | ${本次手术用名} |
+|    | input text | id=txtStripBlock | ${区属性超缺} |
+|    | sleep | 5s |
+|    | focus | id=saveMaster |
+|    | click element | id=saveMaster |
+|    | sleep | 3s |
+|    | #填写原发灶 |
+|    | 保存原发灶 | ${左灶位置} | ${左灶数} | ${左灶均径} | ${右灶位置} | ${右灶数} | ${右灶均径} |
+|    | ... | ${峡部灶位置} | ${峡部灶数} | ${峡部灶均径} | ${锥叶灶位置} | ${锥叶灶数} | ${锥叶灶均径} |
+|    | ... | ${是否腺内传播} |
+|    | #填写转移灶一级数据 |
+|    | reload page |
+|    | sleep | 5s |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左Va区} | ${左Vb区} | ${左肌间区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右Va区} | ${右Vb区} | ${右肌间区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | #比对预期和实际结果值 |
+|    | focus | id=txtTransferDiameterJudgeL |
+|    | ${实际左转移路径判定}= | get element attribute | id=txtTransferDiameterJudgeL@dataval |
+|    | focus | id=txtMainTransferDiameterL |
+|    | ${实际左主转移路径}= | get element attribute | id=txtMainTransferDiameterL@dataval |
+|    | focus | id=txtTransferDiameterNumL |
+|    | ${实际左转移路径数}= | get element attribute | id=txtTransferDiameterNumL@dataval |
+|    | focus | id=txtTransferDiameterJudgeR |
+|    | ${实际右转移路径判定}= | get element attribute | id=txtTransferDiameterJudgeR@dataval |
+|    | focus | id=txtMainTransferDiameterR |
+|    | ${实际右主转移路径}= | get element attribute | id=txtMainTransferDiameterR@dataval |
+|    | focus | id=txtTransferDiameterNumR |
+|    | ${实际右转移路径数}= | get element attribute | id=txtTransferDiameterNumR@dataval |
+|    | should be equal as strings | ${实际左转移路径判定} | ${预期左转移径路判定} |
+|    | should be equal as strings | ${实际左主转移路径} | ${预期左主转移路径} |
+|    | should be equal as strings | ${实际左转移路径数} | ${预期左转移路径数} |
+|    | should be equal as strings | ${实际右转移路径判定} | ${预期右转移路径判定} |
+|    | should be equal as strings | ${实际右主转移路径} | ${预期右主转移路径} |
+|    | should be equal as strings | ${实际右转移路径数} | ${预期右转移路径数} |
+
+| 派生数据B-3 |
+|    | [Arguments] | ${灶位置左} | ${灶数左} | ${灶均经左} | ${灶位置右} | ${灶数右} | ${灶均经右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均经峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均经锥叶} |
+|    | ... | ${喉前亚区} | ${胸骨上窝亚区} | ${左中段} | ${左下段} | ${左上段} | ${右中段} |
+|    | ... | ${右上段} | ${右下桥1-2} | ${右下桥1-3} | ${L2a区} | ${L3区} | ${L4区} |
+|    | ... | ${L2b区} | ${L5a区} | ${L5b区} | ${左前上纵膈} | ${L1b区} | ${左咽旁} |
+|    | ... | ${左颅底} | ${左肌间} | ${R2a区} | ${R3区} | ${R4区} | ${R2b区} |
+|    | ... | ${R5a区} | ${R5b区} | ${右前上纵膈} | ${R1b区} | ${右咽旁} | ${右颅底} |
+|    | ... | ${右肌间} | ${左基于病理的转移存在可能} | ${左灶位置的相关权重} | ${左灶均径的相关权重} | ${左灶位置和灶均径的综合权重} | ${左IV区转移危险度} |
+|    | ... | ${右基于病理的转移存在可能} | ${右灶位置的相关权重} | ${右灶均径的相关权重} | ${右灶位置和灶均径的综合权重} | ${右IV区转移危险度} |
+|    | [Documentation] | ${灶位置左} \| ${灶数左} \| ${灶均经左} \| ${灶位置右} \| ${灶数右} \| ${灶均经右} \| ${灶位置峡部} \| ${灶数峡部} \| ${灶均经峡部} \| ${灶位置锥叶} \| ${灶数锥叶} \| ${灶均经锥叶} \| ${喉前亚区} \| ${胸骨上窝亚区} \| ${左中段} \| ${左下段} \| ${左上段} \| ${右中段} \| ${右上段} \| ${右下桥1-2} \| ${右下桥1-3} \| ${L2a区} \| ${L3区} \| ${L4区} \| ${L2b区} \| ${L5a区} \| ${L5b区} \| ${左前上纵膈} \| ${L1b区} \| ${左咽旁} \| ${左颅底} \| ${左肌间} \| ${R2a区} \| ${R3区} \| ${R4区} \| ${R2b区} \| ${R5a区} \| ${R5b区} \| ${右前上纵膈} \| ${R1b区} \| ${右咽旁} \| ${右颅底} \| ${右肌间} \| ${左基于病理的转移存在可能} \| ${左灶位置的相关权重} \| ${左灶均径的相关权重} \| ${左灶位置和灶均径的综合权重} \| ${左IV区转移危险度} \| ${右基于病理的转移存在可能} \| ${右灶位置的相关权重} \| ${右灶均径的相关权重} \| ${右灶位置和灶均径的综合权重} \| ${右IV区转移危险度} |
+|    | #编辑-灶位置左 |
+|    | execute javascript | window.document.getElementById("txtStovePositionL").value="${灶位置左}" |
+|    | #编辑-灶数（左） |
+|    | execute javascript | window.document.getElementById("txtStoveNumL").value="${灶数左}" |
+|    | #编辑-灶均经（左） |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterL").value="${灶均经左}" |
+|    | #编辑-灶位置右 |
+|    | execute javascript | window.document.getElementById("txtStovePositionR").value="${灶位置右}" |
+|    | #编辑-灶数（右） |
+|    | execute javascript | window.document.getElementById("txtStoveNumR").value="${灶数右}" |
+|    | #编辑-灶均经（右） |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterR").value="${灶均经右}" |
+|    | #编辑-灶位置峡部 |
+|    | execute javascript | window.document.getElementById("txtStovePositionX").value="${灶位置峡部}" |
+|    | #编辑-灶数（峡部） |
+|    | execute javascript | window.document.getElementById("txtStoveNumX").value="${灶数峡部}" |
+|    | #编辑-灶均经（峡部） |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterX").value="${灶均经峡部}" |
+|    | #编辑-灶位置锥叶 |
+|    | execute javascript | window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}" |
+|    | #编辑-灶数（锥叶） |
+|    | execute javascript | window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}" |
+|    | #编辑-灶均经（锥叶） |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均经锥叶}" |
+|    | sleep | 2 |
+|    | click element | id=SaveOriginal |
+|    | sleep | 4 |
+|    | click element | id=SaveOriginalAndDerived | #向下派生原发灶一级数据 |
+|    | sleep | 2 |
+|    | Confirm Action |
+|    | sleep | 3 |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左中段} | ${左下段} | ${左上段} | ${右中段} |
+|    | ... | ${右上段} | ${右下桥1-2} | ${右下桥1-3} | ${L2a区} | ${L3区} | ${L4区} |
+|    | ... | ${L2b区} | ${L5a区} | ${L5b区} | ${左前上纵膈} | ${L1b区} | ${左咽旁} |
+|    | ... | ${左颅底} | ${左肌间} | ${R2a区} | ${R3区} | ${R4区} | ${R2b区} |
+|    | ... | ${R5a区} | ${R5b区} | ${右前上纵膈} | ${R1b区} | ${右咽旁} | ${右颅底} |
+|    | ... | ${右肌间} |
+|    | sleep | 2 |
+|    | click element | id=SaveDerivedDataB3 |
+|    | Reload page |
+|    | sleep | 5 |
+|    | #获取派生B-3 |
+|    | ${FourTransferMayL} | Get Element Attribute | id=txtFourTransferMayL@dataval |
+|    | ${positionWeightsL} | Get Element Attribute | id=txtStovepositionWeightsL@dataval |
+|    | ${diameterWeightsL} | Get Element Attribute | id=txtStovediameterWeightsL@dataval |
+|    | ${PositiondiameterWeightsL} | Get Element Attribute | id=txtStovePositiondiameterWeightsL@dataval |
+|    | ${TransferDangerLl} | Get Element Attribute | id=txtFourTransferDangerL@dataval |
+|    | ${FourTransferMayR} | Get Element Attribute | id=txtFourTransferMayR@dataval |
+|    | ${positionWeightsR} | Get Element Attribute | id=txtStovepositionWeightsR@dataval |
+|    | ${diameterWeightsR} | Get Element Attribute | id=txtStovediameterWeightsR@dataval |
+|    | ${PositiondiameterWeightsR} | Get Element Attribute | id=txtStovePositiondiameterWeightsR@dataval |
+|    | ${TransferDangerR} | Get Element Attribute | id=txtFourTransferDangerR@dataval |
+|    | should contain | ${FourTransferMayL} | ${左基于病理的转移存在可能} |
+|    | should contain | ${positionWeightsL} | ${左灶位置的相关权重} |
+|    | should contain | ${diameterWeightsL} | ${左灶均径的相关权重} |
+|    | should contain | ${PositiondiameterWeightsL} | ${左灶位置和灶均径的综合权重} |
+|    | should contain | ${TransferDangerLl} | ${左IV区转移危险度} |
+|    | should contain | ${FourTransferMayR} | ${右基于病理的转移存在可能} |
+|    | should contain | ${positionWeightsR} | ${右灶位置的相关权重} |
+|    | should contain | ${diameterWeightsR} | ${右灶均径的相关权重} |
+|    | should contain | ${PositiondiameterWeightsR} | ${右灶位置和灶均径的综合权重} |
+|    | should contain | ${TransferDangerR} | ${右IV区转移危险度} |
+
+| 派生数据C2-转移浸润强度 |
+|    | [Arguments] | ${侧相对浸润性强度左} | ${矫正侧相对浸润性强度左} | ${侧相对浸润性强度右} | ${矫正侧相对浸润性强度右} | ${侧相对转移性强度左} | ${矫正侧相对转移性强度左} |
+|    | ... | ${侧相对转移性强度右} | ${矫正侧相对转移性强度右} | ${预期侧相对浸润性强度比对} | ${预期两侧浸强度间差异} | ${预期主浸润性危害侧别-强度} | ${预期侧相对转移性强度比对} |
+|    | ... | ${预期两侧转强度间差异} | ${预期主转移性危害侧别-强度} | ${预期特强转移能力灶所在侧} | ${预期两行为危害的主侧别汇总} | ${预期两行为主危害侧的强度级汇总} |
+|    | [Documentation] | ${侧相对浸润性强度左} \| ${矫正侧相对浸润性强度左} \| ${侧相对浸润性强度右} \| ${矫正侧相对浸润性强度右} \| ${侧相对转移性强度左} \| ${矫正侧相对转移性强度左} \| ${侧相对转移性强度右} \| ${矫正侧相对转移性强度右} \| ${预期侧相对浸润性强度比对} \| ${预期两侧浸强度间差异} \| ${预期主浸润性危害侧别-强度} \| ${预期侧相对转移性强度比对} \| ${预期两侧转强度间差异} \| ${预期主转移性危害侧别-强度} \| ${预期特强转移能力灶所在侧} \| ${预期两行为危害的主侧别汇总} \| ${预期两行为主危害侧的强度级汇总} |
+|    | input text | id=txtSideRelativeSteepStrength | ${侧相对浸润性强度左} |
+|    | input text | id=txtReSideRelativeSteepStrength | ${矫正侧相对浸润性强度左} |
+|    | input text | id=txtSideRelativeSteepStrengthR | ${侧相对浸润性强度右} |
+|    | input text | id=txtReSideRelativeSteepStrengthR | ${矫正侧相对浸润性强度右} |
+|    | click element | id=SaveDerivedDataA |
+|    | sleep | 1 |
+|    | click element | id=SaveDerivedDataAAndDerived |
+|    | sleep | 1 |
+|    | confirm action |
+|    | input text | id=txtRelativeTransferStrengthL | ${侧相对转移性强度左} |
+|    | input text | id=txtRedressRelativeTransferStrengthL | ${矫正侧相对转移性强度左} |
+|    | input text | id=txtRelativeTransferStrengthR | ${侧相对转移性强度右} |
+|    | input text | id=txtRedressRelativeTransferStrengthR | ${矫正侧相对转移性强度右} |
+|    | click element | id=SaveDerivedDataB2 |
+|    | sleep | 1 |
+|    | click element | id=SaveDerivedDataB2AndDerived |
+|    | sleep | 1 |
+|    | confirm action |
+|    | sleep | 3 |
+|    | ${侧相对浸润性强度比对} | Get Element Attribute | id=txtSteepStrengthCompare@dataval |
+|    | ${两侧浸强度间差异} | Get Element Attribute | id=txtTwoSteepStrengthDifference@dataval |
+|    | ${主浸润性危害侧别-强度} | Get Element Attribute | id=txtMainSteepSide@dataval |
+|    | ${侧相对转移性强度比对} | Get Element Attribute | id=txtTransferStrengthCompare@dataval |
+|    | ${两侧转强度间差异} | Get Element Attribute | id=txtTwoTransferStrengthDifference@dataval |
+|    | ${主转移性危害侧别-强度} | Get Element Attribute | id=txtMainTransferSide@dataval |
+|    | ${特强转移能力灶所在侧} | Get Element Attribute | id=txtTransferStoveSide@dataval |
+|    | ${两行为危害的主侧别汇总} | Get Element Attribute | id=txtHarmNeckSide@dataval |
+|    | ${两行为主危害侧的强度级汇总} | Get Element Attribute | id=txtHarmStrengthLevel@dataval |
+|    | should contain | ${侧相对浸润性强度比对} | ${预期侧相对浸润性强度比对} |
+|    | should contain | ${侧相对浸润性强度比对} | ${预期侧相对浸润性强度比对} |
+|    | should contain | ${两侧浸强度间差异} | ${预期两侧浸强度间差异} |
+|    | should contain | ${主浸润性危害侧别-强度} | ${预期主浸润性危害侧别-强度} |
+|    | should contain | ${侧相对转移性强度比对} | ${预期侧相对转移性强度比对} |
+|    | should contain | ${两侧转强度间差异} | ${预期两侧转强度间差异} |
+|    | should contain | ${主转移性危害侧别-强度} | ${预期主转移性危害侧别-强度} |
+|    | should contain | ${特强转移能力灶所在侧} | ${预期特强转移能力灶所在侧} |
+|    | should contain | ${两行为危害的主侧别汇总} | ${预期两行为危害的主侧别汇总} |
+|    | should contain | ${两行为主危害侧的强度级汇总} | ${预期两行为主危害侧的强度级汇总} |
+
+| 派生数据C2-有III类及以上毗邻浸润的侧别 |
+|    | [Arguments] | ${肉眼浸润危害类别左} | ${肉眼浸润危害类别右} | ${预期有III类及以上毗邻浸润的侧别} |
+|    | input text | id=txtSteepHarmType | ${肉眼浸润危害类别左} |
+|    | input text | id=txtSteepHarmTypeR | ${肉眼浸润危害类别右} |
+|    | click element | id=SaveDerivedDataA |
+|    | sleep | 2 |
+|    | click element | id=SaveDerivedDataAAndDerived |
+|    | sleep | 1 |
+|    | sleep | 1 |
+|    | ${有III类及以上毗邻浸润的侧别} | Get Element Attribute | id=txtNearbySteepSide@dataval |
+|    | should contain | ${有III类及以上毗邻浸润的侧别} | ${预期有III类及以上毗邻浸润的侧别} |
+
+| 派生数据C2-转移LN数目居多侧 |
+|    | [Arguments] | ${灶位置左} | ${灶个数左} | ${灶均经左} | ${灶位置右} | ${灶个数右} | ${灶均经右} |
+|    | ... | ${灶位置峡} | ${灶个数峡} | ${灶均经峡} | ${灶位置椎} | ${灶个数椎} | ${灶均经椎} |
+|    | ... | ${喉前亚区} | ${胸骨上窝亚区} | ${左中段} | ${左下段} | ${左上段} | ${右中段} |
+|    | ... | ${右上段} | ${右下桥1-2} | ${右下桥1-3} | ${L2a区} | ${L3区} | ${L4区} |
+|    | ... | ${L2b区} | ${L5a区} | ${L5b区} | ${左前上纵膈} | ${L1b区} | ${左咽旁} |
+|    | ... | ${左颅底} | ${左肌间} | ${R2a区} | ${R3区} | ${R4区} | ${R2b区} |
+|    | ... | ${R5a区} | ${R5b区} | ${右前上纵膈} | ${R1b区} | ${右咽旁} | ${右颅底} |
+|    | ... | ${右肌间} | ${预期转移LN数目居多侧} |
+|    | 添加原发灶 | ${灶位置左} | ${灶个数左} | ${灶均经左} | ${灶位置右} | ${灶个数右} | ${灶均经右} |
+|    | ... | ${灶位置峡} | ${灶个数峡} | ${灶均经峡} | ${灶位置椎} | ${灶个数椎} | ${灶均经椎} |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左中段} | ${左下段} | ${左上段} | ${右中段} |
+|    | ... | ${右上段} | ${右下桥1-2} | ${右下桥1-3} | ${L2a区} | ${L3区} | ${L4区} |
+|    | ... | ${L2b区} | ${L5a区} | ${L5b区} | ${左前上纵膈} | ${L1b区} | ${左咽旁} |
+|    | ... | ${左颅底} | ${左肌间} | ${R2a区} | ${R3区} | ${R4区} | ${R2b区} |
+|    | ... | ${R5a区} | ${R5b区} | ${右前上纵膈} | ${R1b区} | ${右咽旁} | ${右颅底} |
+|    | ... | ${右肌间} |
+|    | Click element | id=SaveDerivedDataB2 |
+|    | sleep | 1 |
+|    | Click element | id=SaveDerivedDataB2AndDerived |
+|    | sleep | 1 |
+|    | confirm action |
+|    | sleep | 1 |
+|    | ${转移LN数目居多侧} | Get Element Attribute | id=txtTransferNumberMoreSide@dataval |
+|    | should contain | ${转移LN数目居多侧} | ${预期转移LN数目居多侧} |
+
+| 派生数据D-最大灶均径分类&癌危害威胁的基础级 |
+|    | [Arguments] | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} | ${期望最大灶的均径分类} | ${期望癌危害/威胁的基础级} |
+|    | 添加-原发灶 | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} |
+|    | #累及范围-可控性分析 |
+|    | #最大灶的均径分类 |
+|    | ${实际最大灶的均径分类} | Execute Javascript | return $("#txtMaxCancerDiameter").val() |
+|    | #癌危害/威胁的基础级 |
+|    | ${实际癌危害/威胁的基础级} | Execute Javascript | return $("#txtCancerBasicLevel").val() |
+|    | Should Be Equal As Strings | ${期望最大灶的均径分类} | ${实际最大灶的均径分类} |
+|    | Should Be Equal As Strings | ${期望癌危害/威胁的基础级} | ${实际癌危害/威胁的基础级} |
+
+| 派生数据D-转移波及方面的参考级 |
+|    | [Arguments] | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} | ${期望转移波及方面的参考级} |
+|    | Sleep | 3 |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | Sleep | 2 |
+|    | Execute Javascript | $("#SaveMicroscopeAndDerived").click() |
+|    | #转移波及方面的参考级 |
+|    | ${实际转移波及方面的参考级} | Execute Javascript | return $("#txtTransferReference").val() |
+|    | Should Be Equal As Strings | ${期望转移波及方面的参考级} | ${实际转移波及方面的参考级} |
+
+| 派生数据D-浸润参考级&权重一览&威胁的总要面和强度级 |
+|    | [Arguments] | ${肉眼浸润危害类别左侧} | ${侧相对浸润性强度左侧} | ${矫正侧相对浸润性强度左侧} | ${肉眼浸润危害类别右侧} | ${侧相对浸润性强度右侧} | ${矫正侧相对浸润性强度右侧} |
+|    | ... | ${肉眼浸润危害类别峡部} | ${侧相对浸润性强度峡部} | ${矫正侧相对浸润性强度峡部} | ${肉眼浸润危害类别椎叶} | ${侧相对浸润性强度椎叶} | ${矫正侧相对浸润性强度椎叶} |
+|    | ... | ${侧相对转移性强度左侧} | ${矫正侧相对转移性强度左侧} | ${侧相对转移性强度右侧} | ${矫正侧相对转移性强度右侧} | ${癌危害威胁的基础级} | ${期望浸润危害方面的参考级} |
+|    | ... | ${转移波及方面的参考级} | ${期望各方面权重级一览} | ${期望威胁的总要和强度级} |
+|    | [Documentation] | ${肉眼浸润危害类别左侧} \| ${侧相对浸润性强度左侧} \| ${矫正侧相对浸润性强度左侧} \| ${肉眼浸润危害类别右侧} \| ${侧相对浸润性强度右侧} \| ${矫正侧相对浸润性强度右侧} \| ${肉眼浸润危害类别峡部} \| ${侧相对浸润性强度峡部} \| ${矫正侧相对浸润性强度峡部} \| ${肉眼浸润危害类别椎叶} \| ${侧相对浸润性强度椎叶} \| ${矫正侧相对浸润性强度椎叶} \| ${侧相对转移性强度左侧}|${矫正侧相对转移性强度左侧} \| ${侧相对转移性强度右侧} \| ${矫正侧相对转移性强度右侧} \| ${癌危害威胁的基础级} \| ${期望浸润危害方面的参考级} \| ${转移波及方面的参考级} \| ${期望各方面权重级一览} \| ${期望威胁的总要和强度级} \| |
+|    | 浸润情况分析D | ${肉眼浸润危害类别左侧} | ${侧相对浸润性强度左侧} | ${矫正侧相对浸润性强度左侧} | ${肉眼浸润危害类别右侧} | ${侧相对浸润性强度右侧} | ${矫正侧相对浸润性强度右侧} |
+|    | ... | ${肉眼浸润危害类别峡部} | ${侧相对浸润性强度峡部} | ${矫正侧相对浸润性强度峡部} | ${肉眼浸润危害类别椎叶} | ${侧相对浸润性强度椎叶} | ${矫正侧相对浸润性强度椎叶} |
+|    | Sleep | 2 |
+|    | #点击原发灶一级数据向下派生 |
+|    | Execute Javascript | $("#SaveOriginalAndDerived").click() |
+|    | 淋巴结转移情况分析D | ${侧相对转移性强度左侧} | ${矫正侧相对转移性强度左侧} | ${侧相对转移性强度右侧} | ${矫正侧相对转移性强度右侧} |
+|    | Sleep | 1 |
+|    | #转移灶一级数据向下派生 |
+|    | Execute Javascript | $("#SaveDerivedDataB2AndDerived").click() |
+|    | #累及范围-可控性分析 |
+|    | #癌危害/威胁的基础级 |
+|    | Execute Javascript | $("#txtCancerBasicLevel").val('${癌危害威胁的基础级}') |
+|    | execute javascript | $("#txtCancerBasicLevel").blur() |
+|    | #浸润危害方面的参考级 |
+|    | ${实际浸润危害方面的参考级} | Execute Javascript | return $("#txtSteepReference").val() |
+|    | #转移波及方面的参考级 |
+|    | Execute Javascript | $("#txtTransferReference").val('${转移波及方面的参考级}') |
+|    | Execute Javascript | $("#txtTransferReference").blur() |
+|    | #各方面权重级一览 |
+|    | ${实际各方面权重级一览} | Execute Javascript | return $("#txtAspectWeights").val() |
+|    | #威胁的总要和强度级 |
+|    | ${实际威胁的总要和强度级} | Execute Javascript | return $("#txtThreatMainSurface").val() |
+|    | Should Be Equal As Strings | ${期望浸润危害方面的参考级} | ${实际浸润危害方面的参考级} |
+|    | Should Be Equal As Strings | ${期望各方面权重级一览} | ${实际各方面权重级一览} |
+|    | Should Be Equal As Strings | ${期望威胁的总要和强度级} | ${实际威胁的总要和强度级} |
+
+| 派生数据E1 |
+|    | [Arguments] | ${峡部灶数} | ${本次手术区块名} | ${历次手术累计区块名} | ${本次手术名} | ${次别} | ${最大灶的均经分类} |
+|    | ... | ${癌危害/威胁的基础级} | ${浸润危害方面的参考级} | ${转移波及方面的参考级} | ${威胁的总要面和强度级} | ${期望腺体切除情况分类} | ${期望癌的总累及范围-可控性分级} |
+|    | ... | ${期望癌的总行为倾向及强度分层} | ${期望风险类级层情况汇总} | ${期望风险内涵代码} |
+|    | 峡部灶数 | ${峡部灶数} |
+|    | Sleep | 1 |
+|    | #喉前亚区 |
+|    | Execute Javascript | $("#txtOperationSchemeCN").val("▲") |
+|    | #保存转移灶一级数据 |
+|    | Execute Javascript | $("#SaveMicroscope").click() |
+|    | #一般项目 |
+|    | 编辑本次手术区块名 | ${本次手术区块名} |
+|    | 历次手术累计区块名 | ${历次手术累计区块名} |
+|    | 编辑本次手术名 | ${本次手术名} |
+|    | 次别 | ${次别} |
+|    | 累及范围-可控性分析 | ${最大灶的均经分类} | ${癌危害/威胁的基础级} | ${浸润危害方面的参考级} | ${转移波及方面的参考级} | ${威胁的总要面和强度级} |
+|    | Sleep | 1 |
+|    | #向下派生 |
+|    | Execute Javascript | $("#SaveInvolveRangeAndDerived").click() |
+|    | #腺体切除情况分类 |
+|    | ${实际腺体切除情况分类} | Execute Javascript | return $("#txtGlandRemovalSort").val() |
+|    | #癌的总累及范围-可控性分级 |
+|    | ${实际癌的总累及范围-可控性分级} | Execute Javascript | return $("#txtControllableGrading").val() |
+|    | #癌的总行为倾向及强度分层 |
+|    | ${实际癌的总行为倾向及强度分层} | Execute Javascript | return $("#txtTotalLifeTrend").val() |
+|    | #风险类级层情况汇总 |
+|    | ${实际风险类级层情况汇总} | Execute Javascript | return $("#txtRiskClassDivide").val() |
+|    | #风险内涵代码 |
+|    | ${实际风险内涵代码} | Execute Javascript | return $("#txtClassLayerCode").val() |
+|    | Should Be Equal As Strings | ${期望腺体切除情况分类} | ${实际腺体切除情况分类} |
+|    | Should Be Equal As Strings | ${期望癌的总累及范围-可控性分级} | ${实际癌的总累及范围-可控性分级} |
+|    | Should Be Equal As Strings | ${期望癌的总行为倾向及强度分层} | ${实际癌的总行为倾向及强度分层} |
+|    | Should Be Equal As Strings | ${期望风险类级层情况汇总} | ${实际风险类级层情况汇总} |
+|    | Should Be Equal As Strings | ${期望风险内涵代码} | ${实际风险内涵代码} |
+
+| 构造病人信息 |
+|    | [Arguments] | ${病历号} | ${病人姓名} | ${身份证号} |
+|    | goto | http://192.168.10.164/syf1.1.1/patient/patientmanage |
+|    | input text | id=txtQuery | ${病历号} |
+|    | sleep | 10s |
+|    | click element | id=btnSearch |
+|    | sleep | 1s |
+|    | select checkbox | xpath=//input[@name="checkAll"] |
+|    | click element | xpath=//a[@banana-cmd="delete"] |
+|    | confirm action |
+|    | sleep | 2s |
+|    | click link | 添加 |
+|    | sleep | 1s |
+|    | select frame | xpath=/html/body/div[1]/table/tbody/tr/td/div/div[2]/iframe |
+|    | input text | id=txtHospitalNumber | ${病历号} |
+|    | input text | id=txtPatName | ${病人姓名} |
+|    | input text | id=txtCardId | ${身份证号} |
+|    | click element | id=saveBtn |
+|    | sleep | 1s |
+|    | unselect frame |
+|    | goto | http://192.168.10.164/syf1.1.1/TumorStudy2/Index |
+|    | sleep | 3s |
+
+| B2预置条件 |
+|    | #登录系统 |
+|    | open browser | http://192.168.10.164/syf1.1.1/login/index | chrome |
+|    | delete all cookies |
+|    | execute javascript | window.document.getElementById("txtUserName").value="30048" |
+|    | execute javascript | window.document.getElementById("txtPassword").value="5436" |
+|    | click element | id=btnConfirm |
+|    | sleep | 3s |
+|    | maximize browser window |
+|    | 构造病人信息 | 412724 | 托尼.J | 987654321987654321 |
+|    | # 删除测试中的数据 |
+|    | goto | http://192.168.10.164/syf1.1.1/TumorStudy2/Index |
+|    | sleep | 10s |
+|    | input text | id=txtQuery | 412724 |
+|    | sleep | 3s |
+|    | click element | id=btnSearch |
+|    | sleep | 10s |
+|    | select checkbox | name=checkAll |
+|    | sleep | 1s |
+|    | click element | btnDelete |
+|    | sleep | 1s |
+|    | confirm action |
+|    | #进入病理详情页面 |
+|    | goto | http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true |
+|    | Sleep | 10s |
+|    | focus | id=txtHospitalNumber |
+|    | input text | id=txtHospitalNumber | 412724 |
+|    | click element | id=txtPatientName |
+|    | sleep | 3s |
+|    | execute javascript | window.document.getElementById("txtBUltrasonicCheckTime").value="2016-09-09" |
+|    | execute javascript | window.document.getElementById("txtOperationDay").value="2016-10-24" |
+
+| 浸润情况分析 |
+|    | [Arguments] | ${肉眼浸润危害类别左} | ${侧相对浸润性强度左} | ${矫正侧相对浸润性强度左} | ${肉眼浸润危害类别右} | ${侧相对浸润性强度右} | ${矫正侧相对浸润性强度右} |
+|    | input text | id=txtSteepHarmType | ${肉眼浸润危害类别左} |
+|    | input text | id=txtSideRelativeSteepStrength | ${侧相对浸润性强度左} |
+|    | input text | id=txtReSideRelativeSteepStrength | ${矫正侧相对浸润性强度左} |
+|    | input text | id=txtSteepHarmTypeR | ${肉眼浸润危害类别右} |
+|    | input text | id=txtSideRelativeSteepStrengthR | ${侧相对浸润性强度右} |
+|    | input text | id=txtReSideRelativeSteepStrengthR | ${矫正侧相对浸润性强度右} |
+
+| 侧别转移强度 |
+|    | [Arguments] | ${侧相对转移性强度左} | ${矫正侧相对转移性强度左} | ${侧相对转移性强度右} | ${矫正侧相对转移性强度右} |
+|    | input text | id=txtRelativeTransferStrengthL | ${侧相对转移性强度左} |
+|    | input text | id=txtRedressRelativeTransferStrengthL | ${矫正侧相对转移性强度左} |
+|    | input text | txtRelativeTransferStrengthR | ${侧相对转移性强度右} |
+|    | input text | id=txtRedressRelativeTransferStrengthR | ${矫正侧相对转移性强度右} |
+
+| 保存一般项目 |
+|    | #保存一般项目 |
+|    | focus | id=saveMaster |
+|    | Click Element | id=saveMaster |
+|    | Sleep | 3s |
+
+| 侧相对转移强度 |
+|    | [Arguments] | ${灶位置(左)} | ${灶数(左)} | ${灶均径(左)} | ${灶位置(右)} | ${灶数(右)} | ${灶均径(右)} |
+|    | ... | ${灶位置(峡部)} | ${灶数(峡部)} | ${灶均径(峡部)} | ${灶位置(锥叶)} | ${灶数(锥叶)} | ${灶均径(锥叶)} |
+|    | ... | ${其他发现} | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} |
+|    | ... | ${右沟上段} | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} |
+|    | ... | ${左III区} | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} |
+|    | ... | ${左Ib区} | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} |
+|    | ... | ${右IV区} | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} |
+|    | ... | ${右咽旁区} | ${右颅底区} | ${预期左侧相对转移强度} | ${预期右侧相对转移强度} |
+|    | #填写一般项目 |
+|    | input text | id=txtOperationSchemeCN | 全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底 |
+|    | input text | id=txtThisDoSurgery | 左叶切除 |
+|    | sleep | 1s |
+|    | focus | id=saveMaster |
+|    | click element | id=saveMaster |
+|    | sleep | 3s |
+|    | #填写原发灶信息 |
+|    | 添加-原发灶 | ${灶位置(左)} | ${灶数(左)} | ${灶均径(左)} | ${灶位置(右)} | ${灶数(右)} | ${灶均径(右)} |
+|    | ... | ${灶位置(峡部)} | ${灶数(峡部)} | ${灶均径(峡部)} | ${灶位置(锥叶)} | ${灶数(锥叶)} | ${灶均径(锥叶)} |
+|    | ... | ${其他发现} |
+|    | #填写转移灶信息 |
+|    | 添加-转移灶 | ${喉前亚区} | ${胸骨上窝亚区} | ${左沟上段} | ${左沟中段} | ${左沟下段} | ${右沟上段} |
+|    | ... | ${右沟中段} | ${右沟下段桥1-2片} | ${右沟下段桥1-3片} | ${左IIa区} | ${左IIb区} | ${左III区} |
+|    | ... | ${左IV区} | ${左肌间区} | ${左Va区} | ${左Vb区} | ${左前上纵膈区} | ${左Ib区} |
+|    | ... | ${左咽旁区} | ${左颅底区} | ${右IIa区} | ${右IIb区} | ${右III区} | ${右IV区} |
+|    | ... | ${右肌间区} | ${右Va区} | ${右Vb区} | ${右前上纵膈区} | ${右Ib区} | ${右咽旁区} |
+|    | ... | ${右颅底区} |
+|    | #比对预期结果和实际结果 |
+|    | focus | id=txtRelativeTransferStrengthL |
+|    | ${实际左侧相对转移强度}= | get element attribute | id=txtRelativeTransferStrengthL@dataval |
+|    | focus | id=txtRelativeTransferStrengthR |
+|    | ${实际右侧相对转移强度}= | get element attribute | id=txtRelativeTransferStrengthR@dataval |
+|    | should be equal as strings | ${实际左侧相对转移强度} | ${预期左侧相对转移强度} |
+|    | should be equal as strings | ${实际右侧相对转移强度} | ${预期右侧相对转移强度} |
+
+| 保存原发灶 |
+|    | [Arguments] | ${灶位置左} | ${灶数左} | ${灶均径左} | ${灶位置右} | ${灶数右} | ${灶均径右} |
+|    | ... | ${灶位置峡部} | ${灶数峡部} | ${灶均径峡部} | ${灶位置锥叶} | ${灶数锥叶} | ${灶均径锥叶} |
+|    | ... | ${是否腺内播散} |
+|    | focus | id=txtStovePositionL |
+|    | execute javascript | window.document.getElementById("txtStovePositionL").value="${灶位置左}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumL").value="${灶数左}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionR").value="${灶位置右}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumR").value="${灶数右}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionX").value="${灶位置峡部}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumX").value="${灶数峡部}" |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}" |
+|    | execute javascript | window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}" |
+|    | execute javascript | window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}" |
+|    | focus | id=txtStoveMeanDiameterZ |
+|    | execute javascript | window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}" |
+|    | sleep | 2 |
+|    | execute javascript | window.document.getElementById("txtOtherOptions").value="${是否腺内播散}" |
+|    | wait until element is enabled | id=SaveOriginal | 20s | error=等待保存原发灶超时 |
+|    | sleep | 3s |
+|    | focus | id=SaveOriginal |
+|    | click element | id=SaveOriginal |
+|    | sleep | 5s |
+
+| 保存B2派生结果 |
+|    | focus | id=SaveDerivedDataB2 |
+|    | click element | id=SaveDerivedDataB2 |
+|    | sleep | 3s |
+
+| 浸润情况分析D |
+|    | [Arguments] | ${肉眼浸润危害类别左侧} | ${侧相对浸润性强度左侧} | ${矫正侧相对浸润性强度左侧} | ${肉眼浸润危害类别右侧} | ${侧相对浸润性强度右侧} | ${矫正侧相对浸润性强度右侧} |
+|    | ... | ${肉眼浸润危害类别峡部} | ${侧相对浸润性强度峡部} | ${矫正侧相对浸润性强度峡部} | ${肉眼浸润危害类别椎叶} | ${侧相对浸润性强度椎叶} | ${矫正侧相对浸润性强度椎叶} |
+|    | #A-2.(浸润情况分析) |
+|    | #肉眼浸润危害类别左侧 |
+|    | Execute Javascript | $("#txtSteepHarmType").val("${肉眼浸润危害类别左侧}") |
+|    | #侧相对浸润行强度左侧 |
+|    | Execute Javascript | $("#txtSideRelativeSteepStrength").val("${侧相对浸润性强度左侧}") |
+|    | #矫正侧相对浸润性强度左侧 |
+|    | Execute Javascript | $("#txtReSideRelativeSteepStrength").val("${矫正侧相对浸润性强度左侧}") |
+|    | #肉眼浸润危害类别右侧 |
+|    | Execute Javascript | $("#txtSteepHarmTypeR").val("${肉眼浸润危害类别右侧}") |
+|    | #侧相对浸润性强度右侧 |
+|    | Execute Javascript | $("#txtSideRelativeSteepStrengthR").val("${侧相对浸润性强度右侧}") |
+|    | #矫正侧相对浸润性强度右侧 |
+|    | Execute Javascript | $("#txtReSideRelativeSteepStrengthR").val("${矫正侧相对浸润性强度右侧}") |
+|    | #肉眼浸润危害类别峡部 |
+|    | Execute Javascript | $("#txtSteepHarmTypeX").val("${肉眼浸润危害类别峡部}") |
+|    | #侧相对浸润性强度峡部 |
+|    | Execute Javascript | $("#txtSideRelativeSteepStrengthX").val("${侧相对浸润性强度峡部}") |
+|    | #矫正侧相对浸润性强度峡部 |
+|    | Execute Javascript | $("#txtReSideRelativeSteepStrengthX").val("${矫正侧相对浸润性强度峡部}") |
+|    | #肉眼浸润危害类别椎叶 |
+|    | Execute Javascript | $("#txtSteepHarmTypeZ").val("${肉眼浸润危害类别椎叶}") |
+|    | #侧相对浸润性强度椎叶 |
+|    | Execute Javascript | $("#txtSideRelativeSteepStrengthZ").val("${侧相对浸润性强度椎叶}") |
+|    | #矫正侧相对浸润性强度椎叶 |
+|    | Execute Javascript | $("#txtReSideRelativeSteepStrengthZ").val("${矫正侧相对浸润性强度椎叶}") |
+|    | #保存派生数据A |
+|    | Execute Javascript | $("#SaveDerivedDataA").click() |
+
+| 淋巴结转移情况分析D |
+|    | [Arguments] | ${侧相对转移性强度左侧} | ${矫正侧相对转移性强度左侧} | ${侧相对转移性强度右侧} | ${矫正侧相对转移性强度右侧} |
+|    | #B-2.(淋巴结转移情况分析) |
+|    | #侧相对转移强度 |
+|    | execute javascript | $("#txtRelativeTransferStrengthL").val("${侧相对转移性强度左侧}") |
+|    | #矫正侧相对转移性强度左侧 |
+|    | Execute Javascript | $("#txtRedressRelativeTransferStrengthL").val("${矫正侧相对转移性强度左侧}") |
+|    | #侧相对转移强度（右侧） |
+|    | execute javascript | $("#txtRelativeTransferStrengthR").val("${侧相对转移性强度右侧}") |
+|    | #矫正侧相对转移性强度右侧 |
+|    | Execute Javascript | $("#txtRedressRelativeTransferStrengthR").val("${矫正侧相对转移性强度右侧}") |
+|    | #保存B-2.(淋巴结转移情况分析) |
+|    | Execute Javascript | $("#SaveDerivedDataB2").click() |
+
+| 峡部灶数 |
+|    | [Arguments] | ${峡部灶数} |
+|    | #原发灶一级数据 |
+|    | #峡部灶数 |
+|    | Execute Javascript | $("#txtStoveNumX").val("${峡部灶数}") |
+|    | #原发灶一级数据保存 |
+|    | Execute Javascript | $("#SaveOriginal").click() |
+
+| 历次手术累计区块名 |
+|    | [Arguments] | ${历次手术累计区块名} |
+|    | #历次手术累计区块名 |
+|    | Execute Javascript | $("#txtAddupSurgeryRangeCN").val("${历次手术累计区块名}") |
+
+| 次别 |
+|    | [Arguments] | ${次别} |
+|    | #次别 |
+|    | Execute Javascript | $("#txtOtherTimes").val("${次别}") |
+
+| 累及范围-可控性分析 |
+|    | [Arguments] | ${最大灶的均经分类} | ${癌危害/威胁的基础级} | ${浸润危害方面的参考级} | ${转移波及方面的参考级} | ${威胁的总要面和强度级} |
+|    | #累及范围-可控性分析 |
+|    | #最大灶的均经分类 |
+|    | Execute Javascript | $("#txtMaxCancerDiameter").val("${最大灶的均经分类}") |
+|    | #癌危害/威胁的基础级 |
+|    | Execute Javascript | $("#txtCancerBasicLevel").val("${癌危害/威胁的基础级}") |
+|    | #浸润危害方面的参考级 |
+|    | Execute Javascript | $("#txtSteepReference").val("${浸润危害方面的参考级}") |
+|    | #转移波及方面的参考级 |
+|    | Execute Javascript | $("#txtTransferReference").val("${转移波及方面的参考级}") |
+|    | #威胁的总要面和强度级 |
+|    | Execute Javascript | $("#txtThreatMainSurface").val("${威胁的总要面和强度级}") |
+|    | #保存累及范围-可控性分析 |
+|    | Execute Javascript | $("#SaveInvolveRange").click() |

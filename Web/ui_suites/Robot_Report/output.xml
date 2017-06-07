@@ -1,0 +1,4194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170607 19:12:31.142" generator="Robot 3.0 (Python 2.7.10 on win32)">
+<suite source="D:\projects\gitRepository\AutoMan\Web\ui_suites" id="s1" name="Ui Suites">
+<suite source="D:\projects\gitRepository\AutoMan\Web\ui_suites\syf1.1.1" id="s1-s1" name="Syf1.1.1">
+<suite source="D:\projects\gitRepository\AutoMan\Web\ui_suites\syf1.1.1\pathology" id="s1-s1-s1" name="Pathology">
+<suite source="D:\projects\gitRepository\AutoMan\Web\ui_suites\syf1.1.1\pathology\suite01driverA.txt" id="s1-s1-s1-s1" name="suite01driverA">
+<test id="s1-s1-s1-s1-t1" name="step01：登录病理评估">
+<kw name="登陆病理评估" library="登陆登出">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://192.168.10.164/syf1.1.1/login/Index</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20170607 19:12:31.587" level="INFO">Opening browser 'chrome' to base url 'http://192.168.10.164/syf1.1.1/login/Index'</msg>
+<status status="PASS" endtime="20170607 19:12:37.040" starttime="20170607 19:12:31.587"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:12:40.043" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:12:40.043" starttime="20170607 19:12:37.042"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170607 19:12:41.197" starttime="20170607 19:12:40.044"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtUserName</arg>
+<arg>30048</arg>
+</arguments>
+<msg timestamp="20170607 19:12:41.200" level="INFO">Typing text '30048' into text field 'id=txtUserName'</msg>
+<status status="PASS" endtime="20170607 19:12:41.377" starttime="20170607 19:12:41.198"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtPassword</arg>
+<arg>5436</arg>
+</arguments>
+<msg timestamp="20170607 19:12:41.378" level="INFO">Typing text '5436' into text field 'id=txtPassword'</msg>
+<status status="PASS" endtime="20170607 19:12:41.507" starttime="20170607 19:12:41.378"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20170607 19:12:42.508" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20170607 19:12:42.508" starttime="20170607 19:12:41.508"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=btnConfirm</arg>
+</arguments>
+<msg timestamp="20170607 19:12:42.510" level="INFO">Clicking element 'id=btnConfirm'.</msg>
+<status status="PASS" endtime="20170607 19:12:42.615" starttime="20170607 19:12:42.509"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170607 19:12:44.616" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:12:44.616" starttime="20170607 19:12:42.616"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=link</arg>
+</arguments>
+<msg timestamp="20170607 19:12:44.618" level="INFO">Clicking element 'id=link'.</msg>
+<status status="PASS" endtime="20170607 19:12:44.911" starttime="20170607 19:12:44.617"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=chartBox</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:12:47.581" starttime="20170607 19:12:44.912"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element should be visible</arg>
+<arg>id=chartBox</arg>
+</arguments>
+<assign>
+<var>${bl}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>id=chartBox</arg>
+</arguments>
+<msg timestamp="20170607 19:12:47.583" level="INFO">Verifying element 'id=chartBox' is visible.</msg>
+<status status="PASS" endtime="20170607 19:12:47.603" starttime="20170607 19:12:47.583"></status>
+</kw>
+<msg timestamp="20170607 19:12:47.603" level="INFO">${bl} = True</msg>
+<status status="PASS" endtime="20170607 19:12:47.603" starttime="20170607 19:12:47.582"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${bl}</arg>
+</arguments>
+<msg timestamp="20170607 19:12:47.604" level="INFO">True</msg>
+<status status="PASS" endtime="20170607 19:12:47.605" starttime="20170607 19:12:47.604"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=tumorstudy</arg>
+</arguments>
+<msg timestamp="20170607 19:12:47.606" level="INFO">Clicking element 'id=tumorstudy'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:12:47.804" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:12:47.805" starttime="20170607 19:12:47.629"></status>
+</kw>
+<msg timestamp="20170607 19:12:47.829" level="FAIL">ValueError: Element locator 'id=tumorstudy' did not match any elements.</msg>
+<status status="FAIL" endtime="20170607 19:12:47.829" starttime="20170607 19:12:47.605"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:12:47.830" starttime="20170607 19:12:31.583"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:12:47.830" critical="yes" starttime="20170607 19:12:31.581">ValueError: Element locator 'id=tumorstudy' did not match any elements.</status>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Step02：删除测试数据">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" endtime="20170607 19:12:47.834" starttime="20170607 19:12:47.834"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=txtAll</arg>
+<arg>10s</arg>
+<arg>error=等待登陆后页面加载完成超时</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:12:58.120" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:12:58.121" starttime="20170607 19:12:57.947"></status>
+</kw>
+<msg timestamp="20170607 19:12:58.140" level="FAIL">等待登陆后页面加载完成超时</msg>
+<status status="FAIL" endtime="20170607 19:12:58.140" starttime="20170607 19:12:47.835"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:12:58.141" critical="yes" starttime="20170607 19:12:47.831">等待登陆后页面加载完成超时</status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="Step03：进入病理详情界面">
+<kw name="Add" library="列表界面功能">
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.location.href = '/syf1.1.1/PathologicalEvaluation/Edit?type=add&amp;editmark=true';</arg>
+</arguments>
+<msg timestamp="20170607 19:12:58.146" level="INFO">Executing JavaScript:
+window.location.href = '/syf1.1.1/PathologicalEvaluation/Edit?type=add&amp;editmark=true';</msg>
+<status status="PASS" endtime="20170607 19:13:03.645" starttime="20170607 19:12:58.145"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:06.648" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:06.648" starttime="20170607 19:13:03.647"></status>
+</kw>
+<status status="PASS" endtime="20170607 19:13:06.649" starttime="20170607 19:12:58.145"></status>
+</kw>
+<status status="PASS" endtime="20170607 19:13:06.650" critical="yes" starttime="20170607 19:12:58.142"></status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Step04:add病人信息">
+<kw name="添加-病人信息" library="病理详情界面功能">
+<arguments>
+<arg>505076</arg>
+<arg>2016-09-23</arg>
+<arg>2016-10-24</arg>
+<arg>左叶,右叶,双中央区,双侧中颈区,双外侧颈区</arg>
+<arg>左叶切除</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtHospitalNumber</arg>
+<arg>${病历号}</arg>
+</arguments>
+<msg timestamp="20170607 19:13:06.657" level="INFO">Typing text '505076' into text field 'id=txtHospitalNumber'</msg>
+<status status="PASS" endtime="20170607 19:13:06.928" starttime="20170607 19:13:06.656"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtHospitalNumber</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:07.014" starttime="20170607 19:13:06.929"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:09.016" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:09.016" starttime="20170607 19:13:07.015"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtBUltrasonicCheckTime").value="${B超日期}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:09.018" level="INFO">Executing JavaScript:
+window.document.getElementById("txtBUltrasonicCheckTime").value="2016-09-23"</msg>
+<status status="PASS" endtime="20170607 19:13:09.044" starttime="20170607 19:13:09.017"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170607 19:13:10.046" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20170607 19:13:10.046" starttime="20170607 19:13:09.045"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOperationDay").value="${手术日期}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:10.048" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOperationDay").value="2016-10-24"</msg>
+<status status="PASS" endtime="20170607 19:13:10.074" starttime="20170607 19:13:10.047"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>$("#txtOperationDay").blur()</arg>
+</arguments>
+<msg timestamp="20170607 19:13:10.075" level="INFO">Executing JavaScript:
+$("#txtOperationDay").blur()</msg>
+<status status="PASS" endtime="20170607 19:13:10.091" starttime="20170607 19:13:10.074"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170607 19:13:13.092" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:13.092" starttime="20170607 19:13:10.092"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtOperationSchemeCN</arg>
+</arguments>
+<msg timestamp="20170607 19:13:13.093" level="INFO">Clicking element 'id=txtOperationSchemeCN'.</msg>
+<status status="PASS" endtime="20170607 19:13:13.275" starttime="20170607 19:13:13.093"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170607 19:13:14.276" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20170607 19:13:14.276" starttime="20170607 19:13:13.276"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtOperationSchemeCN</arg>
+<arg>${本次手术区块名}</arg>
+</arguments>
+<msg timestamp="20170607 19:13:14.278" level="INFO">Typing text '左叶,右叶,双中央区,双侧中颈区,双外侧颈区' into text field 'id=txtOperationSchemeCN'</msg>
+<status status="PASS" endtime="20170607 19:13:14.821" starttime="20170607 19:13:14.277"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:15.822" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20170607 19:13:15.822" starttime="20170607 19:13:14.822"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtThisDoSurgery</arg>
+<arg>${本次手术用名}</arg>
+</arguments>
+<msg timestamp="20170607 19:13:15.824" level="INFO">Typing text '左叶切除' into text field 'id=txtThisDoSurgery'</msg>
+<status status="PASS" endtime="20170607 19:13:16.109" starttime="20170607 19:13:15.823"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=saveMaster</arg>
+</arguments>
+<msg timestamp="20170607 19:13:16.111" level="INFO">Clicking element 'id=saveMaster'.</msg>
+<status status="PASS" endtime="20170607 19:13:16.649" starttime="20170607 19:13:16.110"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.650" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:21.650" starttime="20170607 19:13:16.650"></status>
+</kw>
+<status status="PASS" endtime="20170607 19:13:21.651" starttime="20170607 19:13:06.655"></status>
+</kw>
+<status status="PASS" endtime="20170607 19:13:21.651" critical="yes" starttime="20170607 19:13:06.652"></status>
+</test>
+<test id="s1-s1-s1-s1-t5" name="原发灶派生A">
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>&gt;3</arg>
+<arg>≤3</arg>
+<arg>Sin(Lob)-4Fo</arg>
+<arg>A.极早</arg>
+<arg>乳头状微小癌(A类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:21.779" starttime="20170607 19:13:21.723"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.781" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:21.796" starttime="20170607 19:13:21.780"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.797" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="&gt;3"</msg>
+<status status="PASS" endtime="20170607 19:13:21.836" starttime="20170607 19:13:21.797"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.837" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:21.854" starttime="20170607 19:13:21.837"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.856" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.890" starttime="20170607 19:13:21.855"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.892" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.915" starttime="20170607 19:13:21.891"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.918" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.944" starttime="20170607 19:13:21.915"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.946" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.961" starttime="20170607 19:13:21.945"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.962" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.980" starttime="20170607 19:13:21.962"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:21.981" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:21.998" starttime="20170607 19:13:21.981"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:22.000" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:22.013" starttime="20170607 19:13:21.999"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:22.015" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:22.029" starttime="20170607 19:13:22.014"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:22.077" starttime="20170607 19:13:22.029"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:22.078" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:22.092" starttime="20170607 19:13:22.078"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:24.093" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:24.093" starttime="20170607 19:13:22.093"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:24.094" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:24.109" starttime="20170607 19:13:24.094"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:24.148" starttime="20170607 19:13:24.109"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.149" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:27.149" starttime="20170607 19:13:24.148"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:27.178" starttime="20170607 19:13:27.150"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.179" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:27.476" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:27.477" starttime="20170607 19:13:27.226"></status>
+</kw>
+<msg timestamp="20170607 19:13:27.526" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:27.526" starttime="20170607 19:13:27.178"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:27.527" starttime="20170607 19:13:21.721"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:27.528" starttime="20170607 19:13:21.686"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>○</arg>
+<arg>0</arg>
+<arg>≤3</arg>
+<arg>腺内播散</arg>
+<arg>Sin(Lob)-0Fo*</arg>
+<arg>A.极早</arg>
+<arg>乳头状微小癌(A类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:27.603" starttime="20170607 19:13:27.568"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.604" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="○"</msg>
+<status status="PASS" endtime="20170607 19:13:27.646" starttime="20170607 19:13:27.604"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.648" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="0"</msg>
+<status status="PASS" endtime="20170607 19:13:27.662" starttime="20170607 19:13:27.647"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.663" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:27.679" starttime="20170607 19:13:27.662"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.680" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.694" starttime="20170607 19:13:27.680"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.695" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.700" starttime="20170607 19:13:27.694"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.701" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.712" starttime="20170607 19:13:27.700"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.713" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.725" starttime="20170607 19:13:27.713"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.727" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.731" starttime="20170607 19:13:27.726"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.733" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.744" starttime="20170607 19:13:27.732"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.746" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.758" starttime="20170607 19:13:27.745"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.760" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.765" starttime="20170607 19:13:27.759"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:27.813" starttime="20170607 19:13:27.765"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:27.814" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:27.831" starttime="20170607 19:13:27.813"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:29.832" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:29.833" starttime="20170607 19:13:27.832"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:29.835" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value="腺内播散"</msg>
+<status status="PASS" endtime="20170607 19:13:29.863" starttime="20170607 19:13:29.834"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:29.883" starttime="20170607 19:13:29.864"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:32.885" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:32.885" starttime="20170607 19:13:29.884"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:32.905" starttime="20170607 19:13:32.886"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:32.906" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:33.190" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:33.190" starttime="20170607 19:13:32.939"></status>
+</kw>
+<msg timestamp="20170607 19:13:33.192" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:33.192" starttime="20170607 19:13:32.906"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:33.193" starttime="20170607 19:13:27.566"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:33.193" starttime="20170607 19:13:27.544"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>/</arg>
+<arg>/</arg>
+<arg>≤3</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>A.极早</arg>
+<arg>乳头状微小癌(A类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:33.253" starttime="20170607 19:13:33.235"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.254" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:13:33.260" starttime="20170607 19:13:33.254"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.261" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:13:33.280" starttime="20170607 19:13:33.261"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.281" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:33.291" starttime="20170607 19:13:33.280"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.293" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.297" starttime="20170607 19:13:33.292"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.298" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.305" starttime="20170607 19:13:33.298"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.306" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.311" starttime="20170607 19:13:33.306"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.313" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.320" starttime="20170607 19:13:33.312"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.321" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.326" starttime="20170607 19:13:33.321"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.327" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.331" starttime="20170607 19:13:33.326"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.334" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.338" starttime="20170607 19:13:33.333"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.339" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.344" starttime="20170607 19:13:33.339"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:33.360" starttime="20170607 19:13:33.345"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:33.361" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:33.376" starttime="20170607 19:13:33.360"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:35.377" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:35.377" starttime="20170607 19:13:33.376"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:35.379" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:35.408" starttime="20170607 19:13:35.378"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:35.425" starttime="20170607 19:13:35.409"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.426" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:38.426" starttime="20170607 19:13:35.425"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:38.452" starttime="20170607 19:13:38.427"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.454" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:38.683" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:38.683" starttime="20170607 19:13:38.482"></status>
+</kw>
+<msg timestamp="20170607 19:13:38.686" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:38.686" starttime="20170607 19:13:38.453"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:38.687" starttime="20170607 19:13:33.233"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:38.688" starttime="20170607 19:13:33.211"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>/</arg>
+<arg>○</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:38.772" starttime="20170607 19:13:38.736"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.774" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:38.787" starttime="20170607 19:13:38.773"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.789" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:13:38.797" starttime="20170607 19:13:38.788"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.799" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="○"</msg>
+<status status="PASS" endtime="20170607 19:13:38.814" starttime="20170607 19:13:38.798"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.815" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.831" starttime="20170607 19:13:38.814"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.832" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.845" starttime="20170607 19:13:38.831"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.846" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.859" starttime="20170607 19:13:38.845"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.860" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.865" starttime="20170607 19:13:38.859"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.866" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.878" starttime="20170607 19:13:38.865"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.880" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.893" starttime="20170607 19:13:38.879"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.895" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.903" starttime="20170607 19:13:38.894"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.904" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.912" starttime="20170607 19:13:38.904"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:38.964" starttime="20170607 19:13:38.912"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:38.966" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:38.979" starttime="20170607 19:13:38.965"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:40.980" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:40.980" starttime="20170607 19:13:38.980"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:40.982" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:40.989" starttime="20170607 19:13:40.981"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:41.010" starttime="20170607 19:13:40.989"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.012" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:44.012" starttime="20170607 19:13:41.011"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:44.038" starttime="20170607 19:13:44.013"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.040" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:44.287" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:44.288" starttime="20170607 19:13:44.065"></status>
+</kw>
+<msg timestamp="20170607 19:13:44.289" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:44.290" starttime="20170607 19:13:44.039"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:44.291" starttime="20170607 19:13:38.735"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:44.291" starttime="20170607 19:13:38.709"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>unD(B)</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Tot)-2Fo*</arg>
+<arg>B.早</arg>
+<arg>乳头状微小癌(B类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:44.381" starttime="20170607 19:13:44.345"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.383" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="unD(B)"</msg>
+<status status="PASS" endtime="20170607 19:13:44.397" starttime="20170607 19:13:44.382"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.399" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:44.417" starttime="20170607 19:13:44.398"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.419" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:44.444" starttime="20170607 19:13:44.418"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.445" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:44.461" starttime="20170607 19:13:44.444"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.462" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:44.479" starttime="20170607 19:13:44.462"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.481" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="&gt;3≤5"</msg>
+<status status="PASS" endtime="20170607 19:13:44.497" starttime="20170607 19:13:44.480"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.498" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.513" starttime="20170607 19:13:44.497"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.514" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.528" starttime="20170607 19:13:44.513"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.529" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.541" starttime="20170607 19:13:44.528"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.543" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.547" starttime="20170607 19:13:44.542"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.549" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.560" starttime="20170607 19:13:44.548"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:44.601" starttime="20170607 19:13:44.561"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:44.603" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:44.614" starttime="20170607 19:13:44.602"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:46.615" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:46.616" starttime="20170607 19:13:44.614"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:46.618" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value="腺内播散"</msg>
+<status status="PASS" endtime="20170607 19:13:46.644" starttime="20170607 19:13:46.617"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:46.670" starttime="20170607 19:13:46.645"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:49.671" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:49.671" starttime="20170607 19:13:46.671"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:49.696" starttime="20170607 19:13:49.672"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:49.698" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:49.952" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:49.953" starttime="20170607 19:13:49.722"></status>
+</kw>
+<msg timestamp="20170607 19:13:49.955" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:49.956" starttime="20170607 19:13:49.697"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:49.956" starttime="20170607 19:13:44.343"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:49.957" starttime="20170607 19:13:44.317"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>Mul(Lob-Isthm)-2Fo</arg>
+<arg>B.早</arg>
+<arg>乳头状微小癌(B类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:50.037" starttime="20170607 19:13:50.002"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.038" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:50.047" starttime="20170607 19:13:50.038"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.048" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:50.064" starttime="20170607 19:13:50.048"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.066" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:50.079" starttime="20170607 19:13:50.065"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.080" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.093" starttime="20170607 19:13:50.080"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.094" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.102" starttime="20170607 19:13:50.094"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.103" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.114" starttime="20170607 19:13:50.102"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.115" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="Isthmus(L)"</msg>
+<status status="PASS" endtime="20170607 19:13:50.138" starttime="20170607 19:13:50.114"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.139" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:50.153" starttime="20170607 19:13:50.139"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.154" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="&gt;3≤5"</msg>
+<status status="PASS" endtime="20170607 19:13:50.169" starttime="20170607 19:13:50.154"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.170" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.180" starttime="20170607 19:13:50.170"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.181" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.195" starttime="20170607 19:13:50.180"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:50.237" starttime="20170607 19:13:50.196"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:50.238" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:50.247" starttime="20170607 19:13:50.238"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:52.248" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:52.248" starttime="20170607 19:13:50.247"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:52.249" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:52.267" starttime="20170607 19:13:52.249"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:52.286" starttime="20170607 19:13:52.268"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.287" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:55.288" starttime="20170607 19:13:52.287"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:55.312" starttime="20170607 19:13:55.289"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.313" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:13:55.505" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:13:55.506" starttime="20170607 19:13:55.342"></status>
+</kw>
+<msg timestamp="20170607 19:13:55.507" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:13:55.507" starttime="20170607 19:13:55.312"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:55.508" starttime="20170607 19:13:50.000"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:13:55.508" starttime="20170607 19:13:49.977"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>Mul(Tot-Isthm-Pyram)-4Fo</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:55.587" starttime="20170607 19:13:55.552"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.588" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:55.597" starttime="20170607 19:13:55.587"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.599" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:55.612" starttime="20170607 19:13:55.598"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.613" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:13:55.625" starttime="20170607 19:13:55.612"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.626" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:55.637" starttime="20170607 19:13:55.626"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.639" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:55.646" starttime="20170607 19:13:55.638"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.647" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="&gt;3≤5"</msg>
+<status status="PASS" endtime="20170607 19:13:55.668" starttime="20170607 19:13:55.647"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.670" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="Isthmus(L)"</msg>
+<status status="PASS" endtime="20170607 19:13:55.679" starttime="20170607 19:13:55.669"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.681" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:55.694" starttime="20170607 19:13:55.680"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.695" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="&gt;3≤5"</msg>
+<status status="PASS" endtime="20170607 19:13:55.708" starttime="20170607 19:13:55.694"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.709" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:13:55.718" starttime="20170607 19:13:55.709"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.719" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="1"</msg>
+<status status="PASS" endtime="20170607 19:13:55.736" starttime="20170607 19:13:55.719"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:55.874" starttime="20170607 19:13:55.736"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:55.876" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value="&gt;5≤7"</msg>
+<status status="PASS" endtime="20170607 19:13:55.894" starttime="20170607 19:13:55.875"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:13:57.895" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:13:57.895" starttime="20170607 19:13:55.895"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:13:57.896" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:13:57.902" starttime="20170607 19:13:57.896"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:13:57.920" starttime="20170607 19:13:57.903"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:00.924" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:00.925" starttime="20170607 19:13:57.920"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:01.164" starttime="20170607 19:14:00.925"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.165" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:01.384" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:01.385" starttime="20170607 19:14:01.223"></status>
+</kw>
+<msg timestamp="20170607 19:14:01.387" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:01.387" starttime="20170607 19:14:01.165"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:01.388" starttime="20170607 19:13:55.551"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:01.388" starttime="20170607 19:13:55.526"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>2</arg>
+<arg>&gt;7≤10</arg>
+<arg>A-1b</arg>
+<arg>3</arg>
+<arg>&gt;3≤5</arg>
+<arg>Isthmus(L)</arg>
+<arg>unD(A)</arg>
+<arg>&gt;7≤10</arg>
+<arg>Mul(Tot-Isthm)-5Fo</arg>
+<arg>D.早中</arg>
+<arg>乳头状微小癌(D类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:01.513" starttime="20170607 19:14:01.436"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.514" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:01.531" starttime="20170607 19:14:01.514"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.532" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="2"</msg>
+<status status="PASS" endtime="20170607 19:14:01.549" starttime="20170607 19:14:01.531"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.551" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="&gt;7≤10"</msg>
+<status status="PASS" endtime="20170607 19:14:01.563" starttime="20170607 19:14:01.550"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.564" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:01.585" starttime="20170607 19:14:01.564"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.587" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="3"</msg>
+<status status="PASS" endtime="20170607 19:14:01.597" starttime="20170607 19:14:01.586"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.600" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="&gt;3≤5"</msg>
+<status status="PASS" endtime="20170607 19:14:01.627" starttime="20170607 19:14:01.599"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.628" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="Isthmus(L)"</msg>
+<status status="PASS" endtime="20170607 19:14:01.643" starttime="20170607 19:14:01.628"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.644" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="unD(A)"</msg>
+<status status="PASS" endtime="20170607 19:14:01.661" starttime="20170607 19:14:01.643"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.663" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="&gt;7≤10"</msg>
+<status status="PASS" endtime="20170607 19:14:01.681" starttime="20170607 19:14:01.662"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.682" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:01.703" starttime="20170607 19:14:01.682"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.704" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:01.715" starttime="20170607 19:14:01.703"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:01.777" starttime="20170607 19:14:01.716"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:01.779" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:01.798" starttime="20170607 19:14:01.778"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:03.799" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:03.799" starttime="20170607 19:14:01.799"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:03.801" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:03.810" starttime="20170607 19:14:03.800"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:03.842" starttime="20170607 19:14:03.811"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:06.843" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:06.843" starttime="20170607 19:14:03.843"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:06.864" starttime="20170607 19:14:06.844"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:06.865" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:07.128" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:07.128" starttime="20170607 19:14:06.908"></status>
+</kw>
+<msg timestamp="20170607 19:14:07.130" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:07.130" starttime="20170607 19:14:06.864"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:07.131" starttime="20170607 19:14:01.434"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:07.131" starttime="20170607 19:14:01.410"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>/</arg>
+<arg>&gt;10≤15</arg>
+<arg>${EMPTY}</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>E.中</arg>
+<arg>乳头状普通癌(A类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:07.237" starttime="20170607 19:14:07.180"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.238" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:07.264" starttime="20170607 19:14:07.238"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.266" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:07.302" starttime="20170607 19:14:07.265"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.304" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="&gt;10≤15"</msg>
+<status status="PASS" endtime="20170607 19:14:07.334" starttime="20170607 19:14:07.303"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.336" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.367" starttime="20170607 19:14:07.335"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.368" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.401" starttime="20170607 19:14:07.368"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.402" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.417" starttime="20170607 19:14:07.401"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.418" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.451" starttime="20170607 19:14:07.418"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.453" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.477" starttime="20170607 19:14:07.452"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.479" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.495" starttime="20170607 19:14:07.478"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.496" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.511" starttime="20170607 19:14:07.496"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.513" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.535" starttime="20170607 19:14:07.512"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:07.580" starttime="20170607 19:14:07.535"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:07.582" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:07.598" starttime="20170607 19:14:07.581"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:09.599" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:09.600" starttime="20170607 19:14:07.599"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:09.606" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:09.611" starttime="20170607 19:14:09.605"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:09.642" starttime="20170607 19:14:09.612"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:12.644" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:12.645" starttime="20170607 19:14:09.642"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:12.711" starttime="20170607 19:14:12.646"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:12.712" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:12.868" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:12.868" starttime="20170607 19:14:12.734"></status>
+</kw>
+<msg timestamp="20170607 19:14:12.870" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:12.870" starttime="20170607 19:14:12.712"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:12.871" starttime="20170607 19:14:07.178"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:12.871" starttime="20170607 19:14:07.149"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>unID(X)</arg>
+<arg>0</arg>
+<arg>&gt;15≤20</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>F.中后</arg>
+<arg>乳头状普通癌(B类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:13.028" starttime="20170607 19:14:12.913"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.029" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="unID(X)"</msg>
+<status status="PASS" endtime="20170607 19:14:13.056" starttime="20170607 19:14:13.028"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.057" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:13.065" starttime="20170607 19:14:13.056"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.067" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="&gt;15≤20"</msg>
+<status status="PASS" endtime="20170607 19:14:13.095" starttime="20170607 19:14:13.066"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.096" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.110" starttime="20170607 19:14:13.095"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.111" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.125" starttime="20170607 19:14:13.110"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.126" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.134" starttime="20170607 19:14:13.126"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.137" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.142" starttime="20170607 19:14:13.136"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.143" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.148" starttime="20170607 19:14:13.143"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.149" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.160" starttime="20170607 19:14:13.148"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.161" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.167" starttime="20170607 19:14:13.160"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.169" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.173" starttime="20170607 19:14:13.168"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:13.220" starttime="20170607 19:14:13.174"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:13.222" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:13.230" starttime="20170607 19:14:13.221"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:15.233" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:15.234" starttime="20170607 19:14:13.231"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:15.236" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:15.245" starttime="20170607 19:14:15.235"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:15.264" starttime="20170607 19:14:15.246"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.265" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:18.265" starttime="20170607 19:14:15.265"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:18.292" starttime="20170607 19:14:18.266"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.293" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:18.483" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:18.483" starttime="20170607 19:14:18.324"></status>
+</kw>
+<msg timestamp="20170607 19:14:18.485" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:18.485" starttime="20170607 19:14:18.293"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:18.486" starttime="20170607 19:14:12.911"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:18.486" starttime="20170607 19:14:12.888"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:18.562" starttime="20170607 19:14:18.529"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.564" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:18.580" starttime="20170607 19:14:18.563"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.582" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.597" starttime="20170607 19:14:18.580"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.599" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.631" starttime="20170607 19:14:18.598"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.632" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.648" starttime="20170607 19:14:18.632"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.649" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.665" starttime="20170607 19:14:18.648"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.667" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.695" starttime="20170607 19:14:18.666"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.697" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.714" starttime="20170607 19:14:18.696"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.715" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.733" starttime="20170607 19:14:18.714"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.735" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.748" starttime="20170607 19:14:18.734"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.749" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.784" starttime="20170607 19:14:18.749"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.785" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.801" starttime="20170607 19:14:18.785"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:18.836" starttime="20170607 19:14:18.802"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:18.837" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:18.863" starttime="20170607 19:14:18.836"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:20.865" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:20.866" starttime="20170607 19:14:18.864"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:20.868" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:20.879" starttime="20170607 19:14:20.867"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:20.903" starttime="20170607 19:14:20.880"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:23.904" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:23.905" starttime="20170607 19:14:20.903"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:23.931" starttime="20170607 19:14:23.906"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:23.933" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:24.114" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:24.114" starttime="20170607 19:14:23.965"></status>
+</kw>
+<msg timestamp="20170607 19:14:24.116" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:24.116" starttime="20170607 19:14:23.932"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:24.117" starttime="20170607 19:14:18.527"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:24.118" starttime="20170607 19:14:18.503"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>/</arg>
+<arg>0</arg>
+<arg>&gt;20≤25</arg>
+<arg>Sin(Lob)-0Fo</arg>
+<arg>G.后</arg>
+<arg>乳头状普通癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:24.198" starttime="20170607 19:14:24.161"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.199" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:24.216" starttime="20170607 19:14:24.199"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.218" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:24.229" starttime="20170607 19:14:24.217"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.231" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="&gt;20≤25"</msg>
+<status status="PASS" endtime="20170607 19:14:24.264" starttime="20170607 19:14:24.230"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.265" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.279" starttime="20170607 19:14:24.264"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.280" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.295" starttime="20170607 19:14:24.280"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.296" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.328" starttime="20170607 19:14:24.296"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.329" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.335" starttime="20170607 19:14:24.328"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.336" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.344" starttime="20170607 19:14:24.336"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.345" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.362" starttime="20170607 19:14:24.345"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.364" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.377" starttime="20170607 19:14:24.363"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.378" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.393" starttime="20170607 19:14:24.378"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:24.437" starttime="20170607 19:14:24.394"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:24.439" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:24.444" starttime="20170607 19:14:24.438"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:26.446" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:26.446" starttime="20170607 19:14:24.444"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:26.449" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:26.457" starttime="20170607 19:14:26.448"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:26.479" starttime="20170607 19:14:26.458"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:29.480" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:29.482" starttime="20170607 19:14:26.480"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:29.511" starttime="20170607 19:14:29.483"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:29.512" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:29.910" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:29.911" starttime="20170607 19:14:29.542"></status>
+</kw>
+<msg timestamp="20170607 19:14:29.912" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:29.912" starttime="20170607 19:14:29.512"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:29.913" starttime="20170607 19:14:24.159"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:29.913" starttime="20170607 19:14:24.135"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>unD(B)</arg>
+<arg>&gt;25≤30</arg>
+<arg>unD(A)</arg>
+<arg>&gt;3</arg>
+<arg>&gt;30</arg>
+<arg>Isthmus(L)</arg>
+<arg>2</arg>
+<arg>unD(A)</arg>
+<arg>A-1b</arg>
+<arg>unD(X)</arg>
+<arg>unD(B</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Tot-Isthm-Pyram)-6Fo*</arg>
+<arg>G.后</arg>
+<arg>乳头状普通癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:30.037" starttime="20170607 19:14:29.960"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.039" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:30.125" starttime="20170607 19:14:30.038"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.126" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="unD(B)"</msg>
+<status status="PASS" endtime="20170607 19:14:30.138" starttime="20170607 19:14:30.126"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.139" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="&gt;25≤30"</msg>
+<status status="PASS" endtime="20170607 19:14:30.145" starttime="20170607 19:14:30.138"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.147" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="unD(A)"</msg>
+<status status="PASS" endtime="20170607 19:14:30.178" starttime="20170607 19:14:30.146"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.179" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="&gt;3"</msg>
+<status status="PASS" endtime="20170607 19:14:30.193" starttime="20170607 19:14:30.178"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.194" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="&gt;30"</msg>
+<status status="PASS" endtime="20170607 19:14:30.212" starttime="20170607 19:14:30.193"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.213" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="Isthmus(L)"</msg>
+<status status="PASS" endtime="20170607 19:14:30.228" starttime="20170607 19:14:30.213"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.229" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="2"</msg>
+<status status="PASS" endtime="20170607 19:14:30.246" starttime="20170607 19:14:30.229"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.247" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="unD(A)"</msg>
+<status status="PASS" endtime="20170607 19:14:30.276" starttime="20170607 19:14:30.246"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.278" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:30.292" starttime="20170607 19:14:30.277"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.294" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="unD(X)"</msg>
+<status status="PASS" endtime="20170607 19:14:30.311" starttime="20170607 19:14:30.293"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:30.344" starttime="20170607 19:14:30.311"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:30.346" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value="unD(B"</msg>
+<status status="PASS" endtime="20170607 19:14:30.352" starttime="20170607 19:14:30.345"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:32.353" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:32.353" starttime="20170607 19:14:30.352"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:32.355" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value="腺内播散"</msg>
+<status status="PASS" endtime="20170607 19:14:32.366" starttime="20170607 19:14:32.354"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:32.388" starttime="20170607 19:14:32.367"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.390" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:35.390" starttime="20170607 19:14:32.389"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:35.419" starttime="20170607 19:14:35.391"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.421" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:35.798" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:35.798" starttime="20170607 19:14:35.453"></status>
+</kw>
+<msg timestamp="20170607 19:14:35.801" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:35.801" starttime="20170607 19:14:35.420"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:35.802" starttime="20170607 19:14:29.958"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:35.803" starttime="20170607 19:14:29.932"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>/</arg>
+<arg>0</arg>
+<arg>unD(A)</arg>
+<arg>A-1b</arg>
+<arg>0</arg>
+<arg>unD(B)</arg>
+<arg>/</arg>
+<arg>0</arg>
+<arg>unD(A)</arg>
+<arg>/</arg>
+<arg>0</arg>
+<arg>unD(X)</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Tot-Isthm-Pyram)-0Fo*</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:35.880" starttime="20170607 19:14:35.851"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.882" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:35.893" starttime="20170607 19:14:35.881"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.894" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:35.901" starttime="20170607 19:14:35.894"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.902" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value="unD(A)"</msg>
+<status status="PASS" endtime="20170607 19:14:35.919" starttime="20170607 19:14:35.901"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.920" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:35.931" starttime="20170607 19:14:35.920"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.932" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:35.948" starttime="20170607 19:14:35.931"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.950" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="unD(B)"</msg>
+<status status="PASS" endtime="20170607 19:14:35.980" starttime="20170607 19:14:35.949"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.983" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:35.994" starttime="20170607 19:14:35.982"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:35.996" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:36.011" starttime="20170607 19:14:35.995"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:36.012" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value="unD(A)"</msg>
+<status status="PASS" endtime="20170607 19:14:36.029" starttime="20170607 19:14:36.011"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:36.030" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20170607 19:14:36.036" starttime="20170607 19:14:36.029"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:36.037" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="0"</msg>
+<status status="PASS" endtime="20170607 19:14:36.043" starttime="20170607 19:14:36.037"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:36.099" starttime="20170607 19:14:36.044"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:36.100" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value="unD(X)"</msg>
+<status status="PASS" endtime="20170607 19:14:36.111" starttime="20170607 19:14:36.100"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:38.112" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:38.112" starttime="20170607 19:14:36.111"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:38.113" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value="腺内播散"</msg>
+<status status="PASS" endtime="20170607 19:14:38.119" starttime="20170607 19:14:38.113"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+<arg>20s</arg>
+<arg>error=等待保存原发灶超时</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:38.136" starttime="20170607 19:14:38.120"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.137" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:41.137" starttime="20170607 19:14:38.136"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:41.163" starttime="20170607 19:14:41.139"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.165" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:41.475" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170607 19:14:41.475" starttime="20170607 19:14:41.193"></status>
+</kw>
+<msg timestamp="20170607 19:14:41.477" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:41.477" starttime="20170607 19:14:41.164"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:41.478" starttime="20170607 19:14:35.849"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:41.478" starttime="20170607 19:14:35.823"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>Sin(Lob)-1Fo</arg>
+<arg>A.极早</arg>
+<arg>乳头状微小癌(A类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:41.557" starttime="20170607 19:14:41.521"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.558" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.570" starttime="20170607 19:14:41.557"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.571" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.577" starttime="20170607 19:14:41.571"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterL").value="${灶均径左}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.578" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterL").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.604" starttime="20170607 19:14:41.577"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.605" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="A-1b"</msg>
+<status status="PASS" endtime="20170607 19:14:41.617" starttime="20170607 19:14:41.605"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.618" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="1"</msg>
+<status status="PASS" endtime="20170607 19:14:41.625" starttime="20170607 19:14:41.617"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterR").value="${灶均径右}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.626" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterR").value="≤3"</msg>
+<status status="PASS" endtime="20170607 19:14:41.658" starttime="20170607 19:14:41.625"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.660" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.673" starttime="20170607 19:14:41.659"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.674" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.698" starttime="20170607 19:14:41.674"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterX").value="${灶均径峡部}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.700" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterX").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.714" starttime="20170607 19:14:41.699"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.715" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.746" starttime="20170607 19:14:41.715"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.747" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.761" starttime="20170607 19:14:41.746"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStoveMeanDiameterZ</arg>
+</arguments>
+<status status="PASS" endtime="20170607 19:14:41.806" starttime="20170607 19:14:41.762"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveMeanDiameterZ").value="${灶均径锥叶}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:41.807" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveMeanDiameterZ").value=""</msg>
+<status status="PASS" endtime="20170607 19:14:41.827" starttime="20170607 19:14:41.807"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170607 19:14:43.828" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170607 19:14:43.828" starttime="20170607 19:14:41.828"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOtherOptions").value="${是否腺内播散}"</arg>
+</arguments>
+<msg timestamp="20170607 19:14:43.830" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOtherOptions").value=""</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:51.886" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:51.887" starttime="20170607 19:14:47.855"></status>
+</kw>
+<msg timestamp="20170607 19:14:51.888" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:14:51.903" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:51.904" starttime="20170607 19:14:43.829"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:51.905" starttime="20170607 19:14:41.519"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:14:51.906" starttime="20170607 19:14:41.496"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>Mul(Lob-Isthm)-2Fo</arg>
+<arg>B.早</arg>
+<arg>乳头状微小癌(B类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:14:59.982" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:14:59.983" starttime="20170607 19:14:55.964"></status>
+</kw>
+<msg timestamp="20170607 19:14:59.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:00.009" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:00.009" starttime="20170607 19:14:51.961"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:00.010" starttime="20170607 19:14:51.960"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:00.011" starttime="20170607 19:14:51.936"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>Mul(Lob-Pyram)-2Fo</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:08.093" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:08.093" starttime="20170607 19:15:04.078"></status>
+</kw>
+<msg timestamp="20170607 19:15:08.094" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:08.097" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:08.097" starttime="20170607 19:15:00.067"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:08.098" starttime="20170607 19:15:00.065"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:08.099" starttime="20170607 19:15:00.040"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>Mul(Lob-Pyram)-2Fo</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:16.185" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:16.186" starttime="20170607 19:15:12.161"></status>
+</kw>
+<msg timestamp="20170607 19:15:16.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:16.189" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:16.190" starttime="20170607 19:15:08.157"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:16.190" starttime="20170607 19:15:08.156"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:16.191" starttime="20170607 19:15:08.129"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>Mul(Isthm-Pyram)-2Fo</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:24.291" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:24.291" starttime="20170607 19:15:20.254"></status>
+</kw>
+<msg timestamp="20170607 19:15:24.291" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:24.291" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:24.291" starttime="20170607 19:15:16.239"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:24.291" starttime="20170607 19:15:16.238"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:24.291" starttime="20170607 19:15:16.216"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Tot-Pyram)-3Fo*</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:32.481" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:32.481" starttime="20170607 19:15:28.425"></status>
+</kw>
+<msg timestamp="20170607 19:15:32.481" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:32.481" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:32.481" starttime="20170607 19:15:24.338"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:32.481" starttime="20170607 19:15:24.338"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:32.481" starttime="20170607 19:15:24.322"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;5≤7</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Lob-Isthm-Pyram)-3Fo*</arg>
+<arg>C.较早</arg>
+<arg>乳头状微小癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:40.703" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:40.703" starttime="20170607 19:15:36.615"></status>
+</kw>
+<msg timestamp="20170607 19:15:40.703" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:40.703" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:40.703" starttime="20170607 19:15:32.528"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:40.703" starttime="20170607 19:15:32.528"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:40.703" starttime="20170607 19:15:32.513"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>≤3</arg>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;3≤5</arg>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;7≤10</arg>
+<arg>腺内播散</arg>
+<arg>Mul(Lob-Isthm-Pyram)-3Fo*</arg>
+<arg>D.早中</arg>
+<arg>乳头状微小癌(D类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:48.817" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:48.817" starttime="20170607 19:15:44.803"></status>
+</kw>
+<msg timestamp="20170607 19:15:48.818" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:48.821" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:48.822" starttime="20170607 19:15:40.749"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:48.824" starttime="20170607 19:15:40.749"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:48.825" starttime="20170607 19:15:40.718"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>Isthmus(L)</arg>
+<arg>1</arg>
+<arg>&gt;15≤20</arg>
+<arg>Sin(Isthm)-1Fo</arg>
+<arg>F.中后</arg>
+<arg>乳头状普通癌(B类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:15:57.149" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:57.150" starttime="20170607 19:15:53.134"></status>
+</kw>
+<msg timestamp="20170607 19:15:57.150" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:57.153" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:15:57.153" starttime="20170607 19:15:48.876"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:57.154" starttime="20170607 19:15:48.874"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:15:57.155" starttime="20170607 19:15:48.852"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>A-1b</arg>
+<arg>1</arg>
+<arg>&gt;25≤30</arg>
+<arg>Sin(Pyram)-1Fo</arg>
+<arg>G.后</arg>
+<arg>乳头状普通癌(C类)</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:16:05.309" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:16:05.310" starttime="20170607 19:16:01.245"></status>
+</kw>
+<msg timestamp="20170607 19:16:05.310" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:16:05.312" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:16:05.312" starttime="20170607 19:15:57.210"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:16:05.313" starttime="20170607 19:15:57.208"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:16:05.313" starttime="20170607 19:15:57.183"></status>
+</kw>
+<kw name="派生数据A" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>aa</arg>
+<arg>2</arg>
+<arg>&gt;25≤30</arg>
+<arg>Sin(Pyram)-2Fo</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="添加-原发灶" library="病理详情界面功能">
+<doc>参数：</doc>
+<arguments>
+<arg>${灶位置左}</arg>
+<arg>${灶数左}</arg>
+<arg>${灶均径左}</arg>
+<arg>${灶位置右}</arg>
+<arg>${灶数右}</arg>
+<arg>${灶均径右}</arg>
+<arg>${灶位置峡部}</arg>
+<arg>${灶数峡部}</arg>
+<arg>${灶均径峡部}</arg>
+<arg>${灶位置锥叶}</arg>
+<arg>${灶数锥叶}</arg>
+<arg>${灶均径锥叶}</arg>
+<arg>${是否腺内播散}</arg>
+</arguments>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtStovePositionL</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170607 19:16:13.552" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:16:13.553" starttime="20170607 19:16:09.364"></status>
+</kw>
+<msg timestamp="20170607 19:16:13.553" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:16:13.554" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<status status="FAIL" endtime="20170607 19:16:13.555" starttime="20170607 19:16:05.357"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:16:13.555" starttime="20170607 19:16:05.355"></status>
+</kw>
+<status status="FAIL" endtime="20170607 19:16:13.556" starttime="20170607 19:16:05.331"></status>
+</kw>
+<doc>#灶位置左 | #灶位置左 灶数左 | # 灶均经左 | 灶位置右 | # 灶数右 | # 灶均经右 | 灶位置峡部 | # 灶数峡部 | # 灶均经峡部 | # 灶位置锥叶 | #灶数锥叶 | #灶均经锥叶 | 预期结果_单多发生类型 | # 预期结果_病期程 | # 预期结果_临床习惯归类</doc>
+<status status="FAIL" endtime="20170607 19:16:13.557" critical="yes" starttime="20170607 19:13:21.653">Several failures occurred:
+
+1) ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+2) ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+3) ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+    [ Message content over the limit has been removed. ]
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+23) WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+24) WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+
+
+25) WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)</status>
+</test>
+<doc>test 单多中心发生类型，病期程估判</doc>
+<metadata>
+<item name="More Info">For more information about *Robot Framework* see http://robotframework.org</item>
+<item name="version">1.1.1</item>
+</metadata>
+<status status="FAIL" endtime="20170607 19:16:13.561" starttime="20170607 19:12:31.559"></status>
+</suite>
+<status status="FAIL" endtime="20170607 19:16:13.571" starttime="20170607 19:12:31.262"></status>
+</suite>
+<status status="FAIL" endtime="20170607 19:16:13.579" starttime="20170607 19:12:31.258"></status>
+</suite>
+<status status="FAIL" endtime="20170607 19:16:13.585" starttime="20170607 19:12:31.167"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="3" pass="2">Critical Tests</stat>
+<stat fail="3" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="3" id="s1" name="Ui Suites" pass="2">Ui Suites</stat>
+<stat fail="3" id="s1-s1" name="Syf1.1.1" pass="2">Ui Suites.Syf1.1.1</stat>
+<stat fail="3" id="s1-s1-s1" name="Pathology" pass="2">Ui Suites.Syf1.1.1.Pathology</stat>
+<stat fail="3" id="s1-s1-s1-s1" name="suite01driverA" pass="2">Ui Suites.Syf1.1.1.Pathology.suite01driverA</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170607 19:14:51.888" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:14:59.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:08.094" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:16.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:24.291" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:32.481" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:40.703" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:48.818" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:15:57.150" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:16:05.310" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+<msg timestamp="20170607 19:16:13.553" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86)
+</msg>
+</errors>
+</robot>

@@ -1,0 +1,6 @@
+#!e:\autoweb\venv\scripts\python.exe
+
+from pabot.pabot import main
+import sys
+
+main(sys.argv[1:])

@@ -1,0 +1,27 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+| Resource       | 登陆登出.txt |
+| Library        | Process |
+| Library        | OperatingSystem |
+
+| *** Keywords *** |
+| 登陆病理评估 |
+|    | Open Browser | http://192.168.10.164/syf1.1.1/login/Index | browser=chrome | #输入网址 |
+|    | Sleep | 3s |
+|    | maximize Browser window |
+|    | Input Text | id=txtUserName | 30048 | #输入用户名 |
+|    | Input Text | id=txtPassword | 5436 | #输入密码 |
+|    | Sleep | 1s |
+|    | Click Element | id=btnConfirm | #点击登陆 |
+|    | Sleep | 2s |
+|    | click element | id=link | #页面跳转到link页 |
+|    | wait until element is visible | id=chartBox | 10 |
+|    | ${bl} | run keyword and return status | element should be visible | id=chartBox |
+|    | log | ${bl} |
+|    | click element | id=tumorstudy | #切换到列表页 |
+|    | Execute Javascript | $(".divMenuSel > div:first").click() |
+|    | sleep | 3s |
+
+| 结束进程 |
+|    | operatingSystem.Run | taskkill /F /IM chromedriver.exe |
+|    | operatingSystem.Run | taskkill /F /IM iedriverserver.exe |

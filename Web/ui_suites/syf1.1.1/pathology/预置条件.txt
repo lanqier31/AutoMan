@@ -1,0 +1,12 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+| Resource       | 列表界面功能.txt |
+| Resource       | 病理详情界面功能.txt |
+| Resource       | ../登陆登出.txt |
+
+| *** Keywords *** |
+| 派生测试A预置条件 |
+|    | 登陆病理评估 |
+|    | 删除某个测试数据 | 505076 |
+|    | Add | #进入病理详情界面 |
+|    | 添加-病人信息 |

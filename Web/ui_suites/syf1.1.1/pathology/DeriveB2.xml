@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161103 11:28:27.176" generator="Robot 3.0 (Python 2.7.9 on win32)">
+<suite source="E:\病理评估\B2转移路径数.txt" id="s1" name="B2转移路径数">
+<test id="s1-t1" name="预置条件">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://192.168.10.164/syf1.1.1/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20161103 11:28:27.302" level="INFO">Opening browser 'chrome' to base url 'http://192.168.10.164/syf1.1.1/'</msg>
+<status status="PASS" endtime="20161103 11:28:30.701" starttime="20161103 11:28:27.302"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:33.702" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:28:33.702" starttime="20161103 11:28:30.701"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20161103 11:28:34.847" starttime="20161103 11:28:33.702"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtUserName</arg>
+<arg>30048</arg>
+</arguments>
+<msg timestamp="20161103 11:28:34.848" level="INFO">Typing text '30048' into text field 'id=txtUserName'</msg>
+<status status="PASS" endtime="20161103 11:28:34.910" starttime="20161103 11:28:34.847"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtPassword</arg>
+<arg>5436</arg>
+</arguments>
+<msg timestamp="20161103 11:28:34.911" level="INFO">Typing text '5436' into text field 'id=txtPassword'</msg>
+<status status="PASS" endtime="20161103 11:28:34.965" starttime="20161103 11:28:34.911"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:35.965" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:28:35.965" starttime="20161103 11:28:34.965"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=btnConfirm</arg>
+</arguments>
+<msg timestamp="20161103 11:28:35.965" level="INFO">Clicking element 'id=btnConfirm'.</msg>
+<status status="PASS" endtime="20161103 11:28:36.010" starttime="20161103 11:28:35.965"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:38.010" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161103 11:28:38.010" starttime="20161103 11:28:36.010"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://192.168.10.164/syf1.1.1/TumorStudy2/Index</arg>
+</arguments>
+<msg timestamp="20161103 11:28:38.010" level="INFO">Opening url 'http://192.168.10.164/syf1.1.1/TumorStudy2/Index'</msg>
+<status status="PASS" endtime="20161103 11:28:39.711" starttime="20161103 11:28:38.010"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:44.711" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20161103 11:28:44.711" starttime="20161103 11:28:39.711"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtQuery</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20161103 11:28:44.712" level="INFO">Typing text '123456' into text field 'id=txtQuery'</msg>
+<status status="PASS" endtime="20161103 11:28:44.847" starttime="20161103 11:28:44.712"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:54.848" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20161103 11:28:54.848" starttime="20161103 11:28:44.847"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=btnSearch</arg>
+</arguments>
+<msg timestamp="20161103 11:28:54.850" level="INFO">Clicking element 'id=btnSearch'.</msg>
+<status status="PASS" endtime="20161103 11:28:54.954" starttime="20161103 11:28:54.849"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:57.955" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:28:57.955" starttime="20161103 11:28:54.954"></status>
+</kw>
+<kw name="Select Checkbox" library="Selenium2Library">
+<doc>Selects checkbox identified by `locator`.</doc>
+<arguments>
+<arg>name=checkAll</arg>
+</arguments>
+<msg timestamp="20161103 11:28:57.956" level="INFO">Selecting checkbox 'name=checkAll'.</msg>
+<status status="PASS" endtime="20161103 11:28:58.033" starttime="20161103 11:28:57.956"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>btnDelete</arg>
+</arguments>
+<msg timestamp="20161103 11:28:58.033" level="INFO">Clicking element 'btnDelete'.</msg>
+<status status="PASS" endtime="20161103 11:28:58.090" starttime="20161103 11:28:58.033"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:28:59.091" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:28:59.091" starttime="20161103 11:28:58.090"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:28:59.101" starttime="20161103 11:28:59.092"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&amp;editmark=true</arg>
+</arguments>
+<msg timestamp="20161103 11:28:59.102" level="INFO">Opening url 'http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&amp;editmark=true'</msg>
+<status status="PASS" endtime="20161103 11:29:02.817" starttime="20161103 11:28:59.101"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:05.817" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:05.817" starttime="20161103 11:29:02.817"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtHospitalNumber</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20161103 11:29:05.819" level="INFO">Typing text '123456' into text field 'id=txtHospitalNumber'</msg>
+<status status="PASS" endtime="20161103 11:29:05.962" starttime="20161103 11:29:05.818"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:07.963" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:07.963" starttime="20161103 11:29:05.962"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtBUltrasonicCheckTime").value="2016-09-09"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:07.965" level="INFO">Executing JavaScript:
+window.document.getElementById("txtBUltrasonicCheckTime").value="2016-09-09"</msg>
+<status status="PASS" endtime="20161103 11:29:07.997" starttime="20161103 11:29:07.964"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:08.998" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:08.998" starttime="20161103 11:29:07.997"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtOperationDay").value="2016-10-24"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:08.999" level="INFO">Executing JavaScript:
+window.document.getElementById("txtOperationDay").value="2016-10-24"</msg>
+<status status="PASS" endtime="20161103 11:29:09.031" starttime="20161103 11:29:08.999"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtOperationSchemeCN</arg>
+</arguments>
+<msg timestamp="20161103 11:29:09.033" level="INFO">Clicking element 'id=txtOperationSchemeCN'.</msg>
+<status status="PASS" endtime="20161103 11:29:09.129" starttime="20161103 11:29:09.032"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtOperationSchemeCN</arg>
+<arg>全叶,双中央区,双侧中颈区,双外侧颈区,双颌下-咽旁-颅底</arg>
+</arguments>
+<msg timestamp="20161103 11:29:09.130" level="INFO">Typing text '全叶,双中央区,双侧中颈区,双外侧颈区,双颌下-咽旁-颅底' into text field 'id=txtOperationSchemeCN'</msg>
+<status status="PASS" endtime="20161103 11:29:09.197" starttime="20161103 11:29:09.129"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:10.197" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:10.197" starttime="20161103 11:29:09.197"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=txtThisDoSurgery</arg>
+<arg>左叶切除</arg>
+</arguments>
+<msg timestamp="20161103 11:29:10.198" level="INFO">Typing text '左叶切除' into text field 'id=txtThisDoSurgery'</msg>
+<status status="PASS" endtime="20161103 11:29:10.330" starttime="20161103 11:29:10.198"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:13.330" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:13.330" starttime="20161103 11:29:10.330"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=saveMaster</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:13.397" starttime="20161103 11:29:13.331"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=saveMaster</arg>
+</arguments>
+<msg timestamp="20161103 11:29:13.397" level="INFO">Clicking element 'id=saveMaster'.</msg>
+<status status="PASS" endtime="20161103 11:29:13.466" starttime="20161103 11:29:13.397"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.466" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:16.466" starttime="20161103 11:29:13.466"></status>
+</kw>
+<status status="PASS" endtime="20161103 11:29:16.466" critical="yes" starttime="20161103 11:28:27.301"></status>
+</test>
+<test id="s1-t2" name="转移路径数派生-Case01">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-2a</arg>
+<arg>1</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>0pw(0Fo)</arg>
+<arg>/</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.470" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-2a"</msg>
+<status status="PASS" endtime="20161103 11:29:16.480" starttime="20161103 11:29:16.470"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.481" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="1"</msg>
+<status status="PASS" endtime="20161103 11:29:16.496" starttime="20161103 11:29:16.481"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.497" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.512" starttime="20161103 11:29:16.497"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.512" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.520" starttime="20161103 11:29:16.512"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.521" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.532" starttime="20161103 11:29:16.520"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.533" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.544" starttime="20161103 11:29:16.532"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.545" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.548" starttime="20161103 11:29:16.544"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.548" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:16.552" starttime="20161103 11:29:16.548"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:16.553" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:16.619" starttime="20161103 11:29:16.552"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:17.621" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:17.621" starttime="20161103 11:29:16.620"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:17.689" starttime="20161103 11:29:17.622"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:17.689" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:17.750" starttime="20161103 11:29:17.689"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:17.750" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161103 11:29:18.024" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161103 11:29:18.024" starttime="20161103 11:29:17.786"></status>
+</kw>
+<msg timestamp="20161103 11:29:18.037" level="FAIL">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=54.0.2840.71)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20161103 11:29:18.037" starttime="20161103 11:29:17.750"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:18.037" starttime="20161103 11:29:16.469"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:18.037" critical="yes" starttime="20161103 11:29:16.467">ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=54.0.2840.71)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64)
+</status>
+</test>
+<test id="s1-t3" name="转移路径数派生-Case02">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>/</arg>
+<arg>/</arg>
+<arg>√</arg>
+<arg>2</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>0pw(0Fo)</arg>
+<arg>(2 Fo)</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.040" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.044" starttime="20161103 11:29:18.040"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.044" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.046" starttime="20161103 11:29:18.044"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.047" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="√"</msg>
+<status status="PASS" endtime="20161103 11:29:18.049" starttime="20161103 11:29:18.046"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.049" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="2"</msg>
+<status status="PASS" endtime="20161103 11:29:18.052" starttime="20161103 11:29:18.049"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.053" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.060" starttime="20161103 11:29:18.052"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.060" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.062" starttime="20161103 11:29:18.060"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.062" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.065" starttime="20161103 11:29:18.062"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.065" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:18.067" starttime="20161103 11:29:18.065"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:18.067" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:18.104" starttime="20161103 11:29:18.067"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:19.104" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:19.104" starttime="20161103 11:29:18.104"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:19.120" starttime="20161103 11:29:19.104"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:19.120" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:19.158" starttime="20161103 11:29:19.120"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:19.158" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:19.205" starttime="20161103 11:29:19.158"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:19.215" starttime="20161103 11:29:19.205"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.215" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:22.215" starttime="20161103 11:29:19.215"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:22.251" starttime="20161103 11:29:22.215"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:22.269" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:22.269" starttime="20161103 11:29:22.251"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:22.312" starttime="20161103 11:29:22.269"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:22.349" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:22.349" starttime="20161103 11:29:22.312"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.350" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:22.350" level="FAIL">None != 0pw(0Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:22.350" starttime="20161103 11:29:22.349"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:22.350" starttime="20161103 11:29:18.039"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:22.350" critical="yes" starttime="20161103 11:29:18.038">None != 0pw(0Fo)</status>
+</test>
+<test id="s1-t4" name="转移路径数派生-Case03">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-2a</arg>
+<arg>3</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>√</arg>
+<arg>2</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(5 Fo)</arg>
+<arg>/</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.352" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-2a"</msg>
+<status status="PASS" endtime="20161103 11:29:22.364" starttime="20161103 11:29:22.352"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.365" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="3"</msg>
+<status status="PASS" endtime="20161103 11:29:22.368" starttime="20161103 11:29:22.364"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.369" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:22.379" starttime="20161103 11:29:22.368"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.380" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:22.383" starttime="20161103 11:29:22.380"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.383" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="√"</msg>
+<status status="PASS" endtime="20161103 11:29:22.391" starttime="20161103 11:29:22.383"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.392" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="2"</msg>
+<status status="PASS" endtime="20161103 11:29:22.395" starttime="20161103 11:29:22.392"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.396" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:22.397" starttime="20161103 11:29:22.395"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.398" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:22.400" starttime="20161103 11:29:22.398"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:22.400" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:22.439" starttime="20161103 11:29:22.400"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:23.439" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:23.439" starttime="20161103 11:29:22.439"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:23.514" starttime="20161103 11:29:23.440"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:23.515" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:23.577" starttime="20161103 11:29:23.515"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:23.577" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:23.599" starttime="20161103 11:29:23.577"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:23.605" starttime="20161103 11:29:23.599"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.606" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:26.606" starttime="20161103 11:29:23.605"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:26.665" starttime="20161103 11:29:26.606"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:26.682" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:26.682" starttime="20161103 11:29:26.665"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:26.698" starttime="20161103 11:29:26.682"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:26.713" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:26.713" starttime="20161103 11:29:26.698"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.714" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:26.714" level="FAIL">None != (5 Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:26.714" starttime="20161103 11:29:26.714"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:26.714" starttime="20161103 11:29:22.351"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:26.715" critical="yes" starttime="20161103 11:29:22.350">None != (5 Fo)</status>
+</test>
+<test id="s1-t5" name="转移路径数派生-Case04">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-3a</arg>
+<arg>0</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(0 Fo)</arg>
+<arg>/</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.717" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-3a"</msg>
+<status status="PASS" endtime="20161103 11:29:26.725" starttime="20161103 11:29:26.716"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.725" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="0"</msg>
+<status status="PASS" endtime="20161103 11:29:26.729" starttime="20161103 11:29:26.725"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.729" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.733" starttime="20161103 11:29:26.729"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.734" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.750" starttime="20161103 11:29:26.734"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.750" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.760" starttime="20161103 11:29:26.750"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.760" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.763" starttime="20161103 11:29:26.760"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.763" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.765" starttime="20161103 11:29:26.763"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.766" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:26.768" starttime="20161103 11:29:26.766"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:26.768" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:26.856" starttime="20161103 11:29:26.768"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:27.857" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:27.857" starttime="20161103 11:29:26.856"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:27.935" starttime="20161103 11:29:27.859"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:27.936" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:28.009" starttime="20161103 11:29:27.935"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:28.009" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:28.027" starttime="20161103 11:29:28.009"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:28.039" starttime="20161103 11:29:28.027"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.039" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:31.039" starttime="20161103 11:29:28.039"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:31.122" starttime="20161103 11:29:31.040"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:31.145" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:31.145" starttime="20161103 11:29:31.122"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:31.161" starttime="20161103 11:29:31.145"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:31.175" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:31.175" starttime="20161103 11:29:31.161"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.175" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:31.176" level="FAIL">None != (0 Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:31.176" starttime="20161103 11:29:31.175"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:31.176" starttime="20161103 11:29:26.716"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:31.176" critical="yes" starttime="20161103 11:29:26.715">None != (0 Fo)</status>
+</test>
+<test id="s1-t6" name="转移路径数派生-Case05">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-4a</arg>
+<arg>&gt;3</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(&gt;3Fo)</arg>
+<arg>/</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.178" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-4a"</msg>
+<status status="PASS" endtime="20161103 11:29:31.182" starttime="20161103 11:29:31.178"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.182" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="&gt;3"</msg>
+<status status="PASS" endtime="20161103 11:29:31.193" starttime="20161103 11:29:31.182"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.193" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.196" starttime="20161103 11:29:31.193"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.196" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.199" starttime="20161103 11:29:31.196"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.199" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.202" starttime="20161103 11:29:31.199"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.202" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.215" starttime="20161103 11:29:31.202"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.216" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.224" starttime="20161103 11:29:31.215"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.225" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:31.227" starttime="20161103 11:29:31.224"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:31.228" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:31.298" starttime="20161103 11:29:31.228"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:32.299" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:32.299" starttime="20161103 11:29:31.298"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:32.362" starttime="20161103 11:29:32.300"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:32.363" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:32.445" starttime="20161103 11:29:32.363"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:32.445" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:32.482" starttime="20161103 11:29:32.445"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:32.490" starttime="20161103 11:29:32.482"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.490" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:35.490" starttime="20161103 11:29:32.490"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:35.520" starttime="20161103 11:29:35.490"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:35.564" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:35.564" starttime="20161103 11:29:35.520"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:35.583" starttime="20161103 11:29:35.564"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:35.597" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:35.598" starttime="20161103 11:29:35.583"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.598" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:35.598" level="FAIL">None != (&gt;3Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:35.598" starttime="20161103 11:29:35.598"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:35.599" starttime="20161103 11:29:31.177"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:35.599" critical="yes" starttime="20161103 11:29:31.176">None != (&gt;3Fo)</status>
+</test>
+<test id="s1-t7" name="转移路径数派生-Case06">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-5a</arg>
+<arg>unD(A)</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(unD(A) Fo)</arg>
+<arg>/</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.601" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-5a"</msg>
+<status status="PASS" endtime="20161103 11:29:35.611" starttime="20161103 11:29:35.601"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.612" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="unD(A)"</msg>
+<status status="PASS" endtime="20161103 11:29:35.618" starttime="20161103 11:29:35.611"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.618" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.634" starttime="20161103 11:29:35.618"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.635" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.643" starttime="20161103 11:29:35.634"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.644" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.646" starttime="20161103 11:29:35.644"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.647" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.649" starttime="20161103 11:29:35.646"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.649" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.651" starttime="20161103 11:29:35.649"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.651" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:35.659" starttime="20161103 11:29:35.651"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:35.659" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:35.720" starttime="20161103 11:29:35.659"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:36.721" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:36.721" starttime="20161103 11:29:35.720"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:36.785" starttime="20161103 11:29:36.723"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:36.786" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:36.829" starttime="20161103 11:29:36.785"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:36.830" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:36.877" starttime="20161103 11:29:36.830"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:36.890" starttime="20161103 11:29:36.877"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.891" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:39.891" starttime="20161103 11:29:36.891"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:39.926" starttime="20161103 11:29:39.891"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:39.944" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:39.944" starttime="20161103 11:29:39.926"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:39.960" starttime="20161103 11:29:39.944"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:39.968" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:39.968" starttime="20161103 11:29:39.960"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.969" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:39.969" level="FAIL">None != (unD(A) Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:39.969" starttime="20161103 11:29:39.968"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:39.969" starttime="20161103 11:29:35.600"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:39.970" critical="yes" starttime="20161103 11:29:35.599">None != (unD(A) Fo)</status>
+</test>
+<test id="s1-t8" name="转移路径数派生-Case07">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>/</arg>
+<arg>/</arg>
+<arg>√</arg>
+<arg>unD(B)</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(unD(B) Fo)</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.972" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:39.977" starttime="20161103 11:29:39.971"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.978" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:39.981" starttime="20161103 11:29:39.977"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.981" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="√"</msg>
+<status status="PASS" endtime="20161103 11:29:39.984" starttime="20161103 11:29:39.981"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.984" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="unD(B)"</msg>
+<status status="PASS" endtime="20161103 11:29:39.993" starttime="20161103 11:29:39.984"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.993" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:39.996" starttime="20161103 11:29:39.993"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.996" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:39.998" starttime="20161103 11:29:39.996"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:39.998" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:40.000" starttime="20161103 11:29:39.998"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:40.001" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:40.010" starttime="20161103 11:29:40.001"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:40.011" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:40.074" starttime="20161103 11:29:40.010"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:41.075" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:41.075" starttime="20161103 11:29:40.074"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:41.126" starttime="20161103 11:29:41.076"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:41.127" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:41.190" starttime="20161103 11:29:41.126"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:41.190" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:41.216" starttime="20161103 11:29:41.190"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:41.224" starttime="20161103 11:29:41.216"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.225" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:44.225" starttime="20161103 11:29:41.225"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:44.250" starttime="20161103 11:29:44.225"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:44.282" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:44.282" starttime="20161103 11:29:44.251"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:44.300" starttime="20161103 11:29:44.282"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:44.313" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:44.313" starttime="20161103 11:29:44.300"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.313" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'str'&gt;</msg>
+<msg timestamp="20161103 11:29:44.314" level="FAIL">None != </msg>
+<status status="FAIL" endtime="20161103 11:29:44.314" starttime="20161103 11:29:44.313"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:44.314" starttime="20161103 11:29:39.971"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:44.314" critical="yes" starttime="20161103 11:29:39.970">None != </status>
+</test>
+<test id="s1-t9" name="转移路径数派生-Case08">
+<kw name="B2-转移路径数" library="病理详情界面功能">
+<arguments>
+<arg>A-2a</arg>
+<arg>unD(X)</arg>
+<arg>√</arg>
+<arg>2</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>/</arg>
+<arg>(unD(X) Fo)</arg>
+<arg>(2Fo)</arg>
+</arguments>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionL").value="${灶位置左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.316" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionL").value="A-2a"</msg>
+<status status="PASS" endtime="20161103 11:29:44.326" starttime="20161103 11:29:44.315"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumL").value="${灶数左}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.326" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumL").value="unD(X)"</msg>
+<status status="PASS" endtime="20161103 11:29:44.329" starttime="20161103 11:29:44.326"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionR").value="${灶位置右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.330" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionR").value="√"</msg>
+<status status="PASS" endtime="20161103 11:29:44.332" starttime="20161103 11:29:44.330"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumR").value="${灶数右}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.332" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumR").value="2"</msg>
+<status status="PASS" endtime="20161103 11:29:44.342" starttime="20161103 11:29:44.332"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionX").value="${灶位置峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.343" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:44.346" starttime="20161103 11:29:44.342"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumX").value="${灶数峡部}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.346" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumX").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:44.348" starttime="20161103 11:29:44.346"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStovePositionZ").value="${灶位置锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.348" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStovePositionZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:44.350" starttime="20161103 11:29:44.348"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById("txtStoveNumZ").value="${灶数锥叶}"</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.351" level="INFO">Executing JavaScript:
+window.document.getElementById("txtStoveNumZ").value="/"</msg>
+<status status="PASS" endtime="20161103 11:29:44.365" starttime="20161103 11:29:44.350"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveOriginal</arg>
+</arguments>
+<msg timestamp="20161103 11:29:44.365" level="INFO">Clicking element 'id=SaveOriginal'.</msg>
+<status status="PASS" endtime="20161103 11:29:44.407" starttime="20161103 11:29:44.365"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:45.407" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20161103 11:29:45.407" starttime="20161103 11:29:44.407"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:45.489" starttime="20161103 11:29:45.408"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscope</arg>
+</arguments>
+<msg timestamp="20161103 11:29:45.490" level="INFO">Clicking element 'id=SaveMicroscope'.</msg>
+<status status="PASS" endtime="20161103 11:29:45.538" starttime="20161103 11:29:45.489"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=SaveMicroscopeAndDerived</arg>
+</arguments>
+<msg timestamp="20161103 11:29:45.538" level="INFO">Clicking element 'id=SaveMicroscopeAndDerived'.</msg>
+<status status="PASS" endtime="20161103 11:29:45.562" starttime="20161103 11:29:45.538"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161103 11:29:45.571" starttime="20161103 11:29:45.562"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20161103 11:29:48.572" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161103 11:29:48.572" starttime="20161103 11:29:45.571"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:48.629" starttime="20161103 11:29:48.572"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumL@dataval</arg>
+</arguments>
+<assign>
+<var>${实际左侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:48.648" level="INFO">${实际左侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:48.648" starttime="20161103 11:29:48.629"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR</arg>
+</arguments>
+<status status="PASS" endtime="20161103 11:29:48.666" starttime="20161103 11:29:48.648"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>id=txtTransferDiameterNumR@dataval</arg>
+</arguments>
+<assign>
+<var>${实际右侧转移路径数}</var>
+</assign>
+<msg timestamp="20161103 11:29:48.681" level="INFO">${实际右侧转移路径数} = None</msg>
+<status status="PASS" endtime="20161103 11:29:48.681" starttime="20161103 11:29:48.666"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${实际左侧转移路径数}</arg>
+<arg>${预期左侧转移路径数}</arg>
+</arguments>
+<msg timestamp="20161103 11:29:48.681" level="INFO">Argument types are:
+&lt;type 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20161103 11:29:48.681" level="FAIL">None != (unD(X) Fo)</msg>
+<status status="FAIL" endtime="20161103 11:29:48.681" starttime="20161103 11:29:48.681"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:48.682" starttime="20161103 11:29:44.315"></status>
+</kw>
+<status status="FAIL" endtime="20161103 11:29:48.682" critical="yes" starttime="20161103 11:29:44.314">None != (unD(X) Fo)</status>
+</test>
+<test id="s1-t10" name="退出测试集">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20161103 11:29:49.762" starttime="20161103 11:29:48.683"></status>
+</kw>
+<status status="PASS" endtime="20161103 11:29:49.763" critical="yes" starttime="20161103 11:29:48.682"></status>
+</test>
+<status status="FAIL" endtime="20161103 11:29:49.767" starttime="20161103 11:28:27.178"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="8" pass="2">Critical Tests</stat>
+<stat fail="8" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="8" id="s1" name="B2转移路径数" pass="2">B2转移路径数</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

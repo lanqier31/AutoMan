@@ -1,0 +1,24 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+| Resource       | ../登陆登出.txt |
+
+| *** Test Cases *** |
+| 响应页面 |
+|    | open browser | http://192.168.10.164/syf1.1.1/login/Index | browser=chrome |
+|    | sleep | 1 |
+|    | ${页面加载总时长} | set variable | 0 |
+|    | ${requestTime} | set variable | 0 |
+|    | ${TTFB} | set variable | 0 |
+|    | :FOR | ${i} | IN Range | 6 |
+|    |    | reload page |
+|    |    | sleep | 2 |
+|    |    | ${userTime} | execute javascript | return (window.performance.timing.loadEventEnd-window.performance.timing.navigationStart) |
+|    |    | ${页面加载总时长} | evaluate | ${页面加载总时长}+${userTime} |
+|    |    | ${rT} | execute javascript | return window.performance.timing.responseEnd-window.performance.timing.requestStart |
+|    |    | ${requestTime} | evaluate | ${requestTime}+${rT} |
+|    |    | ${tt} | execute javascript | return (window.performance.timing.responseStart-window.performance.timing.connectEnd) |
+|    |    | ${TTFB} | evaluate | ${TTFB}+${tt} |
+|    | ${页面加载总时长_Avg} | evaluate | ${页面加载总时长}/6 |
+|    | ${requestTime_Avg} | evaluate | ${requestTime}/6 |
+|    | ${TTFB_Avg} | evaluate | ${TTFB}/6 |
+|    | [Teardown] | 结束进程 |

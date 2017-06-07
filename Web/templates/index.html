@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+{% block title %}平台主页{% endblock %}
+{% block content %}
+    <div class="row">
+    	
+    	<select id="project_version" class="form-control" onchange="optionChange()">
+			{% for option in project_version.Clinical %}
+    		<option value={{option}}>{{option}}</option>
+			{% endfor %}
+    	</select>
+    	<button id="redo" class="form-control" onClick="ajaxReRun()">重新执行</button>
+    </div>
+    <div id="webloadlist">
+    	<table id="pages_summary" class="table table-hover">
+    	</table>
+    	<script type="text/javascript">
+		$(document).ready(function () { initTable(); })
+		gdata=JSON.parse('{{page_load_result|tojson}}');
+
+		function initTable(){
+			
+			$('#pages_summary').bootstrapTable({
+				method:'post',
+				toolbar:'#toolbar',
+				data:gdata,
+				dataType:'json',
+				striped:false,  //是否行间隔色显示
+				cache:false,//是否试用缓存，默认为true
+				pagination:true, //s是否分页
+				sortable:true,  //是否启用排序
+				sortOrder:"page_name asc", // 排序方式
+				pageNumber:1, //初始化加载第一页，默认第一页
+				pageSize:10 , //每页的记录行数
+				// pageList:[6,20,50] ,  //可供选择的每页行数
+				// url:'/webloadlist',
+				queryParamsType:'', //默认为limit， 在默认情况下，传给服务器的参数为；offset，limit， 设置为''则传给服务器的参数为pageSize，pageNumber
+				sidePagination:"client",// 分页方式，client为客户端分页，server为服务端分页
+				strictSearch:true,
+				clickToSelect:true,  //是否启动点击选中行
+				
+				search:false,
+				// height:$(window).height() - 500,
+				columns:[
+					
+							{	
+								title:"",
+								field:'state',
+								checkbox:true,
+								align:'center',
+								valign:'middle'
+							},{
+								title:'Name',
+								field:'page_name',
+								align:'left',
+								valign:'middle',
+								sortable:true,
+								class:'text-overflow',
+								width:120,
+								formatter: 'actionFormatter',
+								events:'onclick'
+							
+							},{
+								title:'Urls',
+								field:'url',
+								width:'300',
+								align:'left',
+								valign:'middle',
+								class:'text-overflow',
+								switchable:true
+								
+								
+							},{
+								title:'加载总耗时(ms)',
+								field:'loadall',
+								align:'center',
+								valign:'middle',
+								sortable:true,
+								switchable:true
+
+							},{
+								title:'DNS耗时',
+								field:'dns',
+								align:'center',
+								valign:'middle',
+								sortable:true
+
+							},{
+								title:'白屏时长',
+								field:'whitewait',
+								align:'center',
+								valign:'middle',
+								sortable:true
+							},{
+								title:'Request耗时',
+								field:'request',
+								align:'center',
+								valign:'middle',
+								sortable:true
+							},{
+								title:'domReady耗时',
+								field:'dom_ready',
+								align:'center',
+								valign:'middle',
+								switchable:false,
+								sortable:true
+
+							},{
+								title:'loadEvent耗时',
+								field:'load_event',
+								align:'center',
+								valign:'middle',
+								sortable:true
+
+							},{
+								title:'是否重定向',
+								field:'ifredirect',
+								
+								align:'center',
+								valign:'middle',
+								sortable:true
+								
+							}
+						
+						],
+				showColumns:true,   // 是否显示列
+				minimumCountColumns:2,
+				showRefresh:true,  // 是否刷新
+				showToggle:true,
+				formatLoadingMessage: function () {
+					return ;
+				}
+			});
+		};
+		function actionFormatter(value, row, index) {
+				
+			project_version=$("#project_version").find("option:selected").text();
+			page_name=value;
+			var href = 'detail_' + project_version + '_' + page_name;
+			
+			return "<a href='" + href + "' >" + value + "</a>";
+		};
+    	</script>
+    </div>
+    
+	
+    <h4>所有页面加载数据统计堆叠图</h4>
+	<div id="page_summary_chart">
+    	<table id="data_chart" width="100%">
+    	<tr>
+     		<td align="center">
+     		<div id="chart" class="text-align：center" style="width: 1250px;height:800px;">
+			 	<script type="text/javascript">
+			        // 基于准备好的dom，初始化echarts实例
+			        var myChart = echarts.init(document.getElementById('chart'));
+			        
+			        // 指定图表的配置项和数据
+			        option = {
+				    tooltip : {
+				        trigger: 'axis',
+				        axisPointer : {type : 'shadow'}
+				    },
+				    legend: {
+				        data:['dns(ms)', 'request(ms)', 'dom_parser(ms)', 'dom_ready(ms)', 'load_event(ms)', 'whitewait(ms)', 'loadall(ms)'],
+				    },
+				    toolbox: {
+				        show : false,
+				        feature : {
+				            mark : {show: true},
+				            dataView : {show: true, readOnly: false},
+				            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+				            restore : {show: true},
+				            saveAsImage : {show: true}
+				        }
+				    },
+				    calculable : true,
+				    xAxis : [
+				        {
+				            
+				            type : 'category',
+				            data :  {{page_chart_data.page_name|safe}}
+				        }
+				    ],
+				    yAxis : [
+				        {
+				            type : 'value'
+				        }
+				    ],
+				    series : [
+				        {
+				            name:'dns(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.dns|safe}}
+				        },
+
+				        {
+				            name:'request(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+
+				            data: {{page_chart_data.request|safe}}
+				        },
+
+				        {
+				            name:'dom_parser(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.dom_parser|safe}}
+				        },
+
+				        {
+				            name:'dom_ready(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.dom_ready|safe}}
+				        },
+
+				        {
+				            name:'request(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.request|safe}}
+				        },
+
+				      {
+				            name:'load_event(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.load_event|safe}}
+				        },
+				        {
+				            name:'whitewait(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.whitewait|safe}}
+				        },
+				        {
+				            name:'loadall(ms)',
+				            type:'bar',
+				            stack: 'Time',
+				            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+				            data: {{page_chart_data.loadall|safe}}
+				        }
+				    ]
+					};
+			        // 使用刚指定的配置项和数据显示图表。
+			        myChart.setOption(option);
+			    </script>
+			</div>
+			</td>
+		</tr>
+    	</table>
+	</div>
+{% block scripts %}
+	<script type="text/javascript">
+		
+		//刷新数据
+		function optionChange(){
+  		  	var version_text = $('#project_version').find("option:selected").text();
+			$.ajax({
+			    //提交数据的类型 POST GET
+			    type:"POST",
+			    //提交的网址
+			    url:"/index",
+			    async:false,
+			    //提交的数据
+			    data:({"selected_version": version_text}),
+			    //返回数据的格式 "xml", "html", "script", "json", "jsonp", "text"
+			    datatype: "json",
+				//ajax请求成功后的事件
+			    success:function(data){    
+				$('#webloadlist').html($(data).find('#webloadlist').html());	      		
+			       	$('#data_chart').html($(data).find('#data_chart').html());
+			    },
+			    //调用出错执行的函数
+			    error: function(XMLResponse){
+			        //请求出错处理
+				    alert("不要搞事情~ 请检查服务是否开启");
+			    },
+  			});
+		};
+	</script>
+{%- endblock scripts %}
+
+{% endblock %}
+

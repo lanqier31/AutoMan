@@ -1,0 +1,31 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+
+| *** Keywords *** |
+| search |
+|    | [Arguments] | ${keyword} |
+|    | input text | id=txtQuery | ${keyword} |
+|    | sleep | 5 |
+|    | click element | id=btnSearch |
+|    | sleep | 5 |
+
+| Delete_all |
+|    | select checkbox | xpath=//input[@name="checkAll"] |
+|    | click element | id=btnDelete |
+|    | sleep | 1 |
+|    | Dismiss alert |
+|    | sleep | 2 |
+
+| Add |
+|    | #Wait Until Element Is Enabled | xpath=//div[@id="divContainer"]/div[1]/div[3]/div/a[1] | 10s | error=等待病理评估添加超时 |
+|    | execute javascript | window.location.href = '/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true'; |
+|    | #execute javascript | goPage('/syf1.1.1/TumorStudy2/Edit?type=add&editmark=true'); |
+|    | #Click Link | //a[contains(.,'添加')] |
+|    | Sleep | 3s |
+
+| 删除某个测试数据 |
+|    | [Arguments] | ${patId} |
+|    | comment | #选择一个病历号，并将该病历号下的所有病理信息都删除 |
+|    | Wait Until Element Is Enabled | id=txtAll | 10s | error=等待登陆后页面加载完成超时 |
+|    | search | ${patId} |
+|    | deleteALL |

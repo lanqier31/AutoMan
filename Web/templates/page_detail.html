@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+{% block title %}接口自动化{% endblock %}
+{% block content %}
+<h3>一、{{page_name}}页资源加载统计</h3>
+<div class="row">
+<table id="resource_summary" class=" table table-hover" cellspacing="0" width="100%">
+	<!-- <thead>
+    	<tr role="row">
+    		<th>资源类型</th>
+    		<th>资源名称</th>
+    		<th>资源大小(字节Byte)</th>
+    		<th>加载时间(毫秒ms)</th>
+    	</tr>
+	</thead>
+	<tbody>
+	{% for resource in resource_summary %}
+	<tr>
+		<td>{{resource.resource_type}}</td>
+		<td>{{resource.resource_name}}</td>
+		<td>{{resource.resource_size}}</td>
+		<td>{{resource.resource_duration}}</td>
+	</tr>
+	{% endfor %}
+	</tbody> -->
+</table>
+</div>
+<h3>二、 历史版本比较</h3>
+<div class="row">
+	<div class="col-md-6">
+		<div id="main" style="width: 1250px;height:400px;"></div>
+		<script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+			var zrColor = zrender.tool.color;
+            var colorList = [
+                '#ff7f50','#87cefa','#da70d6','#32cd32','#6495ed',
+                '#ff69b4','#ba55d3','#cd5c5c','#ffa500','#40e0d0'];
+            var itemStyle = {
+                normal: {
+                    color: function(params) {
+                    if (params.dataIndex < 0) {
+                    // for legend
+                    return zrColor.lift(
+                    colorList[colorList.length - 1], params.seriesIndex * 0.1);
+                    }
+                    else {
+                    // for bar
+                    return zrColor.lift(
+                     colorList[params.dataIndex], params.seriesIndex * 0.1);
+                    }
+                    }
+                }
+            };
+
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                text: '页面历史版本加载时间构成（ms）'
+                },
+                tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255,255,255,0.7)',
+                axisPointer: {
+                type: 'shadow'
+                },
+                formatter: function(params) {
+                // for text color
+                var color = colorList[params[0].dataIndex];
+                var res = '<div style="color:' + color + '">';
+                res += '<strong>' + params[0].name + '耗时（毫秒）</strong>'
+                for (var i = 0, l = params.length; i < l; i++) {
+                    res += '<br/>' + params[i].seriesName + ' : ' + params[i].value }
+                res += '</div>';
+                return res;
+                }
+                },
+                legend: {
+                x: 'right',
+                data: {{ version_list|safe }}
+                },
+                toolbox: {
+                    show: false,
+                    orient: 'vertical',
+                    y: 'center',
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+                },
+                calculable: true,
+                    grid: {
+                        y: 80,
+                        y2: 40,
+                        x2: 40
+                    },
+                    xAxis: [
+                    {
+                        type: 'category',
+                        data: ['DNS', 'Request', 'DomParser', 'DomReady', 'LoadEvent', 'WhiteWait', 'LoadAll']
+                    }
+                    ],
+                    yAxis: [
+                    {
+                        type: 'value'
+                    }
+                    ],
+                    series: [
+                    	{% for data in history_info %}
+                        {
+                            name: '{{data.version}}',
+                            type: 'bar',
+                            data: [{{data.dns}}, {{data.request}}, {{ data.dom_parser }}, {{ data.dom_ready }}, {{ data.load_event }}, {{ data.whitewait }}, {{ data.loadall }}]
+                        },
+                        {% endfor %}
+                    ]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+     	</script>
+	</div>
+</div>
+<br><br>
+<h3>三、资源类型统计</h3>
+<div class="row">
+	<div class="col-md-6">
+		<table class="table table-hover">
+			<thead>
+			<th>资源类型</th>
+			<th>请求数</th>
+			<th>请求Size(kb)</th>
+			<th>加载时间(ms)</th>
+			</thead>
+			<tbody>
+			{% for type in resource_composition %}
+			<tr>
+				<td>{{ type.resource_type }}</td>
+				<td>{{ type.counts }}</td>
+				<td>{{ type.size_count }}</td>
+				<td>{{ type.duration_count }}</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<table class="table table-hover">
+			<thead>
+			<th>Top3资源名称</th>
+			<th>加载耗时(ms)</th>
+			<th>资源大小</th>
+			</thead>
+			<tbody>
+			{% for item in top_resources %}
+			<tr>
+				<td>{{item.resource_name}}</td>
+				<td>{{item.resource_duration}}</td>
+				<td>{{item.resource_size}}</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div id="contr2" style="width: 500px;height:400px;"></div>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('contr2'));
+			option = {
+    			title : {
+        			text: '页面资源分布图',
+        			subtext: '',
+        			x:'center'
+    			},
+    			tooltip : {
+        			trigger: 'item',
+        			formatter: "{a} <br/>{b} : {c} ({d}%)"
+    			},
+    			legend: {
+        			orient : 'vertical',
+        			x : 'left',
+        			data:{{resource_type_list|safe}}
+    				},
+    			toolbox: {
+        			show : false,
+        			feature : {
+            			mark : {show: true},
+            			dataView : {show: true, readOnly: false},
+            			magicType : {
+                		show: true,
+                		type: ['pie', 'funnel'],
+                		option: {
+                    		funnel: {
+                        		x: '25%',
+                        		width: '50%',
+                        		funnelAlign: 'left',
+                        		max: 1548
+                    		}
+                		}
+            	},
+            	restore : {show: true},
+            	saveAsImage : {show: true}
+        			}
+    			},
+    			calculable : true,
+    				series : [
+        				{
+            			name:'资源分布',
+            			type:'pie',
+            			radius : '55%',
+            			center: ['50%', '60%'],
+            			data:[
+            			{% for item in resource_composition %}
+                		{value:{{item.counts}}, name:'{{item.resource_type}}'},
+                		{% endfor %}
+            			]
+        				}
+    				]
+			};
+			myChart.setOption(option);
+	</script>
+	</div>
+
+<div class="col-md-6">
+	<div id="contr3" style="width: 600px;height:400px;"></div>
+	<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('contr3'));
+			option = {
+    			title : {
+        			text: '资源大小分布图',
+        			subtext: '',
+        			x:'center'
+    			},
+    			tooltip : {
+        			trigger: 'item',
+        			formatter: "{a} <br/>{b} : {c} ({d}%)"
+    			},
+    			legend: {
+        			orient : 'vertical',
+        			x : 'left',
+        		data:{{resource_type_list|safe}}
+    			},
+    			toolbox: {
+        			show : false,
+        			feature : {
+            			mark : {show: true},
+            			dataView : {show: true, readOnly: false},
+            			magicType : {
+                		show: true,
+                		type: ['pie', 'funnel'],
+                		option: {
+                    		funnel: {
+                        		x: '25%',
+                        		width: '50%',
+                        		funnelAlign: 'left',
+                        		max: 1548
+                    		}
+                		}
+            	},
+            	restore : {show: true},
+            	saveAsImage : {show: true}
+        			}
+    			},
+    			calculable : true,
+    				series : [
+        				{
+            			name:'资源分布',
+            			type:'pie',
+            			radius : '55%',
+            			center: ['50%', '60%'],
+            			data:[
+            			{% for item in resource_composition %}
+                		{value:{{item.size_count}}, name:'{{item.resource_type}}'},
+                		{% endfor %}
+            			]
+        				}
+    				]
+			};
+			myChart.setOption(option);
+		</script>
+	</div>
+</div>
+
+<h3>四、优化参考</h3>
+<p>请参考雅虎前端团队的优化准则</p>
+
+{% block scripts %}
+    <script type="text/javascript">
+        $(document).ready(function () { initTable(); })
+         data=JSON.parse('{{resource_summary|tojson}}');
+         
+         
+            function initTable(){
+                $('#resource_summary').bootstrapTable({
+                    method:'post',
+                    toolbar:'#toolbar',
+                    data:data,
+                    dataType:'json',
+                    striped:false,  //是否行间隔色显示
+                    cache:false,//是否试用缓存，默认为true
+                    pagination:true, //s是否分页
+                    sortable:true,  //是否启用排序
+                    sortOrder:"page_name asc", // 排序方式
+                    pageNumber:1, //初始化加载第一页，默认第一页
+                    pageSize:10 , //每页的记录行数
+                    // pageList:[6,20,50] ,  //可供选择的每页行数
+                    // url:'/webloadlist',
+                    queryParamsType:'', //默认为limit， 在默认情况下，传给服务器的参数为；offset，limit， 设置为''则传给服务器的参数为pageSize，pageNumber
+                    sidePagination:"client",// 分页方式，client为客户端分页，server为服务端分页
+                    strictSearch:true,
+                    clickToSelect:true,  //是否启动点击选中行
+                    
+                    search:false,
+                    // height:$(window).height() - 500,
+                    columns:[
+                        
+                                {
+                                    title:'资源名称',
+                                    field:'resource_name',
+                                    width:450,
+                                    align:'left',
+                                    valign:'middle',
+                                    class:'text-overflow',
+                                    switchable:true
+                                    
+                                    
+                                },{
+                                    title:'资源类型',
+                                    field:'resource_type',
+                                    align:'center',
+                                    valign:'middle',
+                                    sortable:true,
+                                    class:'text-overflow'
+                                    // formatter: 'actionFormatter',
+                                    // events:'onclick'
+                                
+                                },{
+                                    title:'资源大小(kb)',
+                                    field:'resource_size',
+                                    align:'center',
+                                    valign:'middle',
+                                    sortable:true,
+                                    switchable:true
+
+                                },{
+                                    title:'加载时间(ms)',
+                                    field:'resource_duration',
+                                    align:'center',
+                                    valign:'middle',
+                                    sortable:true
+
+                                }
+                            
+                            ], // 是否显示列
+                    showColumns:true, 
+                    minimumCountColumns:2,
+                    showRefresh:true,  // 是否刷新
+                    showToggle:true,
+
+                    formatLoadingMessage: function () {
+                    return ;
+                }
+                });
+            };
+            
+    </script>
+{%- endblock scripts %}
+
+{% endblock %}

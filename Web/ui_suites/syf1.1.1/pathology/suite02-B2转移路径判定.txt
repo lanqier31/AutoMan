@@ -1,0 +1,376 @@
+*** Settings ***
+Resource          病理详情界面功能.txt
+
+*** Test Cases ***    本次手术区块名                                本次手术用名           区属性超缺                          左灶位置    左灶数    左灶均径    右灶位置    右灶数    右灶均径    峡部灶位置         峡部灶数    峡部灶均径    锥叶灶位置    锥叶灶数    锥叶灶均径    是否腺内传播    喉前亚区    胸骨上窝亚区    左沟上段    左沟中段    左沟下段    右沟上段    右沟中段    右沟下段桥1-2片    右沟下段桥1-3片    左IIa区    左IIb区    左III区    左IV区    左Va区    左Vb区    左肌间区    左前上纵膈区    左Ib区    左咽旁区    左颅底区    右IIa区    右IIb区    右III区    右IV区    右Va区    右Vb区    右肌间区    右前上纵膈区    右Ib区    右咽旁区    右颅底区    预期左转移径路判定                                          预期左主转移路径     预期左转移路径数    预期右转移路径判定                                          预期右主转移路径     预期右转移路径数
+预置条件                  B2预置条件
+
+转移路径判定Case01          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             /                              A-2a    1      >5≤7    A-2a    1      ≤3      /             /       /        /        /       /        /         1/1     1/2       1/3     /       1/5     /       /       1/8          /            1/10     /        1/12     /       /       /       1/16    /         /       /       /       /        /        /        /       /       /       /       1/27      /       1/29    /       A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/C2(侧外径路②)/D1(外围径路①)    B1(侧旁径路①)    5pw(1Fo)    B1(侧旁径路①)/D2(外围径路②)                                B1(侧旁径路①)    2pw(1Fo)
+
+转移路径判定Case02          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             /                              /       /      /       /       /      /       /             /       /        /        /       /        /         /       1/2       /       /       /       /       /       /            /            /        /        /        /       /       /       /       /         1/18    /       /       /        /        /        /       /       /       /       /         1/28    /       /       A(中线径路)/D2(外围径路②)                                  A(中线径路)      2pw(0Fo)    D2(外围径路②)                                          D2(外围径路②)    1pw(0Fo)
+
+转移路径判定Case03          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             /                              A-2a    1      >5≤7    A-2a    1      ≤3      Isthmus(M)    1       ≤3       /        /       /        /         1/1     /         /       1/4     /       /       /       /            /            /        /        /        /       /       /       /       /         /       1/18    1/19    /        /        /        /       /       /       /       /         /       /       /       A(中线径路)/B1(侧旁径路①)/D2(外围径路②)                        B1(侧旁径路①)    3pw(2Fo)    /                                                  /            /
+
+转移路径判定Case04          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             /                              A-2a    1      ≤3      A-2a    1      >5≤7    Isthmus(M)    1       ≤3       /        /       /        /         /       1/2       /       1/4     /       /       /       /            /            /        /        /        /       /       /       /       /         /       1/18    1/19    /        /        /        /       /       /       /       /         /       /       /       B1(侧旁径路①)/D2(外围径路②)                                B1(侧旁径路①)    2pw(1Fo)    A(中线径路)                                            A(中线径路)      1pw(2Fo)
+
+转移路径判定Case05          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             /                              A-2a    1      >5≤7    A-2a    1      ≤3      Isthmus(M)    1       ≤3       /        /       /        /         /       1/2       /       /       1/5     /       /       /            /            /        /        /        /       /       /       /       1/17      /       /       /       /        /        /        /       /       /       /       /         /       /       /       A(中线径路)/B1(侧旁径路①)/B2(侧旁径路②)                        B1(侧旁径路①)    3pw(2Fo)    /                                                  /            /
+
+转移路径判定Case06          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(右IIa区)                       /       /      /       /       /      /       /             /       /        /        /       /        /         1/1     /         /       /       /       /       /       1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        /        1/22     /       /       /       /       /         /       /       /       C1(侧外径路①)/D2(外围径路②)                                C1(侧外径路①)    2pw(0Fo)    A(中线径路)/B1(侧旁径路①)/C2(侧外径路②)/C3(侧外径路③)              B1(侧旁径路①)    4pw(0Fo)
+
+转移路径判定Case07          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左IIa区)                       /       /      /       /       /      /       /             /       /        /        /       /        /         /       1/2       /       /       /       /       /       1/8          /            /        /        /        /       /       /       /       /         /       /       /       /        /        1/22     1/23    1/24    1/25    /       /         /       /       /       /                                                  /            /           A(中线径路)/B1(侧旁径路①)/C2(侧外径路②)/D1(外围径路①)              B1(侧旁径路①)    4pw(0Fo)
+
+转移路径判定Case08          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(右IIa区)                       /       /      /       /       /      /       /             /       /        /        /       /        /         1/1     /         /       /       /       /       /       1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        /        1/22     /       /       /       /       /         /       /       /       C1(侧外径路①)/D2(外围径路②)                                C1(侧外径路①)    2pw(0Fo)    A(中线径路)/B1(侧旁径路①)/C2(侧外径路②)/C3(侧外径路③)              B1(侧旁径路①)    4pw(0Fo)
+
+转移路径判定Case09          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左前上纵膈区),+(左IV区)              /       /      /       /       /      /       /             /       /        /        /       /        /         /       /         /       /       1/5     /       1/7     /            /            /        1/11     /        /       /       /       /       /         /       /       /       /        /        /        /       /       /       /       /         /       /       /       B1(侧旁径路①)/D2(外围径路②)                                B1(侧旁径路①)    2pw(0Fo)    B1(侧旁径路①)                                          B1(侧旁径路①)    1pw(0Fo)
+
+转移路径判定Case10          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左IV区)                        /       /      /       /       /      /       /             /       /        /        /       /        /         /       /         /       /       1/5     /       /       /            /            /        \        /        /       /       /       /       /         /       /       /       /        /        /        /       /       /       /       /         /       /       /       B1(侧旁径路①)                                          B1(侧旁径路①)    1pw(0Fo)    /                                                  /            /
+
+转移路径判定Case11          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左沟下段),+(左前上纵膈区),+(右IV区)      /       /      /       /       /      /       /             /       /        /        /       /        /         /       /         /       /       1/5     /       1/7     1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        /        /        /       /       1/25    /       /         /       /       /       B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)                      B1(侧旁径路①)    3pw(0Fo)    B1(侧旁径路①)/D1(外围径路①)                                B1(侧旁径路①)    2pw(0Fo)
+
+转移路径判定Case12          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左沟下段),+(左前上纵膈区),+(右前上纵膈区)    /       /      /       /       /      /       /             /       /        /        /       /        /         /       /         /       /       1/5     /       1/7     1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        1/21     1/22     1/23    1/24    1/25    /       /         /       /       /       B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)                      B1(侧旁径路①)    3pw(0Fo)    B1(侧旁径路①)/C2(侧外径路②)/D1(外围径路①)                      B1(侧旁径路①)    3pw(0Fo)
+
+转移路径判定Case13          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左前上纵膈区),+(右前上纵膈区)            /       /      /       /       /      /       /             /       /        /        /       /        /         1/1     1/2       1/3     1/4     1/5     /       1/7     1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        1/21     1/22     1/23    1/24    1/25    /       /         /       /       /       B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)                      B1(侧旁径路①)    3pw(0Fo)    A(中线径路)/B1(侧旁径路①)/C2(侧外径路②)/C3(侧外径路③)/D1(外围径路①)    B1(侧旁径路①)    5pw(0Fo)
+
+转移路径判定Case14          [Template]                             派生数据B2转移路径判定
+                      全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除             +(左前上纵膈区),+(右前上纵膈区)            A-2a    1      >5≤7    A-2a    1      ≤3      /             /       /        /        /       /        /         1/1     1/2       1/3     1/4     1/5     /       1/7     1/8          1/9          1/10     1/11     /        /       /       /       /       /         /       /       /       /        1/21     1/22     1/23    1/24    1/25    /       /         /       /       /       A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)              B1(侧旁径路①)    4pw(1Fo)    B1(侧旁径路①)/C2(侧外径路②)/D1(外围径路①)                      B1(侧旁径路①)    3pw(1Fo)
+                      [Teardown]                             close browser    # 关闭浏览器
+
+转移路径判定Case15          [Tags]                                 a
+                      [Setup]
+                      转移路径判定Case15
+                      [Teardown]
+
+转移路径判定Case16          [Tags]                                 a
+                      [Setup]
+                      转移路径判定Case16
+                      [Teardown]
+
+转移路径判定Case17          [Tags]                                 a
+                      [Setup]
+                      转移路径判定Case17
+                      [Teardown]
+
+转移路径判定Case18          [Tags]                                 a
+                      [Setup]
+                      转移路径判定Case18
+                      [Teardown]
+
+转移路径判定Case19          [Tags]                                 a
+                      [Setup]
+                      转移路径判定Case19
+                      [Teardown]
+
+*** Keywords ***
+转移路径判定Case15
+    B2预置条件
+    派生数据B2转移路径判定    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除    +(左前上纵膈区)    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    1/2
+    ...    /    /    \    /    1/7    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    A(中线径路)/B1(侧旁径路①)    B1(侧旁径路①)    2pw(0Fo)
+    #跳转到病理列表页面添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/TumorStudy2/Index
+    #添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true
+    Sleep    7s
+    #添加病人信息
+    添加-病人信息    412724    2016-11-06    2016-11-08    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除
+    # 填写原发灶
+    保存原发灶    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}
+    #填写再一转移灶
+    execute javascript    window.document.getElementById("txtLFiveBArea").value="1/13"
+    focus    id=SaveMicroscope
+    click element    id=SaveMicroscope
+    sleep    3s
+    focus    id=SaveMicroscopeAndDerived
+    click element    id=SaveMicroscopeAndDerived
+    sleep    2s
+    reload page
+    sleep    7s
+    #比较实际结果和预期结果
+    focus    id=txtTransferDiameterJudgeL
+    ${实际左转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeL@dataval
+    focus    id=txtMainTransferDiameterL
+    ${实际左主转移路径}=    get element attribute    id=txtMainTransferDiameterL@dataval
+    focus    id=txtTransferDiameterNumL
+    ${实际左转移路径数}=    get element attribute    id=txtTransferDiameterNumL@dataval
+    focus    id=txtTransferDiameterJudgeR
+    ${实际右转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeR@dataval
+    focus    id=txtMainTransferDiameterR
+    ${实际右主转移路径}=    get element attribute    id=txtMainTransferDiameterR@dataval
+    focus    id=txtTransferDiameterNumR
+    ${实际右转移路径数}=    get element attribute    id=txtTransferDiameterNumR@dataval
+    should be equal as strings    ${实际左转移路径判定}    /
+    should be equal as strings    ${实际左主转移路径}    /
+    should be equal as strings    ${实际左转移路径数}    /
+    should be equal as strings    ${实际右转移路径判定}    A(中线径路)/B1(侧旁径路①)
+    should be equal as strings    ${实际右主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际右转移路径数}    2pw(0Fo)
+    [Teardown]    close all browsers    # 关闭所有浏览器
+
+转移路径判定Case16
+    B2预置条件
+    派生数据B2转移路径判定    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除    +(左沟下段),+(左前上纵膈区)    /    0    o
+    ...    /    0    o    /    0    o
+    ...    /    0    o    /    /    /
+    ...    /    /    1/5    /    1/7    1/8
+    ...    1/9    1/10    1/11    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    ...    B1(侧旁径路①)    3pw(0Fo)    B1(侧旁径路①)    B1(侧旁径路①)    1pw(0Fo)
+    #跳转到病理列表页面添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/TumorStudy2/Index
+    #添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true
+    Sleep    7s
+    #添加-病人信息
+    focus    id=txtHospitalNumber
+    input text    id=txtHospitalNumber    412724
+    click element    id=txtPatientName
+    sleep    3s
+    execute javascript    window.document.getElementById("txtBUltrasonicCheckTime").value="2016-11-06"
+    execute javascript    window.document.getElementById("txtOperationDay").value="2016-11-08"
+    execute javascript    window.document.getElementById("txtOperationSchemeCN").value="全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底"
+    execute javascript    window.document.getElementById("txtThisDoSurgery").value="左叶切除"
+    execute javascript    window.document.getElementById("txtStripBlock").value="+(右沟下段桥1-3片),+(右前上纵膈区)"
+    click element    id=txtOtherTimes
+    sleep    1s
+    focus    id=saveMaster
+    click element    id=saveMaster
+    sleep    3s
+    #填写原发灶
+    保存原发灶    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}
+    #填写转移灶
+    添加-转移灶    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    1/19    /    1/21    1/22    1/23
+    ...    1/24    1/25    /    /    /    /
+    ...    /
+    #比较预期结果和实际结果
+    focus    id=txtTransferDiameterJudgeL
+    ${实际左转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeL@dataval
+    focus    id=txtMainTransferDiameterL
+    ${实际左主转移路径}=    get element attribute    id=txtMainTransferDiameterL@dataval
+    focus    id=txtTransferDiameterNumL
+    ${实际左转移路径数}=    get element attribute    id=txtTransferDiameterNumL@dataval
+    focus    id=txtTransferDiameterJudgeR
+    ${实际右转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeR@dataval
+    focus    id=txtMainTransferDiameterR
+    ${实际右主转移路径}=    get element attribute    id=txtMainTransferDiameterR@dataval
+    focus    id=txtTransferDiameterNumR
+    ${实际右转移路径数}=    get element attribute    id=txtTransferDiameterNumR@dataval
+    should be equal as strings    ${实际左转移路径判定}    B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    should be equal as strings    ${实际左主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际左转移路径数}    3pw(0Fo)
+    should be equal as strings    ${实际右转移路径判定}    B1(侧旁径路①)
+    should be equal as strings    ${实际右主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际右转移路径数}    1pw(0Fo)
+    [Teardown]    close all browsers
+
+转移路径判定Case17
+    B2预置条件
+    派生数据B2转移路径判定    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除    +(左前上纵膈区)    A-2a    3    >5≤7
+    ...    A-2a    3    ≤3    /    0    ○
+    ...    /    0    ○    ${EMPTY}    1/1    1/2
+    ...    1/3    1/4    1/5    /    1/7    1/8
+    ...    1/9    1/10    1/11    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    ...    B1(侧旁径路①)    4pw(3Fo)    B1(侧旁径路①)    B1(侧旁径路①)    1pw(3Fo)
+    #跳转到病理列表页面添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/TumorStudy2/Index
+    #添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true
+    Sleep    7s
+    focus    id=txtHospitalNumber
+    input text    id=txtHospitalNumber    412724
+    click element    id=txtPatientName
+    sleep    3s
+    execute javascript    window.document.getElementById("txtBUltrasonicCheckTime").value="2016-11-06"
+    execute javascript    window.document.getElementById("txtOperationDay").value="2016-11-08"
+    execute javascript    window.document.getElementById("txtOperationSchemeCN").value="全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底"
+    execute javascript    window.document.getElementById("txtThisDoSurgery").value="左叶切除"
+    execute javascript    window.document.getElementById("txtStripBlock").value="+(右前上纵膈区)"
+    click element    id=txtOtherTimes
+    sleep    2s
+    focus    id=saveMaster
+    click element    id=saveMaster
+    sleep    3s
+    #填写原发灶
+    保存原发灶    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}
+    #填写转移灶
+    添加-转移灶    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    1/19    /    1/21    1/22    1/23
+    ...    1/24    1/25    /    /    /    /
+    ...    /
+    保存B2派生结果
+    #比较预期结果和实际结果
+    focus    id=txtTransferDiameterJudgeL
+    ${实际左转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeL@dataval
+    focus    id=txtMainTransferDiameterL
+    ${实际左主转移路径}=    get element attribute    id=txtMainTransferDiameterL@dataval
+    focus    id=txtTransferDiameterNumL
+    ${实际左转移路径数}=    get element attribute    id=txtTransferDiameterNumL@dataval
+    focus    id=txtTransferDiameterJudgeR
+    ${实际右转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeR@dataval
+    focus    id=txtMainTransferDiameterR
+    ${实际右主转移路径}=    get element attribute    id=txtMainTransferDiameterR@dataval
+    focus    id=txtTransferDiameterNumR
+    ${实际右转移路径数}=    get element attribute    id=txtTransferDiameterNumR@dataval
+    should be equal as strings    ${实际左转移路径判定}    A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    should be equal as strings    ${实际左主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际左转移路径数}    4pw(3Fo)
+    should be equal as strings    ${实际右转移路径判定}    B1(侧旁径路①)
+    should be equal as strings    ${实际右主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际右转移路径数}    1pw(3Fo)
+    [Teardown]    close all browsers
+
+转移路径判定Case18
+    B2预置条件
+    派生数据B2转移路径判定    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除    +(左前上纵膈区)    /    0    o
+    ...    /    0    o    /    0    o
+    ...    /    0    o    /    1/1    1/2
+    ...    1/3    1/4    1/5    /    1/7    1/8
+    ...    1/9    1/10    1/11    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    ...    B1(侧旁径路①)    4pw(0Fo)    B1(侧旁径路①)    B1(侧旁径路①)    1pw(0Fo)
+    #跳转到病理列表页面添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/TumorStudy2/Index
+    #添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true
+    Sleep    7s
+    focus    id=txtHospitalNumber
+    input text    id=txtHospitalNumber    412724
+    click element    id=txtPatientName
+    sleep    3s
+    execute javascript    window.document.getElementById("txtBUltrasonicCheckTime").value="2016-11-06"
+    execute javascript    window.document.getElementById("txtOperationDay").value="2016-11-08"
+    execute javascript    window.document.getElementById("txtOperationSchemeCN").value="全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底"
+    execute javascript    window.document.getElementById("txtThisDoSurgery").value="左叶切除"
+    execute javascript    window.document.getElementById("txtStripBlock").value="+(右前上纵膈区),+(右沟下段桥1-2片)"
+    click element    id=txtOtherTimes
+    sleep    1s
+    focus    id=saveMaster
+    click element    id=saveMaster
+    sleep    3s
+    #填写原发灶
+    保存原发灶    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}
+    #填写转移灶
+    添加-转移灶    1/1    1/2    1/3    1/4    1/5    /
+    ...    1/7    1/8    1/9    1/10    1/11    /
+    ...    /    /    /    /    /    /
+    ...    /    1/19    /    1/21    1/22    1/23
+    ...    1/24    1/25    /    /    /    /
+    ...    /
+    #比较预期结果和实际结果
+    focus    id=txtTransferDiameterJudgeL
+    ${实际左转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeL@dataval
+    focus    id=txtMainTransferDiameterL
+    ${实际左主转移路径}=    get element attribute    id=txtMainTransferDiameterL@dataval
+    focus    id=txtTransferDiameterNumL
+    ${实际左转移路径数}=    get element attribute    id=txtTransferDiameterNumL@dataval
+    focus    id=txtTransferDiameterJudgeR
+    ${实际右转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeR@dataval
+    focus    id=txtMainTransferDiameterR
+    ${实际右主转移路径}=    get element attribute    id=txtMainTransferDiameterR@dataval
+    focus    id=txtTransferDiameterNumR
+    ${实际右转移路径数}=    get element attribute    id=txtTransferDiameterNumR@dataval
+    should be equal as strings    ${实际左转移路径判定}    A(中线径路)/B1(侧旁径路①)/C1(侧外径路①)/D2(外围径路②)
+    should be equal as strings    ${实际左主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际左转移路径数}    4pw(0Fo)
+    should be equal as strings    ${实际右转移路径判定}    B1(侧旁径路①)
+    should be equal as strings    ${实际右主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际右转移路径数}    1pw(0Fo)
+    [Teardown]    close all browsers
+
+转移路径判定Case19
+    B2预置条件
+    派生数据B2转移路径判定    全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底    左叶切除    +(左前上纵膈区)    /    0    o
+    ...    /    0    o    /    0    o
+    ...    /    0    o    /    1/1    1/2
+    ...    1/3    1/4    1/5    /    1/7    /
+    ...    ${EMPTY}    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    A(中线径路)/B1(侧旁径路①)
+    ...    B1(侧旁径路①)    2pw(0Fo)    B1(侧旁径路①)    B1(侧旁径路①)    1pw(0Fo)
+    goto    http://192.168.10.164/syf1.1.1/TumorStudy2/Index
+    #添加再(1)
+    goto    http://192.168.10.164/syf1.1.1/PathologicalEvaluation/Edit?type=add&editmark=true
+    Sleep    7s
+    focus    id=txtHospitalNumber
+    input text    id=txtHospitalNumber    412724
+    click element    id=txtPatientName
+    sleep    3s
+    execute javascript    window.document.getElementById("txtBUltrasonicCheckTime").value="2016-11-06"
+    execute javascript    window.document.getElementById("txtOperationDay").value="2016-11-08"
+    execute javascript    window.document.getElementById("txtOperationSchemeCN").value="全叶,双中央区,双侧中颈区,双外侧颈区,双前上纵膈,双颌下-咽旁-颅底"
+    execute javascript    window.document.getElementById("txtThisDoSurgery").value="左叶切除"
+    execute javascript    window.document.getElementById("txtStripBlock").value="+(左IV区)"
+    click element    id=txtOtherTimes
+    sleep    1s
+    focus    id=saveMaster
+    click element    id=saveMaster
+    sleep    3s
+    #填写原发灶
+    保存原发灶    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}
+    #填写转移灶
+    添加-转移灶    /    /    /    /    /    /
+    ...    /    /    /    /    1/11    1/12
+    ...    1/13    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /    /    /    /    /    /
+    ...    /
+    #比较预期结果和实际结果
+    focus    id=txtTransferDiameterJudgeL
+    ${实际左转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeL@dataval
+    focus    id=txtMainTransferDiameterL
+    ${实际左主转移路径}=    get element attribute    id=txtMainTransferDiameterL@dataval
+    focus    id=txtTransferDiameterNumL
+    ${实际左转移路径数}=    get element attribute    id=txtTransferDiameterNumL@dataval
+    focus    id=txtTransferDiameterJudgeR
+    ${实际右转移路径判定}=    get element attribute    id=txtTransferDiameterJudgeR@dataval
+    focus    id=txtMainTransferDiameterR
+    ${实际右主转移路径}=    get element attribute    id=txtMainTransferDiameterR@dataval
+    focus    id=txtTransferDiameterNumR
+    ${实际右转移路径数}=    get element attribute    id=txtTransferDiameterNumR@dataval
+    should be equal as strings    ${实际左转移路径判定}    A(中线径路)/B1(侧旁径路①)
+    should be equal as strings    ${实际左主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际左转移路径数}    2pw(0Fo)
+    should be equal as strings    ${实际右转移路径判定}    B1(侧旁径路①)
+    should be equal as strings    ${实际右主转移路径}    B1(侧旁径路①)
+    should be equal as strings    ${实际右转移路径数}    1pw(0Fo)
+    [Teardown]    close all browsers

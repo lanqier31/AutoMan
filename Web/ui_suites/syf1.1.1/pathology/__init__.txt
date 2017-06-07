@@ -1,0 +1,7 @@
+| *** Settings *** |
+| Library        | Selenium2Library |
+| Library        | BuiltIn |
+| Library        | AutoItLibrary |
+| Resource       | 预置条件.txt |
+
+| *** Keywords *** |

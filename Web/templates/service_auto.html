@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}接口自动化{% endblock %}
+{% block content %}
+<table id="suite" class="table table-hover">
+    <thead>
+    <tr>
+        <th>测试组件名</th>
+        <th>包含用例数</th>
+        <th>上次执行通过用例数</th>
+        <th>上次执行失败用例数</th>
+        <th>上次测试执行时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="case_detail">基础设置</a></td>
+        <script type="text/javascript:to_detail()">
+			function to_detail()
+			{
+				var href = "/index";
+				location.href = href
+			}
+		</script>
+        <td>60</td>
+        <td>60</td>
+        <td>0</td>
+        <td>2017-03-01 16:56:00</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,122 @@
+body{
+			padding: 0;
+			margin:0;
+			font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif ;
+			height: 100%;
+			width:100%;
+			// background-color: rgba(45,101,203,.89);
+			// background-image: -webkit-radial-gradient(10% 0,farthest-side ellipse,rgba(119,157,207,.8) 30%,rgba(174,180,186,.8) 76%,rgba(199,175,156,.8));
+			// background-attachment: fixed , fixed;
+
+}
+a{
+	text-decoration:none;
+}
+.row{
+	margin-left:0;
+	margin-right:0;
+}
+.navbar-fixed-top{
+	box-shadow:0 3px 3px rgba(0,0,0,0.3);
+	z-index: 999;
+	background-color: #fff;
+}
+.navbar-header img{
+	/*background-image: url(images/md3.png);*/
+	height: 50px;
+	width:50px;
+	margin-right:20px;
+	margin-left:10px;
+}
+// .jiankong{
+// 	margin-top: 10px;
+// }
+.toolbar{
+	position: relative;
+	float: left;
+	display: inline-block;
+	margin-bottom: 8px;
+}
+.projectversion{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.table{
+	table-layout: fixed;
+}
+.table td:hover{
+   overflow: visible;
+   white-space: normal;
+}
+.table td {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+table thead{
+	background-color:#337ab7;
+	color:#fff;
+}
+.header{
+	width:100%;
+	height:80px;
+	/*position: fixed;*/
+	left: 0px;
+	top: 0px;
+	background: url(/static/images/md5.png) no-repeat left;
+	background-size:60px 60px;
+	/*box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);*/
+	margin-bottom: 10px;
+	padding-top: 10px;
+	margin-bottom: 20px;
+
+}
+.navbar-nav{
+	margin-left: 80px;
+	
+}
+.navbar-nav a{
+	color: #000;
+	font-size: 16px;
+	background-color: transparent;
+}
+.nav>li> a:hover,
+.nav>li > a:focus{
+	color:#337ab7;
+	border-bottom: 3px solid #337ab7;
+	background-color: transparent;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: #337ab7;
+	/*background-color: #e7e7e7;*/
+	border-bottom: 3px solid #337ab7;
+}
+.title > a ,.title > a > h4{
+	color: #fff;
+	
+	font-size: 20px;
+	font-weight: bold;
+}
+
+// .btn{
+// 	background-color:#fff;
+// }
+.navbar-right{
+	margin-right: 0;
+}
+.text-overflow{
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;
+}
+.form-control{
+	display: inline-block;
+	width:auto;
+}
+#content{
+	margin-top: 70px;
+}
