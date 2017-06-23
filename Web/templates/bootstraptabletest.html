@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bootstrap-table test</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap-editable.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/mdstyle.css">
+	<script src="../static/js/jquery.min.js"></script>
+	<!-- <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>  -->
+	<script type="text/javascript" src="../static/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap-editable.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap-table-editable.js"></script>
+</head>
+
+<body>
+	<div>
+		<span>Username:</span>
+        <a href="#" id="username" data-type="text" data-placement="right" data-title="Enter username">superuser</a>
+	</div>
+	<div>
+        <span>Status:</span>
+        <a href="#" id="status"></a>
+      </div>
+       <table id="todolist" class="table table-hover">
+    </table>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+    
+    $('#username').editable({
+    	type: "text",                //编辑框的类型。支持text|textarea|select|date|checklist等
+            title: "用户名",              //编辑框的标题
+            disabled: false,             //是否禁用编辑
+            emptytext: "空文本",          //空值的默认文本
+            mode: "inline"   
+    });
+    
+    //make status editable
+    $('#status').editable({
+        type: 'select',
+        title: 'Select status',
+        placement: 'right',
+        value: 2,
+        source: [
+            {value: 1, text: 'status 1'},
+            {value: 2, text: 'status 2'},
+            {value: 3, text: 'status 3'}
+        ]
+        /*
+        //uncomment these lines to send data on server
+        ,pk: 1
+        ,url: '/post'
+        */
+    });
+    var userlist=[{"Id":1,"UserName" : "张三", "Age" : 22, "Birthday" : "1994-12-21", "DeptId" : "1", "DeptName" : "研发部" },{"Id":2,"UserName": "李四", "Age" : 28, "Birthday" : "1988-09-09", "DeptId" : "2", "DeptName" : "销售部" },{"Id":3,"UserName" : "风衣大叔", "Age" : 40, "Birthday" :"1976-09-01", "DeptId" : "2", "DeptName": "销售部"}]
+    // alert (userlist);
+    $('#todolist').bootstrapTable({
+    	toolbar: "#toolbar",
+        idField: "Id",
+        pagination: true,
+        showRefresh: true,
+        search: true,
+        clickToSelect: true,
+        data:userlist,
+        queryParams: function (param) {
+            return {};
+        },
+        // url: "/bootstraptabletest",
+        columns: [
+        		{
+        			checkbox: true
+        		}, {
+	                field: "UserName",
+	                title: "用户名",
+	                editable: {
+		                    type: 'text',
+		                    title: '用户名',
+		                    mode: 'inline',
+		                    validate: function (v) {
+		                        if (!v) return '用户名不能为空';
+		                    }
+            			}
+            		}, {
+		                field: "Age",
+		                title: "年龄",
+		                formatter: function (value, row, index) {
+                    		return "<a href=\"#\" name=\"Age\" data-type=\"text\" data-pk=\""+row.Id+"\" data-title=\"年龄\">" + value + "</a>";
+                		}
+		            }, {
+		                field: "Birthday",
+		                title: "生日"
+		                // formatter: function (value, row, index) {
+		                //     var date = eval('new ' + eval(value).source)
+		                //     return date.format("yyyy-MM-dd");
+		                // }
+		            },{
+		                field: "DeptName",
+		                title: "部门",
+		                editable:true
+		            }, {
+		                field: "Hobby",
+		                title: "爱好",
+		                editable:{
+		                	type:"textarea",
+		                	mode:"inline",
+		                	title:"Hobby"
+
+		                }                
+		            }],
+        onEditableSave: function (field, row, oldValue, $el) {
+        		alert(row);
+        		console.log(row);
+                $.ajax({
+                    type: "post",
+                    url: "/bootstrap-tabletest/Edit",
+                    data: row,
+                    dataType: 'JSON',
+                    success: function (data, status) {
+                        if (status == "success") {
+                            alert('提交数据成功');
+                        }
+                    },
+                    error: function () {
+                        alert('编辑失败');
+                    },
+                    complete: function () {
+
+                    }
+
+                });
+            }
+        });
+});
+</script>
+</html>

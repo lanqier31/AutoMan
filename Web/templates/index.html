@@ -148,7 +148,7 @@
     	<table id="data_chart" width="100%">
     	<tr>
      		<td align="center">
-     		<div id="chart" class="text-align：center" style="width: 1250px;height:800px;">
+     		<div id="chart" class="text-align：center" style="width: 1200px;height:800px;">
 			 	<script type="text/javascript">
 			        // 基于准备好的dom，初始化echarts实例
 			        var myChart = echarts.init(document.getElementById('chart'));
@@ -276,7 +276,7 @@
 			    datatype: "json",
 				//ajax请求成功后的事件
 			    success:function(data){    
-				$('#webloadlist').html($(data).find('#webloadlist').html());	      		
+					$('#webloadlist').html($(data).find('#webloadlist').html());	      		
 			       	$('#data_chart').html($(data).find('#data_chart').html());
 			    },
 			    //调用出错执行的函数

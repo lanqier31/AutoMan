@@ -117,6 +117,52 @@ table thead{
 	display: inline-block;
 	width:auto;
 }
-#content{
-	margin-top: 70px;
+#main{
+	margin-top: 60px;
+
+}
+
+.sidebar{
+	padding-left: 0px;
+}
+.fixed{
+    position:fixed;
+    top:10px;
+    left:0
+    
+}
+
+.modal-dialog {
+    width: 800px;
+    margin: 80px auto;
+}
+
+.form-inline .form-control {  
+    width: 160px;   
+}
+.form-inline .form-group{
+	margin-bottom: 5px;
+}  
+.form-inline label{
+	width: 62px;
+	text-align: right;
+}  
+.indent{
+	margin-left: -220px;
+}
+.todohead{
+	position: relative;
+}
+.buttool{
+	position: absolute;
+	top: -0px;
+	right: 0px;
+}
+.buttool .btn{
+	padding: 4px 12px;
+}
+#bugfilter .nav>li>a{
+	padding: 6px 15px;
+	border-radius: 1px;
+	border-bottom: 0px;
 }

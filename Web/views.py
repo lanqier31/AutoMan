@@ -308,10 +308,65 @@ def per_auto():
     return render_template('per_auto.html')
 
 
+@web_app.route('/savetodo', methods=['GET', 'POST'])
+def savetodo():
+    if request.method == 'POST':
+        rid=request.form.get("id", "null")
+        project=request.form.get("project","null")
+        version=request.form.get("version","null")
+        worktype=request.form.get("worktype", "null")
+        module=request.form.get("module","null")
+        title=request.form.get("title","null")
+        description=request.form.get("description","null")
+        developer=request.form.get("developer","null")
+        tester=request.form.get("tester","null")
+        status=request.form.get("status","null")
+        createtime=request.form.get("createtime","null")
+        completetime=request.form.get("completetime","null")
+        remarks=request.form.get("remarks","null")
+        CURRENT=time.strftime('%Y-%m-%d',time.localtime(time.time()))
+        # 将统计数据保存到sqlite
+
+        connection = sqlite3.connect(config.db_dir)
+        cursor = connection.cursor()
+
+        save_sql="insert into todolist values ('" + str(rid) + "','" + str(project) + "','" + str(version) + "','" + str(worktype) + "','" + str(module) + "',\
+        '" + str(title) + "','" + str(description)+ "','" + str(developer) + "','" + str(tester) + "','" + str(status) + "','" + str(createtime) + "','" + str(completetime) + "','" + str(remarks) + "','"+str(CURRENT)+"')"
+        cursor.execute(save_sql)
+        connection.commit()
+        connection.close()
+        #重新读取数据库的信息
+        g.db = sqlite3.connect(config.db_dir)
+        g.db.text_factory=str
+    
+        select_sql='select rid,version,worktype,module,title,description,developer,tester,status,createtime,completetime,remarks '\
+        +"from todolist where project='" + str(project) + "'"
+        todolists=query_db(select_sql)
+        g.db.close()
+        return render_template('todo.html', todolists=todolists)
+        
+@web_app.route('/todo', methods=['GET', 'POST'])
+def todo():
+    if request.method == 'POST':
+        project=request.form.get('project','null')
+    else:
+
+        project='SYF项目'
+    g.db = sqlite3.connect(config.db_dir)
+    g.db.text_factory=str
+    select_sql='select rid,version,worktype,module,title,description,developer,tester,status,createtime,completetime,remarks '\
+    +"from todolist where project='" + str(project) + "'"
+    todolists=query_db(select_sql)
+    g.db.close()
+    return render_template('todo.html', todolists=todolists)
+
+
+
+
 # 以字典形式返回查询结果
 def query_db(query, args=(), one=False):
     cur=g.db.execute(query,args)
-    rv=[dict((str(cur.description[idx][0]), str(value)) for idx, value in enumerate(row)) for row in cur.fetchall()]
+    rv=[dict((str(cur.description[idx][0]), str(value).replace("\n", "<br/>").replace("\r", "<br/>")) for idx, value in enumerate(row)) for row in cur.fetchall()]
     return (str(rv[0]) if rv else None) if one else rv
 
 
@@ -322,3 +377,12 @@ def variable_config():
         return render_template('variable_config.html')
     else:
         return render_template('variable_config.html')
+
+
+
+@web_app.route('/bootstrap-tabletest', methods=['GET', 'POST'])
+def bootstraptabletest():
+    userlists=[{"UserName" : "张三", "Age" : 22, "Birthday" : "1994-12-21", "DeptId" : "1", "DeptName" : "研发部" },\
+     {"UserName": "李四", "Age" : 28, "Birthday" : "1988-09-09", "DeptId" : "2", "DeptName" : "销售部" },\
+     {"UserName" : "风衣大叔", "Age" : 40, "Birthday" :"1976-09-01", "DeptId" : "2", "DeptName": "销售部"}]
+    return render_template('bootstraptabletest.html', userlists=userlists)
